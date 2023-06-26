@@ -435,7 +435,8 @@ plt. annotate(s, xy = arrow_crd, xytext = text_crd, arrowprops = dict)
     return normDataSet, ranges, minVals
 </code></pre>
 <p>在处理不同取值范围的特征值时，我们通常采用的方法是将数值归一化如将数值处理为0到1 或-1到1之间，下面的公式可以将任意取值范围的特征值转化为0到1区间内的值：</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151905615.png" alt="image-20210804151905615"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151905615.png" class title="image-20210804151905615">
+
 <p>min和max为数据集中最小特征值和最大特征值</p>
 <h2 id="分类器针对网站的测试代码"><a href="#分类器针对网站的测试代码" class="headerlink" title="分类器针对网站的测试代码"></a>分类器针对网站的测试代码</h2><pre><code class="python">def datingClassTest():
     hoRatio = 0.10      #10%拿去做测试
@@ -468,7 +469,8 @@ plt. annotate(s, xy = arrow_crd, xytext = text_crd, arrowprops = dict)
 </code></pre>
 <h1 id="决策树（ID3，C4-5，CART，C5）"><a href="#决策树（ID3，C4-5，CART，C5）" class="headerlink" title="决策树（ID3，C4.5，CART，C5）"></a>决策树（ID3，C4.5，CART，C5）</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/c406495762/article/details/75663451?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162090531916780255260545%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=162090531916780255260545&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-3-75663451.nonecase&utm_term=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&spm=1018.2226.3001.4450">https://blog.csdn.net/c406495762/article/details/75663451?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162090531916780255260545%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=162090531916780255260545&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-3-75663451.nonecase&amp;utm_term=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&amp;spm=1018.2226.3001.4450</a></p>
 <p>决策树是什么？决策树(decision tree)是一种基本的分类与回归方法。举个通俗易懂的例子，如下图所示的流程图就是一个决策树，长方形代表判断模块(decision block)，椭圆形成代表终止模块(terminating block)，表示已经得出结论，可以终止运行。从判断模块引出的左右箭头称作为分支(branch)，它可以达到另一个判断模块或者终止模块。我们还可以这样理解，分类决策树模型是一种描述对实例进行分类的树形结构。决策树由结点(node)和有向边(directed edge)组成。结点有两种类型：内部结点(internal node)和叶结点(leaf node)。内部结点表示一个特征或属性，叶结点表示一个类。蒙圈没？？如下图所示的决策树，长方形和椭圆形都是结点。长方形的结点属于内部结点，椭圆形的结点属于叶结点，从结点引出的左右箭头就是有向边。而最上面的结点就是决策树的根结点(root node)。这样，结点说法就与模块说法对应上了，理解就好。</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/20170721162306492" alt="img"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/20170721162306492" class title="img">
+
 <p>使用决策树做预测需要以下过程：</p>
 <pre><code>收集数据：可以使用任何方法。比如想构建一个相亲系统，我们可以从媒婆那里，或者通过参访相亲对象获取数据。根据他们考虑的因素和最终的选择结果，就可以得到一些供我们利用的数据了。
 准备数据：收集完的数据，我们要进行整理，将这些所有收集的信息按照一定规则整理出来，并排版，方便我们进行后续处理。
@@ -480,15 +482,19 @@ plt. annotate(s, xy = arrow_crd, xytext = text_crd, arrowprops = dict)
 <h2 id="熵（entropy）："><a href="#熵（entropy）：" class="headerlink" title="熵（entropy）："></a>熵（entropy）：</h2><p>熵（entropy）：表示随机变量的不确定性</p>
 <p>熵定义为信息的期望值 </p>
 <p>xi的信息定义为</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151930702.png" alt="image-20210804151930702"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151930702.png" class title="image-20210804151930702">
+
 <p>熵:</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151948585.png" alt="image-20210804151948585"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151948585.png" class title="image-20210804151948585">
+
 <p><strong>熵越大，随机变量的不确定性越大。</strong></p>
 <p><strong>熵越小，随机变量的不确定性越小。</strong> </p>
 <h2 id="经验熵"><a href="#经验熵" class="headerlink" title="经验熵"></a>经验熵</h2><p>当熵中的概率由数据估计(特别是最大似然估计)得到时，所对应的熵称为经验熵(empirical entropy)。什么叫由数据估计？比如有10个数据，一共有两个类别，A类和B类。其中有7个数据属于A类，则该A类的概率即为十分之七。其中有3个数据属于B类，则该B类的概率即为十分之三。浅显的解释就是，这概率是我们根据数据数出来的。我们定义贷款申请样本数据表中的数据为训练数据集D，则训练数据集D的经验熵为H(D)，|D|表示其样本容量，及样本个数。设有K个类Ck，k &#x3D; 1,2,3,···,K，|Ck|为属于类Ck的样本个数，这经验熵公式可以写为：</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804152006522.png" alt="image-20210804152006522"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804152006522.png" class title="image-20210804152006522">
+
 <h2 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h2><p>在划分数据集之前之后信息发生的改变称为信息增益，获得信息增益最高的特征就是最好的选择。</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804152018577.png" alt="image-20210804152018577"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804152018577.png" class title="image-20210804152018577">
+
 <p>其中D时训练数据集，A时某个特征</p>
 <p>根据信息增益准则的特征选择方法是：</p>
 <p>1.对训练集（或子集）D，计算其每个特征的信息增益</p>
@@ -592,7 +598,8 @@ set([&#39;y&#39;, &#39;b&#39;, &#39;o&#39;])
 </code></pre>
 <h3 id="递归构建决策树"><a href="#递归构建决策树" class="headerlink" title="递归构建决策树"></a>递归构建决策树</h3><p>工作原理：得到原始数据集，然后基于最好的属性值划分数据集，有趣特征可能多余两个，因此可能存在大于两个支点的数据集划分。第一次划分之后，数据将被向下传递到树分支点的下一个节点，在这个节点上，我们可以再次划分数据。因此我们可以采用递归的原理处理数据。</p>
 <p>递归结束的条件是：程序遍历完所有划分数据集的属性，或者每个分支下的所有实例都具有相同的分类。如果所有实例具有相同的分类，则得到的一个叶子节点或者终止块。任何到达叶子节点的数据必然属于叶子节点的分类。如下图所示。</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804200335848.png" alt="image-20210804200335848"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804200335848.png" class title="image-20210804200335848">
+
 <p>majorityCnt函数的作用，就是找出classList这堆标签里，出现次数最多的哪个标签。</p>
 <p>classCount是个字典，记录每个标签出现的次数。</p>
 <p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/65702708/archive/2010/09/14/1826362.html">sorted函数</a>把classCount按照键值对的值进行降序排序，返回一个tuple的list。sortedClassCount[0][0]就是出现次数最多的那个标签了。</p>
@@ -635,14 +642,17 @@ def majorityCnt(classList):#投票表决法
     return classLabel
 </code></pre>
 <h2 id="决策树的可视化"><a href="#决策树的可视化" class="headerlink" title="决策树的可视化"></a>决策树的可视化</h2><h3 id="在Python中使用Matplotlib注解绘制树形图"><a href="#在Python中使用Matplotlib注解绘制树形图" class="headerlink" title="在Python中使用Matplotlib注解绘制树形图"></a>在Python中使用Matplotlib注解绘制树形图</h3><h1 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h1><p>基于概率论的分类方法。</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210815160640647.png" alt="image-20210815160640647"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210815160640647.png" class title="image-20210815160640647">
+
 <p><strong>朴素贝叶斯</strong></p>
 <p>优点：在数据少的情况下仍然有效</p>
 <p>缺点：对于输入数据的准备方式较为敏感</p>
 <p>适用数据类型：标称型数据</p>
-<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210809161610428.png" alt="image-20210809161610428"></p>
+<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210809161610428.png" class title="image-20210809161610428">
+
 <p>已知p(x|c)求p(c|x)   （贝叶斯准则，交换条件概率中的条件和结果）</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210809162911242.png" alt="image-20210809162911242"></p>
+<img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210809162911242.png" class title="image-20210809162911242">
+
 <h2 id="使用条件概率来分类"><a href="#使用条件概率来分类" class="headerlink" title="使用条件概率来分类"></a>使用条件概率来分类</h2><p>贝叶斯决策理论要求计算两个概率p1(x,y)和p2(x,y):</p>
 <ul>
 <li>如果p1(x,y)&gt;p2(x,y),那么属于类别1</li>
@@ -679,7 +689,10 @@ def setOfWords2Vec(vocabList, inputSet):
         else: print(&quot;the word: %s is not in my Vocabulary!&quot; % word)
     return returnVec #输出文档向量，每个元素为1或0，fe
 </code></pre>
-<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210816110929505.png" alt="image-20210816110929505"></p>
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><img src="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210816110929505.png" class title="image-20210816110929505">
+
+
+
 <h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><h2 id="1-MNIST"><a href="#1-MNIST" class="headerlink" title="1. MNIST"></a>1. MNIST</h2><p>获取MNIST数据集</p>
 <pre><code class="python">&gt;&gt;&gt; from sklearn.datasets import fetch_openml
 &gt;&gt;&gt; mnist = fetch_openml(&#39;mnist_784&#39;,version = 1)

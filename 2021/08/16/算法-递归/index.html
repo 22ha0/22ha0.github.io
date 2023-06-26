@@ -13,9 +13,10 @@
     <meta name="description" content="递归假设你在祖母的阁楼中翻箱倒柜，发现了一个上锁的神秘手提箱。
 祖母告诉你，钥匙很可能在下面这个盒子里。
 
+
 这个盒子里有盒子，而盒子里的盒子又有盒子。钥匙就在某个盒子中。
 方法1：
-(1) 创建一个,"> 
+(1) 创建一,"> 
     <meta name="author" content="ZZH"> 
     <link rel="alternative" href="atom.xml" title="ZZH&#39;s NoteBook" type="application/atom+xml"> 
     <link rel="icon" href="/img/dog.jpg"> 
@@ -120,7 +121,7 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3k
+                    3.1k
                 </span>
                 
                 
@@ -162,7 +163,8 @@
         <div class="content markdown animated fadeIn">
             <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>假设你在祖母的阁楼中翻箱倒柜，发现了一个上锁的神秘手提箱。</p>
 <p>祖母告诉你，钥匙很可能在下面这个盒子里。</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210816113953962.png" alt="image-20210816113953962"></p>
+<img src="/2021/08/16/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210816113953962.png" class title="image-20210816113953962">
+
 <p>这个盒子里有盒子，而盒子里的盒子又有盒子。钥匙就在某个盒子中。</p>
 <p>方法1：</p>
 <p>(1) 创建一个要查找的盒子堆。</p>
@@ -170,12 +172,14 @@
 <p>(3) 如果找到的是盒子，就将其加入盒子堆中，以便以后再查找。</p>
 <p>(4) 如果找到钥匙，则大功告成！</p>
 <p>(5) 回到第二步。</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210816114206662.png" alt="image-20210816114206662"></p>
+<img src="/2021/08/16/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210816114206662.png" class title="image-20210816114206662">
+
 <p>方法2：</p>
 <p>(1) 检查盒子中的每样东西。</p>
 <p>(2) 如果是盒子，就回到第一步。</p>
 <p>(3) 如果是钥匙，就大功告成！</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210816114233571.png" alt="image-20210816114233571"></p>
+<img src="/2021/08/16/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210816114233571.png" class title="image-20210816114233571">
+
 <p>第一种方法使用的是while循环：只要盒子堆不空，就从中</p>
 <p>取一个盒子，并在其中仔细查找。</p>
 <pre><code class="python">def look_for_key(main_box): 
@@ -219,8 +223,10 @@
         return x*fact(x-1)
 </code></pre>
 <p>下面来详细分析调用fact(3)时调用栈是如何变化的。别忘了，栈顶的方框指出了当前执行到了什么地方。</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210817144014326.png" alt="image-20210817144014326"></p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210817144115692.png" alt="image-20210817144115692"></p>
+<img src="/2021/08/16/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210817144014326.png" class title="image-20210817144014326">
+
+<img src="/2021/08/16/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92/image-20210817144115692.png" class title="image-20210817144115692">
+
 <p>使用栈虽然很方便，但是也要付出代价：存储详尽的信息可能占用大量的内存。每个函数调用都要占用一定的内存，如果栈很高，就意味着计算机存储了大量函数调用的信息。在这种情况下，你有两种选择。</p>
 <ul>
 <li><p>重新编写代码，转而使用循环。</p>

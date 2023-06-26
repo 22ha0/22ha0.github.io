@@ -232,7 +232,9 @@ plt.axis(&quot;off&quot;) #关闭坐标轴
 #save_fig(&quot;some_digit_plot&quot;) #plt.savefig(&quot;some_digit_plot&quot;) #将图片保存在本地
 plt.show()
 </code></pre>
-<p>​<br><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_11_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_11_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">y[0] #y标签为字符
 </code></pre>
 <pre><code>&#39;5&#39;
@@ -273,7 +275,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure more_digits_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_17_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_17_1.png" class title="png">
 <pre><code class="python">y[0]
 </code></pre>
 <pre><code>5
@@ -364,7 +366,10 @@ cross_val_score(never_5_clf, X_train, y_train_5, cv=3, scoring=&quot;accuracy&qu
 <pre><code>array([[53892,   687],
        [ 1891,  3530]], dtype=int64)
 </code></pre>
-<p>第一行表示所有非5（负类）：53892张被正确分为非5类别（真负类） 687张被错误的分成了5类别（假正类）<br>第二行表示所有5（正类）：1891张被错误分为非5类别（假负类） 3530张被正确的分为5类别（真正类）<br><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193313588.png" alt="image-20211013193313588"></p>
+<p>第一行表示所有非5（负类）：53892张被正确分为非5类别（真负类） 687张被错误的分成了5类别（假正类）<br>第二行表示所有5（正类）：1891张被错误分为非5类别（假负类） 3530张被正确的分为5类别（真正类）</p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193313588.png" class title="image-20211013193313588">
+
+
 <pre><code class="python">y_train_perfect_predictions = y_train_5  # pretend we reached perfection
 confusion_matrix(y_train_5, y_train_perfect_predictions)
 #一个完美的分类器只有真正类和真负类
@@ -372,7 +377,11 @@ confusion_matrix(y_train_5, y_train_perfect_predictions)
 <pre><code>array([[54579,     0],
        [    0,  5421]], dtype=int64)
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193342924.png" alt="image-20211013193342924"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193342924.png" class title="image-20211013193342924">
+
+
+
+
 <pre><code class="python">from sklearn.metrics import precision_score, recall_score
 
 precision_score(y_train_5, y_train_pred)
@@ -384,7 +393,11 @@ cm[1, 1] / (cm[0, 1] + cm[1, 1])
 </code></pre>
 <pre><code>0.8370879772350012
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193400541.png" alt="image-20211013193400541"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193400541.png" class title="image-20211013193400541">
+
+
+
+
 <pre><code class="python">recall_score(y_train_5, y_train_pred)
 </code></pre>
 <pre><code>0.6511713705958311
@@ -394,7 +407,10 @@ cm[1, 1] / (cm[0, 1] + cm[1, 1])
 <pre><code>0.6511713705958311
 </code></pre>
 <p>F1分数：将精度和召回率合成一个单一的指标</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193416652.png" alt="image-20211013193416652"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193416652.png" class title="image-20211013193416652">
+
+
+
 <p>F1：将准确率和召回率合成一个单一的指标，F1分数是精度和召回率的谐波平均值。正常的平均值平等对待所有值，而谐波平均值会给予低值更高的权重。因此只有当召回率和精度都很高时，分类器才能得到较高的F1值。</p>
 <p>F1分数对那些具有相近精度和召回率的分类器更有利。</p>
 <pre><code class="python">from sklearn.metrics import f1_score
@@ -462,7 +478,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure precision_recall_vs_threshold_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_61_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_61_1.png" class title="png">
 <pre><code class="python">(y_train_pred == (y_scores &gt; 0)).all()
 </code></pre>
 <pre><code>True
@@ -484,7 +500,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure precision_vs_recall_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_63_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_63_1.png" class title="png">
 <pre><code class="python">threshold_90_precision = thresholds[np.argmax(precisions &gt;= 0.90)]
 </code></pre>
 <pre><code class="python">threshold_90_precision
@@ -507,7 +523,11 @@ plt.show()
 <p>TNR 真负类 正确分类为负类的负类实例比例，也成为特异度</p>
 <p>FPR &#x3D; 1 - TNR(真负类)</p>
 <p>ROC曲线时灵敏度TPR（召回率）和FPR（1-特异度）的关系</p>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193512982.png" alt="image-20211013193512982"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/image-20211013193512982.png" class title="image-20211013193512982">
+
+
+
+
 <pre><code class="python">from sklearn.metrics import roc_curve#Matplotlib绘制ROC曲线
 
 fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)
@@ -536,7 +556,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure roc_curve_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_72_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_72_1.png" class title="png">
 <p>虚线表示随机分类器的ROC曲线，一个优秀的分类器应该离这条线越远越好（向左上角）</p>
 <pre><code class="python">#测量曲线下面积（AUC）完美的ROC AUC等于1，而纯随机分类器ROC AUC为0.5 
 from sklearn.metrics import roc_auc_score
@@ -575,7 +595,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure roc_curve_comparison_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_80_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_80_1.png" class title="png">
 <pre><code class="python">roc_auc_score(y_train_5, y_scores_forest)
 </code></pre>
 <pre><code>0.9983436731328145
@@ -697,7 +717,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure confusion_matrix_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_105_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_105_1.png" class title="png">
 <p>让我们把焦点放错误上</p>
 <p>首先，需要将混淆矩阵中的每一个值除以相应类中的图片数量，这样比较的就是错误率而不是错误的绝对值（后者对图片较多的类不公平）</p>
 <pre><code class="python">row_sums = conf_mx.sum(axis=1, keepdims=True)
@@ -723,7 +743,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure confusion_matrix_errors_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_109_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_109_1.png" class title="png">
 <p>第8列很亮说明，有许多的图片被错误的分类成8了，但第8行不那么差，实际上数字8 被正确分为了8</p>
 <pre><code class="python">cl_a, cl_b = 3, 5
 X_aa = X_train[(y_train == cl_a) &amp; (y_train_pred == cl_a)]
@@ -741,7 +761,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure error_analysis_digits_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_111_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_111_1.png" class title="png">
 <h1 id="Multilabel-classification-多标签分类"><a href="#Multilabel-classification-多标签分类" class="headerlink" title="Multilabel classification 多标签分类"></a>Multilabel classification 多标签分类</h1><pre><code class="python">from sklearn.neighbors import KNeighborsClassifier
 
 y_train_large = (y_train &gt;= 7) #是否是大数
@@ -789,7 +809,7 @@ plt.show()
 </code></pre>
 <pre><code>Saving figure noisy_digit_example_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_120_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_120_1.png" class title="png">
 <p>使用Numpy的randint()函数为MNIST图片的像素争强 左边是有噪声的，右边是干净的</p>
 <p>通过训练分类器，清洗这张图片。</p>
 <pre><code class="python">knn_clf.fit(X_train_mod, y_train_mod)
@@ -799,7 +819,9 @@ save_fig(&quot;cleaned_digit_example_plot&quot;)
 </code></pre>
 <pre><code>Saving figure cleaned_digit_example_plot
 </code></pre>
-<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_122_1.png" alt="png"></p>
+<img src="/2021/10/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%86%E7%B1%BB/output_122_1.png" class title="png">
+
+
 <p>书籍：深度学习四大名著之《机器学习实战：基于Scikit-Learn、Keras和TensorFlow》第二版</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->

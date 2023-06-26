@@ -11,9 +11,11 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
     <meta name="description" content="Django框架的MVC流程
+
 Django框架目录介绍
+
 入门比较重要的命令django-admin startproject mainproject # 创建项目
-python manage.py ,"> 
+python manage.p,"> 
     <meta name="author" content="ZZH"> 
     <link rel="alternative" href="atom.xml" title="ZZH&#39;s NoteBook" type="application/atom+xml"> 
     <link rel="icon" href="/img/dog.jpg"> 
@@ -158,8 +160,10 @@ python manage.py ,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="Django框架的MVC流程"><a href="#Django框架的MVC流程" class="headerlink" title="Django框架的MVC流程"></a>Django框架的MVC流程</h1><p><img src="/Python-Django/image-20210821112056057.png" alt="image-20210821112056057"></p>
-<h1 id="Django框架目录介绍"><a href="#Django框架目录介绍" class="headerlink" title="Django框架目录介绍"></a>Django框架目录介绍</h1><p><img src="/Python-Django/image-20210821112901395.png" alt="image-20210821112901395"></p>
+            <h1 id="Django框架的MVC流程"><a href="#Django框架的MVC流程" class="headerlink" title="Django框架的MVC流程"></a>Django框架的MVC流程</h1><img src="/2021/08/21/Python-Django/image-20210821112056057.png" class title="image-20210821112056057">
+
+<h1 id="Django框架目录介绍"><a href="#Django框架目录介绍" class="headerlink" title="Django框架目录介绍"></a>Django框架目录介绍</h1><img src="/2021/08/21/Python-Django/image-20210821112901395.png" class title="image-20210821112901395">
+
 <h1 id="入门比较重要的命令"><a href="#入门比较重要的命令" class="headerlink" title="入门比较重要的命令"></a>入门比较重要的命令</h1><pre><code class="python">django-admin startproject mainproject # 创建项目
 python manage.py firstWEB #创建APP（进入工程目录）
 python manage.py makemigrations #创建库表（进入工程目录）
@@ -201,7 +205,12 @@ TIME_ZONE = &#39;Asia/Beijing&#39; #时间
 STATIC_URL = &#39;/static/&#39; #静态文件目录
 </code></pre>
 <p>点击运行，访问<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
-<p><img src="/Python-Django/image-20210821151001681.png" alt="image-20210821151001681"></p>
+<img src="/2021/08/21/Python-Django/image-20210821151001681.png" class title="image-20210821151001681">
+
+
+
+
+
 <pre><code class="python">#--urls.py
 urlpatterns = [
     path(&#39;admin/&#39;, admin.site.urls),
@@ -275,16 +284,21 @@ class cal(models.Model): #表的描述
 </code></pre>
 <p>​	</p>
 <p>pycharm链接数据库</p>
-<p><img src="/Python-Django/image-20210822150531120.png" alt="image-20210822150531120"></p>
-<p><img src="/Python-Django/image-20210822150603585.png" alt="image-20210822150603585"></p>
+<img src="/2021/08/21/Python-Django/image-20210822150531120.png" class title="image-20210822150531120">
+
+<img src="/2021/08/21/Python-Django/image-20210822150603585.png" class title="image-20210822150603585">
+
 <p>创建了表的描述并不是创建了表</p>
 <p>所以还需要创建表</p>
-<p><img src="/Python-Django/image-20210822150851925.png" alt="image-20210822150851925"></p>
-<p><img src="/Python-Django/image-20210822151229961.png" alt="image-20210822151229961"></p>
+<img src="/2021/08/21/Python-Django/image-20210822150851925.png" class title="image-20210822150851925">
+
+<img src="/2021/08/21/Python-Django/image-20210822151229961.png" class title="image-20210822151229961">
+
 <pre><code class="shell">python manage.py makemigrations
 python manage.py migrate
 </code></pre>
-<p><img src="/Python-Django/image-20210822151337682.png" alt="image-20210822151337682"></p>
+<img src="/2021/08/21/Python-Django/image-20210822151337682.png" class title="image-20210822151337682">
+
 <h3 id="保存数据库"><a href="#保存数据库" class="headerlink" title="保存数据库"></a>保存数据库</h3><pre><code class="python">#--views.py
 from .models import cal
 
@@ -334,7 +348,8 @@ path(&#39;list&#39;,views.CalList)
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p><img src="/Python-Django/image-20210823154237357.png" alt="image-20210823154237357"></p>
+<img src="/2021/08/21/Python-Django/image-20210823154237357.png" class title="image-20210823154237357">
+
 <h3 id="清库功能"><a href="#清库功能" class="headerlink" title="清库功能"></a>清库功能</h3><p>list.html</p>
 <pre><code class="html">&lt;form method=&quot;POST&quot; action=&quot;/del&quot;&gt;
     &#123;% csrf_token %&#125;

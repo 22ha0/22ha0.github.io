@@ -118,7 +118,7 @@ x = range(2,26,">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    39k
+                    40k
                 </span>
                 
                 
@@ -166,7 +166,9 @@ y = [15,13,14.5,17,20,25,26,26,24,22,18,15]
 plt.plot(x,y) #传入x和y，通过plot绘制折线图
 plt.show() #在执行程序的时候展示图形
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_3_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_3_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">
 </code></pre>
 <pre><code class="python">from matplotlib import pyplot as plt #导入绘图工具
@@ -180,7 +182,9 @@ y = [15,13,14.5,17,20,25,26,26,24,22,18,15]
 plt.plot(x,y) #传入x和y，通过plot绘制折线图
 plt.show() #在执行程序的时候展示图形
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_5_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_5_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">from matplotlib import pyplot as plt #导入绘图工具
 fig = plt.figure(figsize=(20,8),dpi = 80)#设置图片大小 宽20 高8 dpi为每英寸上点的个数
 x = range(2,26,2)
@@ -191,7 +195,9 @@ plt.plot(x,y) #传入x和y，通过plot绘制折线图
 plt.savefig(&quot;./t1.png&quot;) #保存图片 可以保存为svg这种矢量图，放大不会有锯齿
 ####################################
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_6_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_6_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">from matplotlib import pyplot as plt #导入绘图工具
 fig = plt.figure(figsize=(20,8),dpi = 80)#设置图片大小 宽20 高8 dpi为每英寸上点的个数
 x = range(2,26,2)
@@ -205,7 +211,9 @@ plt.xticks(x)#设置x轴的刻度
 ########################
 plt.show() #在执行程序的时候展示图形 
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_7_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_7_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">
 </code></pre>
 <pre><code class="python">#绘制10点到12点每分钟的气温折线图
@@ -218,7 +226,9 @@ y = [random.randint(20,35) for i in range(120)]
 plt.plot(x,y)
 plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_9_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_9_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">#绘制10点到12点每分钟的气温折线图  调整x轴刻度，显示字符串
 from matplotlib import pyplot as plt
 import random
@@ -233,7 +243,9 @@ plt.xticks(_x[::10],_xtick_labels[::10],rotation = 45) #取步长和数据一一
 plt.plot(x,y)
 plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_10_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_10_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">#绘制10点到12点每分钟的气温折线图  设置中文字体
 from matplotlib import pyplot as plt
 import random
@@ -259,7 +271,9 @@ plt.xticks(_x[::10],_xtick_labels[::10],rotation = 45) #取步长和数据一一
 plt.plot(x,y)
 plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_11_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_11_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">#在图上添加描述信息
 from matplotlib import pyplot as plt
 import random
@@ -285,7 +299,9 @@ plt.title(&quot;10点到12点每分钟气温变化情况&quot;)
 
 plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_12_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_12_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">#在图上绘制网格
 from matplotlib import pyplot as plt
 import random
@@ -314,10 +330,14 @@ plt.grid()#根据刻度画
  
 plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_13_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_13_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">#绘制两条折现from matplotlib import pyplot as pltimport randomimport matplotlib as mplfont = &#123;    &quot;family&quot;:&quot;MicroSoft YaHei&quot;,    &quot;weight&quot;:&quot;bold&quot;,    &quot;size&quot;:&quot;10&quot;&#125;mpl.rc(&quot;font&quot;,**font)x = range(1,11)y1 = [random.randint(3,9) for i in x]y2 = [random.randint(3,9) for i in x]#添加折线的标签、颜色、样式plt.plot(x,y1,label = &quot;用户A&quot;,color=&quot;blue&quot;,linestyle = &#39;:&#39;)plt.plot(x,y2,label = &quot;用户B&quot;,color=&quot;red&quot;,linestyle = &#39;-.&#39;)&#39;&#39;&#39;color 线条颜色linestyle 线条风格linewidth 线条粗细alpha 线条透明度&#39;&#39;&#39;#添加图例plt.legend()plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_14_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_14_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">#绘制两条折现
 from matplotlib import pyplot as plt
 import random
@@ -352,7 +372,9 @@ plt.legend()
 plt.text(x=6,y=100,s=&quot;ZZH&quot;,fontsize=50,color = &quot;gray&quot;,alpha = 0.2)
 plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_15_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_15_0.png" class title="png">
+<p>​    </p>
 <h2 id="绘制散点图"><a href="#绘制散点图" class="headerlink" title="绘制散点图"></a>绘制散点图</h2><pre><code class="python">import random
 a = [random.randint(24,35) for i in range(0,15)]
 b = [random.randint(24,35) for i in range(0,15)]
@@ -365,7 +387,9 @@ print(b)
 </code></pre>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x1f409bba888&gt;
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_18_1.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_18_1.png" class title="png">
+<p>​    </p>
 <h2 id="绘制条形图"><a href="#绘制条形图" class="headerlink" title="绘制条形图"></a>绘制条形图</h2><pre><code class="python">import random
 c = [random.randint(0,1000) for i in range(0,15)]
 print(c)
@@ -379,14 +403,18 @@ plt.bar(x,c,color = &quot;orange&quot;,width=0.3) #绘制条形图
 </code></pre>
 <pre><code>&lt;BarContainer object of 15 artists&gt;
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_21_1.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_21_1.png" class title="png">
+<p>​    </p>
 <pre><code class="python">from matplotlib import pyplot as plt
 x = range(0,15)
 plt.barh(x,c,height=0.3,color = &quot;orange&quot;) #绘制横向条形图
 </code></pre>
 <pre><code>&lt;BarContainer object of 15 artists&gt;
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_22_1.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_22_1.png" class title="png">
+<p>​    </p>
 <pre><code class="python">a = [&quot;猩球崛起2&quot;,&quot;敦刻尔克&quot;,&quot;蜘蛛侠&quot;,&quot;战狼2&quot;]
 b_16 = [15746,321,4497,319]
 b_15 = [12357,156,2045,168]
@@ -406,22 +434,30 @@ plt.legend()
 plt.xticks(x_15,a)
 plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_24_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_24_0.png" class title="png">
+<p>​    </p>
 <h2 id="绘制直方图"><a href="#绘制直方图" class="headerlink" title="绘制直方图"></a>绘制直方图</h2><pre><code class="python">import randoma = [random.randint(30,151) for i in range(0,250)]len(a)
 </code></pre>
 <pre><code>250
 </code></pre>
 <pre><code class="python">from matplotlib import pyplot as plt#计算组数d=11 #组距num_bins = (max(a)-min(a))//dplt.figure(figsize=(20,8),dpi=80)plt.hist(a,num_bins)#分组#设置x轴刻度plt.xticks(range(min(a),max(a)+d,d)) plt.grid()plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_27_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_27_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">from matplotlib import pyplot as plt#计算组数d=11 #组距num_bins = (max(a)-min(a))//dplt.figure(figsize=(20,8),dpi=80)plt.hist(a,num_bins,density = 1)#频率分布直方图#设置x轴刻度plt.xticks(range(min(a),max(a)+d,d)) plt.grid()plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_28_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_28_0.png" class title="png">
+<p>​    </p>
 <pre><code class="python">interval =[0,5,10,15,20,25,30,35,40,45,60,90]width = [5,5,5,5,5,5,5,5,5,15,30,60]quantity = [836,2737,3723,3926,3596,1438,3273,642,824,613,215,47] #这些统计之后的数据是不能绘制直方图的#通常来说能够使用plt.hist方法的是那些没用统计过的数据
 </code></pre>
 <pre><code class="python">from matplotlib import pyplot as pltinterval =[0,5,10,15,20,25,30,35,40,45,60,90]width = [5,5,5,5,5,5,5,5,5,15,30,60] #组距quantity = [836,2737,3723,3926,3596,1438,3273,642,824,613,215,47]plt.figure(figsize=(20,8),dpi=80)plt.bar(range(len(quantity)),quantity,width =1)#设置_x = [i-0.5 for i in range(13)]_xtick_labels = interval+[150]plt.xticks(_x,_xtick_labels)plt.grid()plt.show()
 </code></pre>
-<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_30_0.png" alt="png"><br>​    </p>
+<p>​    </p>
+<img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_30_0.png" class title="png">
+<p>​    </p>
 <h2 id="更多绘图工具了解"><a href="#更多绘图工具了解" class="headerlink" title="更多绘图工具了解"></a>更多绘图工具了解</h2><p>matplotlib支持的图形样式</p>
 <p><a target="_blank" rel="noopener" href="http://matplotlib.org/gallery/index.html">http://matplotlib.org/gallery/index.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/gallery/index.html">https://matplotlib.org/stable/gallery/index.html</a></p>
@@ -1181,7 +1217,7 @@ df[].argmax()
 df[].argmin()
 df[].median()#中位数
 </code></pre>
-<h3 id="数据合并和分组"><a href="#数据合并和分组" class="headerlink" title="数据合并和分组"></a>数据合并和分组</h3><p>如果有哪一个分类，就变成1<br><img src="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/attachment:%E5%9B%BE%E7%89%87.png" alt="%E5%9B%BE%E7%89%87.png"></p>
+<h3 id="数据合并和分组"><a href="#数据合并和分组" class="headerlink" title="数据合并和分组"></a>数据合并和分组</h3><p>如果有哪一个分类，就变成1<br><img src="undefined2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/attachment:%E5%9B%BE%E7%89%87.png" alt="%E5%9B%BE%E7%89%87.png"></p>
 <pre><code class="python">#比如 电影分类那列数据为 &quot;A,B,C&quot; A,B,C代表3钟不同分类 一个电影可能有多个分类 
 #set()去重
 list = df[&quot;分类&quot;].str.split(&quot;,&quot;).to_list()#转化成list  [[][]] 列表嵌套结构

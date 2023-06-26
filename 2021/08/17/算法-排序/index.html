@@ -162,8 +162,9 @@
 <li><strong>解决（Conquer）</strong>：用合并排序法对两个子序列递归的排序。</li>
 <li><strong>合并（Combine）</strong>：合并两个已排序的子序列已得到排序结果。</li>
 </ul>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-a29c0dd0186d1f8cef3c5ebdedf3e5a3_b.webp" alt="img"></p>
-<h2 id="2-图解"><a href="#2-图解" class="headerlink" title="2.图解"></a>2.图解</h2><h2 id="3-复杂度分析"><a href="#3-复杂度分析" class="headerlink" title="3.复杂度分析"></a><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-2958d4f3d9dd9156f1b5dca6788fe8a7_1440w.jpg" alt="img">3.复杂度分析</h2><blockquote>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-a29c0dd0186d1f8cef3c5ebdedf3e5a3_b.webp" class title="img">
+
+<h2 id="2-图解"><a href="#2-图解" class="headerlink" title="2.图解"></a>2.图解</h2><h2 id="3-复杂度分析"><a href="#3-复杂度分析" class="headerlink" title="3.复杂度分析"></a><img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-2958d4f3d9dd9156f1b5dca6788fe8a7_1440w.jpg" class title="img">3.复杂度分析</h2><blockquote>
 <p>平均时间复杂度：O(nlogn)<br>最佳时间复杂度：O(n)<br>最差时间复杂度：O(nlogn)<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:124356219%7D">空间复杂度</a>：O(n)<br>排序方式：In-place<br>稳定性：稳定</p>
 </blockquote>
 <p>归并排序算法中，归并最后到底都是相邻元素之间的比较交换，并不会发生相同元素的相对位置发生变化，故是稳定性算法。</p>
@@ -174,13 +175,14 @@
 <p>① 是一棵<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:124885051%7D">完全二叉树</a></p>
 <p>② 每个节点的值都大于或等于其子节点的值，为最大堆；反之为最小堆。</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-a78e7c4a1cc919a322adc87b33006dab_1440w-16384278060616.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-a78e7c4a1cc919a322adc87b33006dab_1440w-16384278060616.jpg" class title="img">
 </li>
 <li><p>堆的存储</p>
 </li>
 </ol>
 <p>一般用数组来表示堆，下标为 i 的结点的父结点下标为(i-1)&#x2F;2；其左右子结点分别为 (2i + 1)、(2i + 2)</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-54a318a1acd0cccb8ac0018ccf58815f_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-54a318a1acd0cccb8ac0018ccf58815f_1440w.jpg" class title="img">
+
 <ol start="3">
 <li>堆的操作</li>
 </ol>
@@ -197,9 +199,13 @@
 <h3 id="2-实现逻辑"><a href="#2-实现逻辑" class="headerlink" title="2. 实现逻辑"></a>2. 实现逻辑</h3><blockquote>
 <p>① 先将初始的R[0…n-1]建立成最大堆，此时是无序堆，而堆顶是最大元素。<br>② 再将堆顶R[0]和无序区的最后一个记录R[n-1]交换，由此得到新的无序区R[0…n-2]和有序区R[n-1]，且满足R[0…n-2].keys ≤ R[n-1].key<br>③  由于交换后新的根R[1]可能违反堆性质，故应将当前无序区R[1..n-1]调整为堆。然后再次将R[1..n-1]中关键字最大的记录R[1]和该区间的最后一个记录R[n-1]交换，由此得到新的无序区R[1..n-2]和有序区R[n-1..n]，且仍满足关系R[1..n-2].keys≤R[n-1..n].keys，同样要将R[1..n-2]调整为堆。<br>④ 直到无序区只有一个元素为止。</p>
 </blockquote>
-<h3 id="3-动图演示"><a href="#3-动图演示" class="headerlink" title="3. 动图演示"></a>3. 动图演示</h3><p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-b7907d351809293c60658b0b87053c66_b.webp" alt="img"></p>
+<h3 id="3-动图演示"><a href="#3-动图演示" class="headerlink" title="3. 动图演示"></a>3. 动图演示</h3><img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-b7907d351809293c60658b0b87053c66_b.webp" class title="img">
+
+
+
 <p>堆排序算法的演示。首先，将元素进行重排，以匹配堆的条件。图中排序过程之前简单的绘出了堆树的结构。</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-7073c729230e1a2c3c3c9207b25f6b43_b.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-7073c729230e1a2c3c3c9207b25f6b43_b.jpg" class title="img">
+
 <p><video class="ztext-gif GifPlayer-gif2mp4" src="https://vdn1.vzuu.com/SD/3bb38dfe-236a-11eb-8039-a6caf32b14c9.mp4?disable_local_cache=1&amp;auth_key=1638431242-0-0-af79a774fa36e1f7244aeb20ff0fbcd8&amp;f=mp4&amp;bu=pico&amp;expiration=1638431242&amp;v=hw" data-thumbnail="https://pic4.zhimg.com/v2-7073c729230e1a2c3c3c9207b25f6b43_b.jpg" poster="https://pic4.zhimg.com/v2-7073c729230e1a2c3c3c9207b25f6b43_b.jpg" data-size="normal" preload="metadata" loop playsinline __idm_id__="333708289"></video></p>
 <p><strong>分步解析说明</strong>： </p>
 <p>实现堆排序需要解决两个问题：</p>
@@ -207,29 +213,39 @@
 <p>1、如何由一个无序序列建成一个堆？<br>2、如何在输出堆顶元素之后，调整剩余元素成为一个新的堆？</p>
 </blockquote>
 <p> 假设给定一个组无序数列{100,5,3,11,6,8,7}，带着问题，我们对其进行堆排序操作进行分步操作说明。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-acbdde7cf6f0426e693187c4899716e7_1440w.png" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-acbdde7cf6f0426e693187c4899716e7_1440w.png" class title="img">
+
 <h3 id="3-1-创建最大堆"><a href="#3-1-创建最大堆" class="headerlink" title="3.1 创建最大堆"></a>3.1 创建最大堆</h3><p>①首先我们将数组我们将数组从上至下按顺序排列，转换成<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%BA%8C%E5%8F%89%E6%A0%91&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:124885051%7D">二叉树</a></p>
 <p>：一个无序堆。每一个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%B8%89%E8%A7%92%E5%85%B3%E7%B3%BB&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:124885051%7D">三角关系</a></p>
 <p>都是一个堆，上面是父节点，下面两个分叉是子节点，两个子节点俗称左孩子、右孩子； </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-6db33bd4ddb7937ca5946283ef2acc5d_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-6db33bd4ddb7937ca5946283ef2acc5d_1440w.jpg" class title="img">
+
 <p>②转换成无序堆之后，我们要努力让这个无序堆变成最大堆(或是最小堆)，即每个堆里都实现父节点的值都大于任何一个子节点的值。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-6db33bd4ddb7937ca5946283ef2acc5d_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-6db33bd4ddb7937ca5946283ef2acc5d_1440w.jpg" class title="img">
+
 <p>③从最后一个堆开始，即左下角那个没有右孩子的那个堆开始；首先对比左右孩子，由于这个堆没有右孩子，所以只能用左孩子，左孩子的值比父节点的值小所以不需要交换。如果发生交换，要检测子节点是否为其他堆的父节点，如果是，递归进行同样的操作。</p>
 <p>④第二次对比红色三角形内的堆，取较大的子节点，右孩子8胜出，和父节点比较，右孩子8大于父节点3，升级做父节点，与3交换位置，3的位置没有子节点，这个堆建成最大堆。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-29c3af6ba60e66f1d328c164d09b4adc_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-29c3af6ba60e66f1d328c164d09b4adc_1440w.jpg" class title="img">
+
 <p>⑤对黄色三角形内堆进行排序，过程和上面一样，最终是右孩子33升为父节点，被交换的右孩子下面也没有子节点，所以直接结束对比。</p>
 <p>⑥最顶部绿色的堆，堆顶100比左右孩子都大，所以不用交换，至此最大堆创建完成。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-cf88501a8092e7b0c4712aa81a875f03_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-cf88501a8092e7b0c4712aa81a875f03_1440w.jpg" class title="img">
+
 <h3 id="3-2-堆排序（最大堆调整）"><a href="#3-2-堆排序（最大堆调整）" class="headerlink" title="3.2 堆排序（最大堆调整）"></a>3.2 堆排序（最大堆调整）</h3><p>①首先将堆顶元素100交换至最底部7的位置，7升至堆顶，100所在的底部位置即为有序区，有序区不参与之后的任何对比。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-e96b570c470785e19936abceee95c8ca_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-e96b570c470785e19936abceee95c8ca_1440w.jpg" class title="img">
+
 <p>②在7升至顶部之后，对顶部重新做最大堆调整，左孩子33代替7的位置。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-5bbfec3cb200b9fa7efcf29fe71fc7dd_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-5bbfec3cb200b9fa7efcf29fe71fc7dd_1440w.jpg" class title="img">
+
 <p>③在7被交换下来后，下面还有子节点，所以需要继续与子节点对比，左孩子11比7大，所以11与7交换位置，交换位置后7下面为有序区，不参与对比，所以本轮结束，无序区再次形成一个最大堆。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-1f490e927a5d7d5e97e9609f7e99b6e5_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-1f490e927a5d7d5e97e9609f7e99b6e5_1440w.jpg" class title="img">
+
 <p>④将最大堆堆顶33交换至堆末尾，扩大有序区； </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-d77c2cf77a7b81041fba5871979f3910_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-d77c2cf77a7b81041fba5871979f3910_1440w.jpg" class title="img">
+
 <p>⑤不断建立最大堆，并且扩大有序区，最终全部有序。 </p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-724e54aaff73bd4c0bf5e5352fc673ce_1440w.jpg" alt="img"></p>
+<img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-724e54aaff73bd4c0bf5e5352fc673ce_1440w.jpg" class title="img">
+
 <h3 id="4-复杂度分析"><a href="#4-复杂度分析" class="headerlink" title="4. 复杂度分析"></a>4. 复杂度分析</h3><ul>
 <li>平均时间复杂度：O(nlogn)</li>
 <li>最佳时间复杂度：O(nlogn)</li>
@@ -248,7 +264,10 @@
 <p>小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。<br>③ 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</p>
 </blockquote>
 <p> 递归到最底部时，数列的大小是零或一，也就是已经排序好了。这个算法一定会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</p>
-<h2 id="3-动图演示-1"><a href="#3-动图演示-1" class="headerlink" title="3. 动图演示"></a>3. 动图演示</h2><p><img src="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-d4e5d0a778dba725091d8317e6bac939_b.webp" alt="img"></p>
+<h2 id="3-动图演示-1"><a href="#3-动图演示-1" class="headerlink" title="3. 动图演示"></a>3. 动图演示</h2><img src="/2021/08/17/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/v2-d4e5d0a778dba725091d8317e6bac939_b.webp" class title="img">
+
+
+
 <p>快速排序</p>
 <h2 id="4-复杂度"><a href="#4-复杂度" class="headerlink" title="4. 复杂度"></a>4. <a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%A4%8D%E6%9D%82%E5%BA%A6&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:123416868%7D">复杂度</a></h2><p>平均时间复杂度：O(NlogN)<br>最佳时间复杂度：O(NlogN)<br>最差<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:123416868%7D">时间复杂度</a>：O(N^2)<br>空间复杂度：根据实现方式的不同而不同</p>
 <p><strong>参考资料：</strong></p>

@@ -165,7 +165,8 @@
 <p>由文件input.txt给出输入数据。第一行有1 个正整数k，表示有k个待合并序列。接下来的1 行中，有k个正整数，表示k个待合并序列的长度。</p>
 <p><strong>结果输出</strong>:</p>
 <p>将编程计算出的最多比较次数和最少比较次数输出到文件output.txt。</p>
-<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/clip_image002.jpg" alt="img"></p>
+<img src="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/clip_image002.jpg" class title="img">
+
 <p><strong>思想</strong>：最小对比次数就为最小的先相加，最大的则相反，区别为求最小 每次都要排序，最大则不需要</p>
 <p><strong>代码</strong></p>
 <pre><code class="python">def readData(n):
@@ -217,7 +218,8 @@ if __name__ ==&#39;__main__&#39;:
 <p>由文件input.txt给出输入数据。第一行有2 个正整数n和k，表示汽车加满油后可行驶n公里，且旅途中有k个加油站。接下来的1 行中，有k+1 个整数，表示第k个加油站与第k-1 个加油站之间的距离。第0 个加油站表示出发地，汽车已加满油。第k+1 个加油站表示目的地。</p>
 <p> <strong>结果输出</strong>:</p>
 <p>将编程计算出的最少加油次数输出到文件output.txt。如果无法到达目的地，则输出”No Solution”。</p>
-<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/clip_image004.jpg" alt="img"></p>
+<img src="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/clip_image004.jpg" class title="img">
+
 <p> <strong>代码</strong></p>
 <pre><code class="python">def readData(i):
     Path = &#39;E:\桌面\新建文件夹\大三 上\大数据算法分析与设计/5-贪心算法-含测试数据\OILING CAR\TEST\OIL&#39;+str(i)+&#39;.IN&#39;
@@ -372,11 +374,13 @@ if __name__ == &quot;__main__&quot;:
 </code></pre>
 <p><strong>思路：</strong></p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%89%9B%E9%A1%BF%E8%BF%AD%E4%BB%A3%E6%B3%95">牛顿迭代法</a>是一种可以用来快速求解函数零点的方法。</p>
-<p>为了叙述方便，我们用 C 表示待求出平方根的那个整数。显然，C 的平方根就是函数<img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031095838657.png" alt="image-20211031095838657">的零点。</p>
+<p>为了叙述方便，我们用 C 表示待求出平方根的那个整数。显然，C 的平方根就是函数<img src="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031095838657.png" class title="image-20211031095838657">的零点。</p>
 <p>牛顿迭代法的本质是借助泰勒级数，从初始值开始快速向零点逼近。我们任取一个 x0 作为初始值，在每一步的迭代中，我们找到函数图像上的点 (xi,f(xi))，过该点作一条斜率为该点导数 f′(xi)f’(x_i)f′(xi) 的直线，与横轴的交点记为 xi+1。xi+1相较于 xi而言距离零点更近。在经过多次迭代后，我们就可以得到一个距离零点非常接近的交点。下图给出了从 x0开始迭代两次，得到 x1 和 x2 的过程。</p>
-<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031100317623.png" alt="image-20211031100317623"></p>
+<img src="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031100317623.png" class title="image-20211031100317623">
+
 <p><strong>算法：</strong></p>
-<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031100917975.png" alt="image-20211031100917975"></p>
+<img src="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031100917975.png" class title="image-20211031100917975">
+
 <p><strong>代码：</strong></p>
 <pre><code class="python">def mySqrt(x):
     if x == 0:
