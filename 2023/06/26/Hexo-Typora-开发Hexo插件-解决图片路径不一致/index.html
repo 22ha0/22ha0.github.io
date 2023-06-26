@@ -5,64 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>机器视觉-笔记 - ZZH&#39;s NoteBook</title>
+    <title>Hexo图片路径不解析-解决图片路径不一致不显示问题 - ZZH&#39;s NoteBook</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="图像分类难在哪？
-视角
-
-
-
-
-
-
-光照
-
-
-
-
-
-
-尺度
-
-
-
-
-遮挡
-
-
-
-
-形变
-
-
-
-
-背景杂波
-
-
-
-
-类内形变
-
-
-
-
-
-
-运动模糊
-
-
-
-
-类别繁多
-
-
-
-数据驱动的图像分类
-数据集构,"> 
+    <meta name="description" content="在本次搭建博客的过程中图片路径不解析，导致图片不显示
+解决办法：
+1.在Hexo根目录的_config.yml中的post_asset_folder设置为true，这样修改后，每次hexo new ,"> 
     <meta name="author" content="ZZH"> 
     <link rel="alternative" href="atom.xml" title="ZZH&#39;s NoteBook" type="application/atom+xml"> 
     <link rel="icon" href="/img/dog.jpg"> 
@@ -126,7 +76,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">机器视觉-笔记</h3>
+        <h3 class="subtitle">Hexo图片路径不解析-解决图片路径不一致不显示问题</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -156,24 +106,25 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                <a href="/categories/博客搭建"><b>「
+                    </b>博客搭建<b> 」</b></a>
                 
-                August 20, 2021
+                June 26, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/" title="机器视觉-笔记" class="">机器视觉-笔记</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2023/06/26/Hexo-Typora-%E5%BC%80%E5%8F%91Hexo%E6%8F%92%E4%BB%B6-%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4/" title="Hexo图片路径不解析-解决图片路径不一致不显示问题" class="">Hexo图片路径不解析-解决图片路径不一致不显示问题</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3.9k
+                    3.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    4 mins.
+                    3 mins.
                 </span>
                 
                 
@@ -186,7 +137,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" rel="tag">机器视觉</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hexo%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/" rel="tag">Hexo图片不显示</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li></ul>
             
         </div>
     </div>
@@ -207,97 +158,102 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="图像分类"><a href="#图像分类" class="headerlink" title="图像分类"></a>图像分类</h1><h2 id="难在哪？"><a href="#难在哪？" class="headerlink" title="难在哪？"></a>难在哪？</h2><ol>
-<li>视角</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820110246190.png" class title="image-20210820110246190">
+            <p>在本次搭建博客的过程中图片路径不解析，导致图片不显示</p>
+<p>解决办法：</p>
+<p>1.在Hexo根目录的_config.yml中的<code>post_asset_folder</code>设置为<code>true</code>，这样修改后，每次<code>hexo new page</code>生成新文章，都会在文章文件同级目录创建一个与文章文件名同名的文件夹，我们就在这里存放此文章的图片。</p>
+<img src="/2023/06/26/Hexo-Typora-%E5%BC%80%E5%8F%91Hexo%E6%8F%92%E4%BB%B6-%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4/image-20230626235737574.png" class title="image-20230626235737574">
+
+<p>2.Typora中的设置参考：<a target="_blank" rel="noopener" href="https://22ha0.github.io/2021/06/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">参考链接</a></p>
+<p>3.在<code>node_modules</code>文件夹下创建文件夹<code>hexo-asset-img</code>，初始化npm包</p>
+<pre><code class="shell">mkdir hexo-asset-img
+cd hexo-asset-img
+npm init
+</code></pre>
+<p>根据提示输入信息</p>
+<pre><code>$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install &lt;pkg&gt;` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (hexo-asset-img)
+version: (1.0.0)
+description: 转换图片路径
+entry point: (index.js)
+test command:
+git repository:
+keywords: hexo
+author: zzz
+license: (ISC) MIT
+About to write to D:\22ha0\node_modules\hexo-asset-img\package.json:
+
+&#123;
+  &quot;name&quot;: &quot;hexo-asset-img&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;转换图片路径&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: &#123;
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  &#125;,
+  &quot;keywords&quot;: [
+    &quot;hexo&quot;
+  ],
+  &quot;author&quot;: &quot;zzz&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+&#125;
 
 
+Is this OK? (yes)
+</code></pre>
+<p>4.编写插件index.js</p>
+<p>创建 <code>index.js</code>，编写代码如下:</p>
+<pre><code class="javascript">const log = require(&#39;hexo-log&#39;)(&#123; &#39;debug&#39;: false, &#39;slient&#39;: false &#125;);
 
-<ol start="2">
-<li>光照</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820110302276.png" class title="image-20210820110302276">
+/**
+ * md文件返回 true
+ * @param &#123;*&#125; data 
+ */
+function ignore(data) &#123;
+    // TODO: 好奇怪，试了一下, md返回true, 但却需要忽略 取反!
+    var source = data.source;
+    var ext = source.substring(source.lastIndexOf(&#39;.&#39;)).toLowerCase();
+    return [&#39;md&#39;,].indexOf(ext) &gt; -1;
+&#125;
 
+function action(data) &#123;
+    var reverseSource = data.source.split(&quot;&quot;).reverse().join(&quot;&quot;);
+    var fileName = reverseSource.substring(3, reverseSource.indexOf(&quot;/&quot;)).split(&quot;&quot;).reverse().join(&quot;&quot;);
 
+    // ![example](postname/example.jpg)  --&gt;  &#123;% asset_img example.jpg example %&#125;
+    var regExp = RegExp(&quot;!\\[(.*?)\\]\\(&quot; + fileName + &#39;/(.+?)\\)&#39;, &quot;g&quot;);
+    // hexo g
+    data.content = data.content.replace(regExp, &quot;&#123;% asset_img $2 $1 %&#125;&quot;,&quot;g&quot;);
 
-<ol start="3">
-<li>尺度</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820110320313.png" class title="image-20210820110320313">
+    // log.info(`hexo-asset-img: filename: $&#123;fileName&#125;, title: $&#123;data.title.trim()&#125;`);
+    
+    return data;
+&#125;
 
-<ol start="4">
-<li>遮挡</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820110610387.png" class title="image-20210820110610387">
+hexo.extend.filter.register(&#39;before_post_render&#39;,(data)=&gt;&#123;
+    if(!ignore(data))&#123;
+        action(data)
+    &#125;
+&#125;, 0);
+</code></pre>
+<p>5.<code>Hexo</code>根目录下 <code>package.json</code> 中 <code>dependencies</code>添加一行 <code>&quot;hexo-asset-img&quot;: &quot;^1.0.0&quot;</code>（不修改的话插件不会加载）</p>
+<p>5.重新生成文章</p>
+<pre><code class="javascript">hexo clean
+hexo g
+hexo s # 本地预览
+</code></pre>
+<p>参考链接：</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1970544">https://cloud.tencent.com/developer/article/1970544</a></p>
 
-<ol start="5">
-<li>形变</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820110959388.png" class title="image-20210820110959388">
-
-<ol start="6">
-<li>背景杂波</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820111140862.png" class title="image-20210820111140862">
-
-<ol start="7">
-<li>类内形变</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820111226176.png" class title="image-20210820111226176">
-
-
-
-<ol start="8">
-<li>运动模糊</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820111324680.png" class title="image-20210820111324680">
-
-<ol start="9">
-<li>类别繁多</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820111546677.png" class title="image-20210820111546677">
-
-<h2 id="数据驱动的图像分类"><a href="#数据驱动的图像分类" class="headerlink" title="数据驱动的图像分类"></a>数据驱动的图像分类</h2><ol>
-<li>数据集构建</li>
-<li>分类器设计与学习</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820143045672.png" class title="image-20210820143045672">
-
-
-
-<ol start="3">
-<li>分类器决策</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820143256582.png" class title="image-20210820143256582">
-
-<h2 id="线性分类器"><a href="#线性分类器" class="headerlink" title="线性分类器"></a>线性分类器</h2><h3 id="1-数据集"><a href="#1-数据集" class="headerlink" title="1.数据集"></a>1.数据集</h3><p>CIFAR10数据集</p>
-<h3 id="2-分类器设计"><a href="#2-分类器设计" class="headerlink" title="2.分类器设计"></a>2.分类器设计</h3><img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820145631178.png" class title="image-20210820145631178">
-
-<h4 id="图像表示"><a href="#图像表示" class="headerlink" title="图像表示"></a>图像表示</h4><p>图像类型：</p>
-<p>二进制图像：只有黑和白</p>
-<p>灰度图像：每个点一个值（0~255）</p>
-<p>彩色图像：每个点3个值（RGB）</p>
-<p>大多数分类算法都要求<strong>输入向量</strong></p>
-<p>最简单的直接将图像矩阵转化为向量</p>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820150204504.png" class title="image-20210820150204504">
-
-<h3 id="3-线性分类器的定义"><a href="#3-线性分类器的定义" class="headerlink" title="3.线性分类器的定义"></a>3.线性分类器的定义</h3><p>线性分类器是一种线性映射，将输入的图像特征映射为类别分数。</p>
-<ol>
-<li>形式简单、易于理解</li>
-<li>通过层级结构（神经网络）或高维映射（支持向量机）可以形成功能强大的非线性模型</li>
-</ol>
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820150757884.png" class title="image-20210820150757884">
-
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820150840316.png" class title="image-20210820150840316">
-
- <img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820151355997.png" class title="image-20210820151355997">
-
-<img src="/2021/08/20/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E7%AC%94%E8%AE%B0/image-20210820151637585.png" class title="image-20210820151637585">
-
-
-
-<h3 id="4-线性分类器的权值"><a href="#4-线性分类器的权值" class="headerlink" title="4.线性分类器的权值"></a>4.线性分类器的权值</h3>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
@@ -345,13 +301,6 @@
             </div>
             
             
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">图像分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E5%9C%A8%E5%93%AA%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">难在哪？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">数据驱动的图像分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">线性分类器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%86%E7%B1%BB%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.分类器设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.线性分类器的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8%E7%9A%84%E6%9D%83%E5%80%BC"><span class="toc-number">1.3.4.</span> <span class="toc-text">4.线性分类器的权值</span></a></li></ol></li></ol></li></ol>
-                </div>
-            </div>
             
             
         </div>
