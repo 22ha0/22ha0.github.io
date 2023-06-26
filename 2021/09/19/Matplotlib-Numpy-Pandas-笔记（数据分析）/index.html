@@ -1,0 +1,1684 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matplotlib+Numpy+Pandas 笔记（数据分析） - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="Matplotlib绘制折线图axis轴指的是x或y轴
+绘制每隔两个小时的气温
+from matplotlib import pyplot as plt #导入绘图工具
+x = range(2,26,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/dog.jpg"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+    
+    <script>var musiclist = ""</script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+
+    
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Matplotlib+Numpy+Pandas 笔记（数据分析）</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                September 19, 2021
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/09/19/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/" title="Matplotlib+Numpy+Pandas 笔记（数据分析）" class="">Matplotlib+Numpy+Pandas 笔记（数据分析）</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    39k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    36 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Matplotlib/" rel="tag">Matplotlib</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Numpy/" rel="tag">Numpy</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Pandas/" rel="tag">Pandas</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h1><h2 id="绘制折线图"><a href="#绘制折线图" class="headerlink" title="绘制折线图"></a>绘制折线图</h2><p>axis轴指的是x或y轴</p>
+<p>绘制每隔两个小时的气温</p>
+<pre><code class="python">from matplotlib import pyplot as plt #导入绘图工具
+x = range(2,26,2)
+y = [15,13,14.5,17,20,25,26,26,24,22,18,15]
+plt.plot(x,y) #传入x和y，通过plot绘制折线图
+plt.show() #在执行程序的时候展示图形
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_3_0.png" alt="png"><br>​    </p>
+<pre><code class="python">
+</code></pre>
+<pre><code class="python">from matplotlib import pyplot as plt #导入绘图工具
+
+#############################################
+fig = plt.figure(figsize=(20,8),dpi = 80)#设置图片大小 宽20 高8 dpi为每英寸上点的个数
+#############################################
+
+x = range(2,26,2)
+y = [15,13,14.5,17,20,25,26,26,24,22,18,15]
+plt.plot(x,y) #传入x和y，通过plot绘制折线图
+plt.show() #在执行程序的时候展示图形
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_5_0.png" alt="png"><br>​    </p>
+<pre><code class="python">from matplotlib import pyplot as plt #导入绘图工具
+fig = plt.figure(figsize=(20,8),dpi = 80)#设置图片大小 宽20 高8 dpi为每英寸上点的个数
+x = range(2,26,2)
+y = [15,13,14.5,17,20,25,26,26,24,22,18,15]
+plt.plot(x,y) #传入x和y，通过plot绘制折线图
+
+####################################
+plt.savefig(&quot;./t1.png&quot;) #保存图片 可以保存为svg这种矢量图，放大不会有锯齿
+####################################
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_6_0.png" alt="png"><br>​    </p>
+<pre><code class="python">from matplotlib import pyplot as plt #导入绘图工具
+fig = plt.figure(figsize=(20,8),dpi = 80)#设置图片大小 宽20 高8 dpi为每英寸上点的个数
+x = range(2,26,2)
+y = [15,13,14.5,17,20,25,26,26,24,22,18,15]
+
+plt.plot(x,y) #传入x和y，通过plot绘制折线图
+
+########################
+plt.xticks(x)#设置x轴的刻度
+#plt.yticks() 调整y轴刻度 
+########################
+plt.show() #在执行程序的时候展示图形 
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_7_0.png" alt="png"><br>​    </p>
+<pre><code class="python">
+</code></pre>
+<pre><code class="python">#绘制10点到12点每分钟的气温折线图
+from matplotlib import pyplot as plt
+import random
+plt.figure(figsize=(20,10),dpi=80)
+x = range(0,120)
+y = [random.randint(20,35) for i in range(120)]
+#plt.xticks(x)
+plt.plot(x,y)
+plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_9_0.png" alt="png"><br>​    </p>
+<pre><code class="python">#绘制10点到12点每分钟的气温折线图  调整x轴刻度，显示字符串
+from matplotlib import pyplot as plt
+import random
+plt.figure(figsize=(20,10),dpi=80)
+x = range(0,120)
+y = [random.randint(20,35) for i in range(120)]
+#调整x轴刻度
+_x = list(x)
+_xtick_labels = [&quot;10:&#123;&#125;&quot;.format(i) for i in range(60)]
+_xtick_labels += [&quot;11:&#123;&#125;&quot;.format(i) for i in range(60)]
+plt.xticks(_x[::10],_xtick_labels[::10],rotation = 45) #取步长和数据一一对应 rotation旋转
+plt.plot(x,y)
+plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_10_0.png" alt="png"><br>​    </p>
+<pre><code class="python">#绘制10点到12点每分钟的气温折线图  设置中文字体
+from matplotlib import pyplot as plt
+import random
+import matplotlib
+
+#设置字体
+font = &#123;
+    &#39;family&#39;:&#39;MicroSoft YaHei&#39;,
+    &#39;weight&#39;:&#39;bold&#39;,
+    &#39;size&#39;:&#39;10&#39;
+&#125;
+matplotlib.rc(&quot;font&quot;,**font)
+#######################################
+
+plt.figure(figsize=(20,10),dpi=80)
+x = range(0,120)
+y = [random.randint(20,35) for i in range(120)]
+_x = list(x)
+_xtick_labels = [&quot;10时&#123;&#125;分&quot;.format(i) for i in range(60)]
+_xtick_labels += [&quot;11时&#123;&#125;分&quot;.format(i) for i in range(60)]
+plt.xticks(_x[::10],_xtick_labels[::10],rotation = 45) #取步长和数据一一对应 rotation旋转
+ 
+plt.plot(x,y)
+plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_11_0.png" alt="png"><br>​    </p>
+<pre><code class="python">#在图上添加描述信息
+from matplotlib import pyplot as plt
+import random
+import matplotlib
+font = &#123;
+    &#39;family&#39;:&#39;MicroSoft YaHei&#39;,
+    &#39;weight&#39;:&#39;bold&#39;,
+    &#39;size&#39;:&#39;20&#39;
+&#125;
+matplotlib.rc(&quot;font&quot;,**font)
+plt.figure(figsize=(20,10),dpi=80)
+x = range(0,120)
+y = [random.randint(20,35) for i in range(120)]
+_x = list(x)
+_xtick_labels = [&quot;10时&#123;&#125;分&quot;.format(i) for i in range(60)]
+_xtick_labels += [&quot;11时&#123;&#125;分&quot;.format(i) for i in range(60)]
+plt.xticks(_x[::10],_xtick_labels[::10],rotation = 45) #取步长和数据一一对应 rotation旋转
+plt.plot(x,y)
+#添加描述信息
+plt.xlabel(&quot;时间&quot;)
+plt.ylabel(&quot;温度 单位（℃）&quot;)
+plt.title(&quot;10点到12点每分钟气温变化情况&quot;)
+
+plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_12_0.png" alt="png"><br>​    </p>
+<pre><code class="python">#在图上绘制网格
+from matplotlib import pyplot as plt
+import random
+import matplotlib
+font = &#123;
+    &#39;family&#39;:&#39;MicroSoft YaHei&#39;,
+    &#39;weight&#39;:&#39;bold&#39;,
+    &#39;size&#39;:&#39;20&#39;
+&#125;
+matplotlib.rc(&quot;font&quot;,**font)
+plt.figure(figsize=(20,10),dpi=80)
+x = range(0,120)
+y = [random.randint(20,35) for i in range(120)]
+_x = list(x)
+_xtick_labels = [&quot;10时&#123;&#125;分&quot;.format(i) for i in range(60)]
+_xtick_labels += [&quot;11时&#123;&#125;分&quot;.format(i) for i in range(60)]
+plt.xticks(_x[::5],_xtick_labels[::5],rotation = 45) #取步长和数据一一对应 rotation旋转
+plt.plot(x,y)
+plt.xlabel(&quot;时间&quot;)
+plt.ylabel(&quot;温度 单位（℃）&quot;)
+plt.title(&quot;10点到12点每分钟气温变化情况&quot;)
+#绘制网格
+plt.grid()#根据刻度画
+#alpha设置透明度 数值0-1
+#
+ 
+plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_13_0.png" alt="png"><br>​    </p>
+<pre><code class="python">#绘制两条折现from matplotlib import pyplot as pltimport randomimport matplotlib as mplfont = &#123;    &quot;family&quot;:&quot;MicroSoft YaHei&quot;,    &quot;weight&quot;:&quot;bold&quot;,    &quot;size&quot;:&quot;10&quot;&#125;mpl.rc(&quot;font&quot;,**font)x = range(1,11)y1 = [random.randint(3,9) for i in x]y2 = [random.randint(3,9) for i in x]#添加折线的标签、颜色、样式plt.plot(x,y1,label = &quot;用户A&quot;,color=&quot;blue&quot;,linestyle = &#39;:&#39;)plt.plot(x,y2,label = &quot;用户B&quot;,color=&quot;red&quot;,linestyle = &#39;-.&#39;)&#39;&#39;&#39;color 线条颜色linestyle 线条风格linewidth 线条粗细alpha 线条透明度&#39;&#39;&#39;#添加图例plt.legend()plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_14_0.png" alt="png"><br>​    </p>
+<pre><code class="python">#绘制两条折现
+from matplotlib import pyplot as plt
+import random
+import numpy as np
+import matplotlib as mpl
+font = &#123;
+    &quot;family&quot;:&quot;MicroSoft YaHei&quot;,
+    &quot;weight&quot;:&quot;bold&quot;,
+    &quot;size&quot;:&quot;10&quot;
+&#125;
+mpl.rc(&quot;font&quot;,**font)
+x = range(0,11)
+y1 = [random.randint(0,2000) for i in x]
+y2 = [random.randint(0,2000) for i in x]
+
+_y1 = np.array(y1)
+_y2 = np.array(y2)
+#获取最大最小值
+x_y1_max = np.argmax(_y1)
+x_y1_min = np.argmin(_y1)
+x_y2_max = np.argmax(_y2)
+x_y2_min = np.argmin(_y2)
+plt.plot(x,y1,label = &quot;用户A&quot;,color=&quot;blue&quot;)
+plt.plot(x,y2,label = &quot;用户B&quot;,color=&quot;red&quot;)
+#绘制最高点和最低点
+plt.plot(x_y1_min,_y1[x_y1_min],&#39;go&#39;) 
+plt.plot(x_y1_max,_y1[x_y1_max],&#39;go&#39;)
+plt.plot(x_y2_min,_y2[x_y2_min],&#39;gs&#39;) 
+plt.plot(x_y2_max,_y2[x_y2_max],&#39;gs&#39;)
+plt.legend()
+#绘制水印
+plt.text(x=6,y=100,s=&quot;ZZH&quot;,fontsize=50,color = &quot;gray&quot;,alpha = 0.2)
+plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_15_0.png" alt="png"><br>​    </p>
+<h2 id="绘制散点图"><a href="#绘制散点图" class="headerlink" title="绘制散点图"></a>绘制散点图</h2><pre><code class="python">import random
+a = [random.randint(24,35) for i in range(0,15)]
+b = [random.randint(24,35) for i in range(0,15)]
+print(a)
+print(b)
+</code></pre>
+<pre><code>[28, 29, 24, 32, 27, 25, 31, 33, 28, 31, 28, 33, 34, 24, 27][33, 34, 27, 27, 31, 29, 31, 30, 34, 26, 26, 31, 30, 29, 29]
+</code></pre>
+<pre><code class="python">from matplotlib import pyplot as pltx=range(0,15)plt.scatter(x,a) #绘制散点图 plt.scatter(x,b)  
+</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x1f409bba888&gt;
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_18_1.png" alt="png"><br>​    </p>
+<h2 id="绘制条形图"><a href="#绘制条形图" class="headerlink" title="绘制条形图"></a>绘制条形图</h2><pre><code class="python">import random
+c = [random.randint(0,1000) for i in range(0,15)]
+print(c)
+</code></pre>
+<pre><code>[90, 924, 412, 993, 665, 629, 723, 550, 852, 500, 947, 153, 787, 586, 606]
+[496, 545, 952, 78, 446, 815, 526, 395, 757, 386, 261, 84, 614, 980, 13]
+</code></pre>
+<pre><code class="python">from matplotlib import pyplot as plt
+x = range(0,15)
+plt.bar(x,c,color = &quot;orange&quot;,width=0.3) #绘制条形图
+</code></pre>
+<pre><code>&lt;BarContainer object of 15 artists&gt;
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_21_1.png" alt="png"><br>​    </p>
+<pre><code class="python">from matplotlib import pyplot as plt
+x = range(0,15)
+plt.barh(x,c,height=0.3,color = &quot;orange&quot;) #绘制横向条形图
+</code></pre>
+<pre><code>&lt;BarContainer object of 15 artists&gt;
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_22_1.png" alt="png"><br>​    </p>
+<pre><code class="python">a = [&quot;猩球崛起2&quot;,&quot;敦刻尔克&quot;,&quot;蜘蛛侠&quot;,&quot;战狼2&quot;]
+b_16 = [15746,321,4497,319]
+b_15 = [12357,156,2045,168]
+b_14 = [2358,399,2358,362]
+</code></pre>
+<pre><code class="python">#绘制多次条形图
+from matplotlib import pyplot as plt
+bar_width = 0.1
+x_14 = list(range(len(a)))
+x_15 = [i+bar_width for i in x_14]
+x_16 = [i+bar_width for i in x_15]
+
+plt.bar(range(len(a)),b_14,width = bar_width,label = &quot;14日&quot;,color = &quot;cyan&quot;)
+plt.bar(x_15,b_15,width=bar_width,label = &quot;15日&quot;)
+plt.bar(x_16,b_16,width=bar_width,label = &quot;16日&quot;)
+plt.legend()
+plt.xticks(x_15,a)
+plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_24_0.png" alt="png"><br>​    </p>
+<h2 id="绘制直方图"><a href="#绘制直方图" class="headerlink" title="绘制直方图"></a>绘制直方图</h2><pre><code class="python">import randoma = [random.randint(30,151) for i in range(0,250)]len(a)
+</code></pre>
+<pre><code>250
+</code></pre>
+<pre><code class="python">from matplotlib import pyplot as plt#计算组数d=11 #组距num_bins = (max(a)-min(a))//dplt.figure(figsize=(20,8),dpi=80)plt.hist(a,num_bins)#分组#设置x轴刻度plt.xticks(range(min(a),max(a)+d,d)) plt.grid()plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_27_0.png" alt="png"><br>​    </p>
+<pre><code class="python">from matplotlib import pyplot as plt#计算组数d=11 #组距num_bins = (max(a)-min(a))//dplt.figure(figsize=(20,8),dpi=80)plt.hist(a,num_bins,density = 1)#频率分布直方图#设置x轴刻度plt.xticks(range(min(a),max(a)+d,d)) plt.grid()plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_28_0.png" alt="png"><br>​    </p>
+<pre><code class="python">interval =[0,5,10,15,20,25,30,35,40,45,60,90]width = [5,5,5,5,5,5,5,5,5,15,30,60]quantity = [836,2737,3723,3926,3596,1438,3273,642,824,613,215,47] #这些统计之后的数据是不能绘制直方图的#通常来说能够使用plt.hist方法的是那些没用统计过的数据
+</code></pre>
+<pre><code class="python">from matplotlib import pyplot as pltinterval =[0,5,10,15,20,25,30,35,40,45,60,90]width = [5,5,5,5,5,5,5,5,5,15,30,60] #组距quantity = [836,2737,3723,3926,3596,1438,3273,642,824,613,215,47]plt.figure(figsize=(20,8),dpi=80)plt.bar(range(len(quantity)),quantity,width =1)#设置_x = [i-0.5 for i in range(13)]_xtick_labels = interval+[150]plt.xticks(_x,_xtick_labels)plt.grid()plt.show()
+</code></pre>
+<p>​<br><img src="/Matplotlib-Numpy-Pandas-%E7%AC%94%E8%AE%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%89/output_30_0.png" alt="png"><br>​    </p>
+<h2 id="更多绘图工具了解"><a href="#更多绘图工具了解" class="headerlink" title="更多绘图工具了解"></a>更多绘图工具了解</h2><p>matplotlib支持的图形样式</p>
+<p><a target="_blank" rel="noopener" href="http://matplotlib.org/gallery/index.html">http://matplotlib.org/gallery/index.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/gallery/index.html">https://matplotlib.org/stable/gallery/index.html</a></p>
+<p>其他的画图工具：</p>
+<p>百度ECharts</p>
+<p>plotly <a target="_blank" rel="noopener" href="http://plot.ly/python">http://plot.ly/python</a></p>
+<p>seaborn </p>
+<h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><p>快速 方便 科学计算的基础库</p>
+<p>用在大型和多维数组上执行数值运算</p>
+<pre><code class="python">import numpy as npt1 = np.array([1,2,3,4,5,6,7,8,9,10])print(t1)t2 = np.array(range(10))print(t2)t3 = np.arange(10)print(t3)t3.dtype#显示np中存放的类型
+</code></pre>
+<pre><code>[ 1  2  3  4  5  6  7  8  9 10][0 1 2 3 4 5 6 7 8 9][0 1 2 3 4 5 6 7 8 9]
+
+
+
+
+
+dtype(&#39;int32&#39;)
+</code></pre>
+<pre><code class="python">t4 = np.array(range(1,4),dtype = float) #定义存储的类型t4.dtype
+</code></pre>
+<pre><code>dtype(&#39;float64&#39;)
+</code></pre>
+<pre><code class="python">t5 = np.array([1,0,0,1,0,0,],dtype = bool)print(t5)
+</code></pre>
+<pre><code>[ True False False  True False False]
+</code></pre>
+<pre><code class="python">t6 = t5.astype(&quot;int8&quot;) #t5转化成int类型print(t6)
+</code></pre>
+<pre><code>[1 0 0 1 0 0]
+</code></pre>
+<pre><code class="python">#np中的小数t7 = np.array([random.random() for i in range(0,10)])print(t7)print(t7.dtype)t8 = np.round(t7,2) #取两位小数print(t8)
+</code></pre>
+<pre><code>[0.01291171 0.50694144 0.81280042 0.95928213 0.56136455 0.51815879 0.64365885 0.59195829 0.11904834 0.80636463]float64[0.01 0.51 0.81 0.96 0.56 0.52 0.64 0.59 0.12 0.81]
+</code></pre>
+<h2 id="数组的计算"><a href="#数组的计算" class="headerlink" title="数组的计算"></a>数组的计算</h2><pre><code class="python">import numpy as npt1 = np.arange(12)print(t1.shape)t1.reshape(3,4)#将t1变成3*4的数组
+</code></pre>
+<pre><code>(12,)
+
+
+
+
+
+array([[ 0,  1,  2,  3],       [ 4,  5,  6,  7],       [ 8,  9, 10, 11]])
+</code></pre>
+<pre><code class="python">t2 = np.arange(24).reshape(2,3,4)t2
+</code></pre>
+<pre><code>array([[[ 0,  1,  2,  3],        [ 4,  5,  6,  7],        [ 8,  9, 10, 11]],       [[12, 13, 14, 15],        [16, 17, 18, 19],        [20, 21, 22, 23]]])
+</code></pre>
+<pre><code class="python">t2.flatten() #将数组展开成一维的
+</code></pre>
+<pre><code>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,       17, 18, 19, 20, 21, 22, 23])
+</code></pre>
+<pre><code class="python">t3 = t1.reshape(3,4)print(t3.transpose()) #转置的3种方法print(t3.T)print(t3.swapaxes(1,0)) #交换轴 也可以形成转置的效果
+</code></pre>
+<pre><code>[[ 0  4  8] [ 1  5  9] [ 2  6 10] [ 3  7 11]][[ 0  4  8] [ 1  5  9] [ 2  6 10] [ 3  7 11]][[ 0  4  8] [ 1  5  9] [ 2  6 10] [ 3  7 11]]
+</code></pre>
+<h3 id="数组计算"><a href="#数组计算" class="headerlink" title="数组计算"></a>数组计算</h3><pre><code class="python">print(t2+2) #每个数都加2 广播性质
+</code></pre>
+<pre><code>[[[ 2  3  4  5]  [ 6  7  8  9]  [10 11 12 13]] [[14 15 16 17]  [18 19 20 21]  [22 23 24 25]]]
+</code></pre>
+<pre><code class="python">t3 = np.arange(100,124)t4 = np.arange(0,24)t3+t4 #位置相同上的相加
+</code></pre>
+<pre><code>array([100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124,       126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146])
+</code></pre>
+<h3 id="numpy数组读取本地数据和索引"><a href="#numpy数组读取本地数据和索引" class="headerlink" title="numpy数组读取本地数据和索引"></a>numpy数组读取本地数据和索引</h3><p> 二维数组的轴使用0，1，2….表示。</p>
+<pre><code class="python">np.arange(10).reshape((2,5)) #2表示0轴的长度，5表示为1轴的长度
+</code></pre>
+<p>numpy读取本地数据</p>
+<pre><code class="python">np.loadtxt(frame,dtype =np.float,delimiter=None,skiprows = 0,usecols = None,unpack=False)&quot;&quot;&quot;frame 文件、字符串、产生器 dtype 数据类型 默认np.floatdelimiter 分隔字符串，默认是任何空格skiprows 跳过前面x行 一般跳过第一行表头usecols 读取指定的列，索引，元组类型unpack (转置)如果为True,读入属性将分别写入不同数组变量。False读入数据只写入一个数组变量，默认False&quot;&quot;&quot;
+</code></pre>
+<p>数组的拼接</p>
+<pre><code class="python">t1 = np.arange(10).reshape(2,5)print(t1)print(&quot;\n&quot;)t2 = np.arange(10).reshape(2,5)print(t2)print(&quot;\n&quot;)t3 = np.vstack((t1,t2))  #竖直拼接t4 = np.hstack((t1,t2))  #水平拼接print(t3)print(&quot;\n&quot;)print(t4)print(&quot;\n&quot;)
+</code></pre>
+<pre><code>[[0 1 2 3 4] [5 6 7 8 9]]
+</code></pre>
+<p>​    </p>
+<pre><code>[[0 1 2 3 4] [5 6 7 8 9]]
+</code></pre>
+<p>​    </p>
+<pre><code>[[0 1 2 3 4] [5 6 7 8 9] [0 1 2 3 4] [5 6 7 8 9]]
+</code></pre>
+<p>​    </p>
+<pre><code>[[0 1 2 3 4 0 1 2 3 4] [5 6 7 8 9 5 6 7 8 9]]
+</code></pre>
+<p>​<br>​    </p>
+<pre><code class="python">t5 = np.arange(12,24).reshape(3,4)print(t5)print(&quot;\n&quot;)t5[[1,2],:] = t5[[2,1],:] #行交换print(t5)print(&quot;\n&quot;)t5[:,[0,2]] = t5[:,[2,0]]#列交换print(t5)print(&quot;\n&quot;)
+</code></pre>
+<pre><code>[[12 13 14 15] [16 17 18 19] [20 21 22 23]]
+</code></pre>
+<p>​    </p>
+<pre><code>[[12 13 14 15] [20 21 22 23] [16 17 18 19]]
+</code></pre>
+<p>​    </p>
+<pre><code>[[14 13 12 15] [22 21 20 23] [18 17 16 19]]
+</code></pre>
+<p>​<br>​    </p>
+<p>Numpy其他好方法</p>
+<pre><code class="python">#获取最大最小值的位置np.argmax(t,axis = 0)np.argmin(t,axis = 1)#创建一个全为0的数组np.zeros((3,4))#创建一个全为1的数组np.ones((3,4))#创建一个对角线为1的正方形数组(方阵)np.eye(3)
+</code></pre>
+<p>numpy中的随机方法</p>
+<pre><code class="python">import numpy as np#加载国家信息us_add = &quot;./youtube_video_data/USvideostest.csv&quot;uk_add = &quot;./youtube_video_data/GBvideostest.csv&quot;us_data = np.loadtxt(us_add,delimiter=&quot;,&quot;,dtype = int,skiprows = 1)uk_data = np.loadtxt(uk_add,delimiter=&quot;,&quot;,dtype = int,skiprows = 1)#添加国家信息#构造全为0的数据zeros_data = np.zeros((us_data.shape[0],1)).astype(int)ones_data = np.ones((uk_data.shape[0],1)).astype(int)us_data = np.hstack((us_data,zeros_data))uk_data = np.hstack((uk_data,ones_data))#拼接两组数final_data = np.vstack((us_data,uk_data))print(final_data)
+</code></pre>
+<pre><code>[[4394029  320053    5931   46245       0] [7860119  185853   26679       0       0] [5845909  576597   39774  170708       0] ... [ 170003    6592     127     454       1] [ 893125   44811     652    2056       1] [1474925   58532    3223   14396       1]]
+</code></pre>
+<pre><code class="python">#numpy生成随机数import numpy as npnp.random.rand(2,3) #创建d0-dn维度的均匀分布的随机数数组，浮点数，范围0-1np.random.randn(2,3) #创建d0-dn维度的标准正太分布随机数，浮点数，平均数0 标准差为1np.random.randint(low,high,(shape)) #从给定上下限范围选取随机数整数，范围为low-high 形状是shapenp.random.uniform(low,high,(size))#产生具有均匀分布的数组。low为起始值，high为结束值 size为形状np.random.normal(lic,scale,(size)) #从指定正太分布中随机抽取样本，分布中心是loc（概率分布的平均值），标准差是scale 形状sizenp.random.seed(s) #随机种子，s是给定的种子数。因为计算机生成的是伪随机数，所以通过设定相同的随机数种子，可以每次都生成相同的随机数
+</code></pre>
+<pre><code>array([[-0.69278629,  1.89889183,  0.1616682 ],       [-1.38241898,  0.54585064, -0.39824509]])
+</code></pre>
+<p>numpy的注意点 copy和view</p>
+<ol>
+<li>a&#x3D;b 完全不复制 a和b相互影响</li>
+<li>a&#x3D;b[:] 视图的操作，一种切片，会创建新的对象a，但是a的数据完全由b保管，他们两个的数据变化是一致的</li>
+<li>a&#x3D;b.copy() 复制，a和b互不影响</li>
+</ol>
+<p>numpy中的nan和常用统计方法</p>
+<p>nan:not a number 不是一个数字<br>两个nan是不相等的<br>判断数组中nan的数量</p>
+<p>np.count_nonzero(t!&#x3D;t)</p>
+<p>inf: inf正无穷 -inf负无穷 都是float类型</p>
+<p>填充数据中的nan</p>
+<pre><code class="python">import numpy as npdef fill_ndarray(t1):    for i in range(t1.shape[1]): #遍历，每一列        temp_col = t1[:,i]  #当前一列        nan_num = np.count_nonzero(temp_col!=temp_col)        if nan_num !=0: #不为0，说明有nan            temp_not_nan_col = temp_col[temp_col==temp_col]            temp_col[np.isnan(temp_col)] = temp_not_nan_col.mean()  #选中当前为nan的位置，值赋为不为nan的均值    return t1t1 = np.arange(12).reshape((3,4)).astype(&quot;float&quot;)t1[1,2:] = np.nan #替换成nant1 = fill_ndarray(t1)print(t1)
+</code></pre>
+<pre><code>[[ 0.  1.  2.  3.] [ 4.  5.  6.  7.] [ 8.  9. 10. 11.]]
+</code></pre>
+<p>numpy中常用的函数</p>
+<pre><code class="python">t.sum(axis=None) #求和t.mean(a,axis=None) #均值np.median(t,axis=None) #中值t.max(axis=None) #最大值t.min(axis=None) #最小值np.ptp(t,axis=None) #极值t.std(axis=None) #标准差
+</code></pre>
+<p>小结</p>
+<ol>
+<li>选择行 t[2]  t[3:,:]</li>
+<li>选择列 t[:,4:]</li>
+<li>连续选择行列 t[2:,:3]</li>
+<li>不连续 t[[1,3],[2,4]] 选择的是（1，2）（3，4）两个位置的值</li>
+<li>索引 t[2,3]<br>切片选一段 索引选一个值</li>
+<li>赋值 t[2:,3] &#x3D; 3</li>
+<li>bool索引 t[t&gt;10] &#x3D; 10</li>
+<li>三元运算符 np.where(t&gt;10,20,0) 大于10的替换成20 其他替换成0</li>
+<li>t.clip(10，20) 把小于10的替换成10 大于20的替换成20</li>
+<li>转置 t.T t.transpose() t.swapaxes(1,0)</li>
+<li>读取本地文件 np.loadtxt()</li>
+<li>nan不是数字  inf无限</li>
+</ol>
+<h1 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h1><p><a target="_blank" rel="noopener" href="http://www.pypandas.cn/docs/">http://www.pypandas.cn/docs/</a></p>
+<p>高性能的数据分析工具</p>
+<p>Series 一维数据 带标(索引)签数组</p>
+<p>DataFrame 二维 Series容器</p>
+<p>pandas Series创建</p>
+<pre><code class="python">#创建Seriesimport stringimport pandas as pdimport numpy as npt = pd.Series(np.arange(10),index = list(string.ascii_uppercase[:10])) #index指定索引为A-Jprint(t)print(type(t))
+</code></pre>
+<pre><code>A    0B    1C    2D    3E    4F    5G    6H    7I    8J    9dtype: int32&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</code></pre>
+<pre><code class="python">#通过字典创建Seriestemp_dict = &#123;&quot;name&quot;:&quot;xiaohong&quot;,&quot;age&quot;:30,&quot;tel&quot;:10086&#125;t1 = pd.Series(temp_dict)print(t1)
+</code></pre>
+<pre><code>name    xiaohongage           30tel        10086dtype: object
+</code></pre>
+<pre><code class="python">#字典推导式a = &#123;string.ascii_uppercase[i]:i for i in range(10)&#125;print(a)
+</code></pre>
+<pre><code>&#123;&#39;A&#39;: 0, &#39;B&#39;: 1, &#39;C&#39;: 2, &#39;D&#39;: 3, &#39;E&#39;: 4, &#39;F&#39;: 5, &#39;G&#39;: 6, &#39;H&#39;: 7, &#39;I&#39;: 8, &#39;J&#39;: 9&#125;
+</code></pre>
+<pre><code class="python">#Series 切片和索引print(t1[&quot;age&quot;])print(t1[0])print(t1[1:2])print(t1[[&quot;age&quot;,&quot;tel&quot;]])
+</code></pre>
+<pre><code>30xiaohongage    30dtype: objectage       30tel    10086dtype: object
+</code></pre>
+<pre><code class="python">t[t&lt;=4]
+</code></pre>
+<pre><code>A    0B    1C    2D    3E    4dtype: int32
+</code></pre>
+<pre><code class="python">print(t.index) #索引print(type(t.index))print(t.values) #数值print(type(t.values))
+</code></pre>
+<pre><code>Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;], dtype=&#39;object&#39;)&lt;class &#39;pandas.core.indexes.base.Index&#39;&gt;[0 1 2 3 4 5 6 7 8 9]&lt;class &#39;numpy.ndarray&#39;&gt;
+</code></pre>
+<pre><code class="python">t.where(t&gt;5,10) #小于等于5的替换成10
+</code></pre>
+<pre><code>A    10
+B    10
+C    10
+D    10
+E    10
+F    10
+G     6
+H     7
+I     8
+J     9
+dtype: int32
+</code></pre>
+<p>pandas 读取外部数据</p>
+<pre><code class="python">import pandas as pd
+df = pd.read_csv(&quot;./dogNames2.csv&quot;)
+print(df)
+</code></pre>
+<pre><code>      Row_Labels  Count_AnimalName
+0              1                 1
+1              2                 2
+2          40804                 1
+3          90201                 1
+4          90203                 1
+...          ...               ...
+16215      37916                 1
+16216      38282                 1
+16217      38583                 1
+16218      38948                 1
+16219      39743                 1
+
+[16220 rows x 2 columns]
+</code></pre>
+<pre><code class="python">#pandas DataFrame创建
+pd.DataFrame(np.arange(12).reshape(3,4))
+#行索引 表明不同行 横向索引 叫index 0轴 axis = 0 
+#列索引 表明不同列 纵向索引 叫columns 1轴 axis = 1
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">df = pd.DataFrame(np.arange(12).reshape(3,4),index=list(&quot;ABC&quot;),columns = list(&quot;WXYZ&quot;)) #指定索引
+print(df)
+</code></pre>
+<pre><code>   W  X   Y   Z
+A  0  1   2   3
+B  4  5   6   7
+C  8  9  10  11
+</code></pre>
+<pre><code class="python">#DataFrame 传入字典
+d1 = &#123;&quot;name&quot;:[&quot;xiaohong&quot;,&quot;xiaoming&quot;],&quot;age&quot;:[23,22],&quot;tel&quot;:[110,120]&#125;
+pd.DataFrame(d1)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>age</th>
+      <th>tel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>xiaohong</td>
+      <td>23</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>xiaoming</td>
+      <td>22</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">d2 = [&#123;&quot;name&quot;:&quot;xiaohong&quot;,&quot;age&quot;:12&#125;,&#123;&quot;name&quot;:&quot;xiaoming&quot;&#125;] #没有数值就是NaN
+pd.DataFrame(d2)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>xiaohong</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>xiaoming</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">#DataFrame的描述信息
+#DataFrame的基础属性
+df.shape #行数 列数
+df.dtype #列数据类型
+df.ndim #数据维度
+df.index #行索引
+df.columns #列索引
+df.values #对象只，二维ndarray数组
+#DataFrame 整体情况查询
+df.head(3) #显示头部几行，默认5行
+df.tail(3) #显示末尾几行，默认5行
+df.info() #相关信息预览
+df.describe()#快速综合统计结果
+</code></pre>
+<pre><code class="python">#DataFrame排序的方法 默认按列排序
+df.sort_values(by = &quot;按照什么排序&quot;，ascending = True)#默认升序排序ascending改为False为降序
+</code></pre>
+<pre><code class="python">#pandas切片和索引
+df[10:20]
+df[10:20][&quot;Row_Labels&quot;] #取10-20行的Row_Labels这一列
+
+#pandas取行或列的注意点
+# - 方括号写数组，表示取行，对行进行操作
+# - 写字符串，表示的去列索引，对列进行操作
+</code></pre>
+<pre><code class="python">#pandas LOC和ILOC
+df.loc #通过标签索引行数据
+df.iloc #通过位置获取行数据
+</code></pre>
+<h3 id="LOC"><a href="#LOC" class="headerlink" title="LOC"></a>LOC</h3><pre><code class="python">df.loc[&quot;A&quot;,&quot;X&quot;] #取某一位置的值
+</code></pre>
+<pre><code>1
+</code></pre>
+<pre><code class="python">df.loc[&quot;B&quot;,[&quot;W&quot;,&quot;X&quot;]] #取某两个地方的值
+</code></pre>
+<pre><code>W    4
+X    5
+Name: B, dtype: int32
+</code></pre>
+<pre><code class="python">#选择间隔的多行多列
+df.loc[[&quot;A&quot;,&quot;C&quot;],[&quot;W&quot;,&quot;Z&quot;]]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>8</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">#选择连续多行
+df.loc[&quot;A&quot;:&quot;B&quot;,[&quot;W&quot;,&quot;Z&quot;]]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+<h3 id="ILOC"><a href="#ILOC" class="headerlink" title="ILOC"></a>ILOC</h3><pre><code class="python">df.iloc[1:3,[2,3]]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B</th>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">df.iloc[1:3,1:3]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B</th>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">#赋值修改数据
+df.loc[&quot;A&quot;,&quot;Y&quot;] = 100
+df.iloc[1:2,0:2] = 111
+print(df)
+</code></pre>
+<pre><code>     W    X    Y   Z
+A    0    1  100   3
+B  111  111    6   7
+C    8    9   10  11
+</code></pre>
+<h2 id="pandas-布尔索引"><a href="#pandas-布尔索引" class="headerlink" title="pandas 布尔索引"></a>pandas 布尔索引</h2><pre><code class="python">df[df[&quot;W&quot;]&gt;0]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B</th>
+      <td>111</td>
+      <td>111</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">df[(df[&quot;W&quot;]&gt;0)&amp;(df[&quot;W&quot;]&lt;10)] #两个条件   &amp;且 |或 不同条件需要用括号括起来
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>C</th>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">#函数名称 	函数功能和描述
+lower() 	#将的字符串转换为小写。
+upper() 	#将的字符串转换为大写。
+len() 	#得出字符串的长度。
+strip() 	#去除字符串两边的空格（包含换行符）。
+split() 	#用指定的分割符分割字符串。
+cat(sep=&quot;&quot;) 	#用给定的分隔符连接字符串元素。
+get_dummies() 	#返回一个带有独热编码值的 DataFrame 结构。
+contains(pattern) 	#如果子字符串包含在元素中，则为每个元素返回一个布尔值 True，否则为 False。
+replace(a,b) 	#将值 a 替换为值 b。
+count(pattern) 	#返回每个字符串元素出现的次数。
+startswith(pattern) 	#如果 Series 中的元素以指定的字符串开头，则返回 True。
+endswith(pattern) 	#如果 Series 中的元素以指定的字符串结尾，则返回 True。
+findall(pattern) 	#以列表的形式返出现的字符串。
+swapcase() 	#交换大小写。
+islower() 	#返回布尔值，检查 Series 中组成每个字符串的所有字符是否都为小写。
+issupper() 	#返回布尔值，检查 Series 中组成每个字符串的所有字符是否都为大写。
+isnumeric() 	#返回布尔值，检查 Series 中组成每个字符串的所有字符是否都为数字。
+repeat(value) 	#以指定的次数重复每个元素。
+find(pattern) 	#返回字符串第一次出现的索引位置。
+#http://m.biancheng.net/pandas/string.html
+</code></pre>
+<pre><code>  File &quot;C:\Users\Zheng\AppData\Local\Temp/ipykernel_3120/2727733356.py&quot;, line 5
+    strip() 	去#除字符串两边的空格（包含换行符）。
+                ^
+SyntaxError: invalid syntax
+</code></pre>
+<pre><code class="python">#pandas 缺失数据的处理
+
+#判断是否为NaN 
+pd.isnull(df) 
+pd.notnull(df)
+
+#处理方式1：删除NaN所在的行列
+t.dropna(axis=0,how=&quot;any&quot;,inplace = False) #how参数 any表示有任意一个NaN就删 all表示全为NaN才删 inplace参数是否进行原地修改
+
+#处理方式2：填充数据
+t.fillna(t.mean())
+t.fillna(t.median())
+t.fillam(0)
+
+#处理为0的数据
+t[t==0] = np.nan
+#当然不是每次为0，都需要处理
+#计算平均值的时候nan是不参与的，但是0会
+</code></pre>
+<h3 id="pandas-统计方法"><a href="#pandas-统计方法" class="headerlink" title="pandas 统计方法"></a>pandas 统计方法</h3><pre><code class="python">#获取平均数
+df[&quot;某列&quot;].mean()
+#获取某个什么的数量
+len(set(df[&quot;某列&quot;].tolist()))
+df[&quot;某列&quot;].unique() #把每一个的唯一一个提取出来
+#获取演员人数
+temp_actors_list = df[&quot;某列&quot;].str.split(&quot;,&quot;).tolost()
+actors_list = [i for j in temp_actors_list for i in j]
+actor_num = len(set(actor_list)) #演员数量
+
+#y=max f(t) ：y是f(t)函数的最大值
+#y=argmax f(t) ：y是f(t)函数取到最大值时的参数t
+df[].max()
+df[].min()
+df[].argmax()
+df[].argmin()
+df[].median()#中位数
+</code></pre>
+<h3 id="数据合并和分组"><a href="#数据合并和分组" class="headerlink" title="数据合并和分组"></a>数据合并和分组</h3><p>如果有哪一个分类，就变成1<br><img src="attachment:%E5%9B%BE%E7%89%87.png" alt="%E5%9B%BE%E7%89%87.png"></p>
+<pre><code class="python">#比如 电影分类那列数据为 &quot;A,B,C&quot; A,B,C代表3钟不同分类 一个电影可能有多个分类 
+#set()去重
+list = df[&quot;分类&quot;].str.split(&quot;,&quot;).to_list()#转化成list  [[][]] 列表嵌套结构
+genre_list = list(set([i for j in list for i in j])) #展开
+#构造全为0的数组
+zero_df = pd.DataFrame(np.zeros((df.shape[0],len(genre_list))),coulumns = genre_list)
+
+#给每个电影出现分类的电影位置赋值为1
+for i in range(df.shape[0]):
+    zeros_df.loc[i,list[i]] = 1
+#统计数量和
+genre_count = zero_df.sum(axis=0)
+print(genre_count)
+#排序
+genre_count.sort_values()
+#画图
+...
+</code></pre>
+<pre><code class="python">#join 行索引相同的合并到一起
+t1.join(t2)
+#merge 列索引相同的合并到一起
+t1.merge(t2,on=&quot;在哪列操作&quot;，how=&quot;用什么方式连接&quot;)
+</code></pre>
+<pre><code class="python">#分组
+groupdf = df.groupby(by=&quot;按某一列分组&quot;)
+countNum = groupdf[&quot;某一列&quot;].count() #计算某列的分类的数量
+countNum[&quot;某一类&quot;]#取出某一类的数量
+</code></pre>
+<pre><code class="python">#DataFrameGroupBy对象的方法
+count #分组中非NA值得数量
+sum #非NA值的和
+mean #非NA值得平均数
+median #非NA值得算数中位数
+std、var #无偏（分母为n-1)标准差和方差
+min、max #非NA值得最小 最大值
+</code></pre>
+<h3 id="索引和复合索引"><a href="#索引和复合索引" class="headerlink" title="索引和复合索引"></a>索引和复合索引</h3><pre><code class="python">df.index #获取index
+df.index = [&quot;x&quot;,&quot;y&quot;] #指定索引
+df.reindex(list(&quot;abcde&quot;))#重新设置index
+df.set_index(&quot;Country&quot;,drop=False) #指定某一列作为index
+df.set_index(&quot;Country&quot;).index.unique() #返回index的唯一值
+
+
+#Series复合索引
+df.set_index([&quot;c&quot;,&quot;d&quot;])[&quot;a&quot;]
+</code></pre>
+<h3 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h3><pre><code class="python">import pandas as pd
+#pd.date_range(start=None,end=None,periods=None,freq=&quot;D&quot;) D天 M月最后一天 H小时 MS每月第一题
+#start和end决定范围 freq决定频率 periods决定个数
+pd.date_range(start=&quot;20101010&quot;,end=&quot;20101030&quot;,freq=&quot;D&quot;)
+pd.date_range(start=&quot;20101010&quot;,periods = 10,freq=&quot;D&quot;)
+</code></pre>
+<pre><code>DatetimeIndex([&#39;2010-10-10&#39;, &#39;2010-10-11&#39;, &#39;2010-10-12&#39;, &#39;2010-10-13&#39;,
+               &#39;2010-10-14&#39;, &#39;2010-10-15&#39;, &#39;2010-10-16&#39;, &#39;2010-10-17&#39;,
+               &#39;2010-10-18&#39;, &#39;2010-10-19&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+</code></pre>
+<pre><code class="python">#时间字符串转化成Pandas的时间类型
+df[&quot;timeStamp&quot;] = pd.to_datetime(df[&quot;timeStamp&quot;],format=&quot;&quot;)
+</code></pre>
+<pre><code class="python">#pandas重采样 从一个频率转化到另外一个频率 resample
+import pandas as pd
+import numpy as np
+t = pd.DataFrame(np.random.uniform(10,50,(100,1)),index = pd.date_range(&quot;20170101&quot;,periods=100))
+print(t)
+</code></pre>
+<pre><code>                    0
+2017-01-01  29.997417
+2017-01-02  33.508945
+2017-01-03  41.117839
+2017-01-04  49.078154
+2017-01-05  11.675032
+...               ...
+2017-04-06  24.246047
+2017-04-07  41.784347
+2017-04-08  18.015055
+2017-04-09  18.941828
+2017-04-10  18.160647
+
+[100 rows x 1 columns]
+</code></pre>
+<pre><code class="python">t.resample(&quot;M&quot;).mean() #按月求平均值
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-31</th>
+      <td>31.378624</td>
+    </tr>
+    <tr>
+      <th>2017-02-28</th>
+      <td>31.638050</td>
+    </tr>
+    <tr>
+      <th>2017-03-31</th>
+      <td>27.265000</td>
+    </tr>
+    <tr>
+      <th>2017-04-30</th>
+      <td>26.354586</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<pre><code class="python">t.resample(&quot;10D&quot;).count()#按10天计数
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-01</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-01-11</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-01-21</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-01-31</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-02-10</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-02-20</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-03-02</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-03-12</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-03-22</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2017-04-01</th>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/dog.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">22 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matplotlib"><span class="toc-number">1.</span> <span class="toc-text">Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%8A%98%E7%BA%BF%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">绘制折线图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="toc-number">1.2.</span> <span class="toc-text">绘制散点图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE"><span class="toc-number">1.3.</span> <span class="toc-text">绘制条形图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="toc-number">1.4.</span> <span class="toc-text">绘制直方图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7%E4%BA%86%E8%A7%A3"><span class="toc-number">1.5.</span> <span class="toc-text">更多绘图工具了解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Numpy"><span class="toc-number">2.</span> <span class="toc-text">Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">2.1.</span> <span class="toc-text">数组的计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%AE%A1%E7%AE%97"><span class="toc-number">2.1.1.</span> <span class="toc-text">数组计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy%E6%95%B0%E7%BB%84%E8%AF%BB%E5%8F%96%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%92%8C%E7%B4%A2%E5%BC%95"><span class="toc-number">2.1.2.</span> <span class="toc-text">numpy数组读取本地数据和索引</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pandas"><span class="toc-number">3.</span> <span class="toc-text">pandas</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LOC"><span class="toc-number">3.0.1.</span> <span class="toc-text">LOC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ILOC"><span class="toc-number">3.0.2.</span> <span class="toc-text">ILOC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pandas-%E5%B8%83%E5%B0%94%E7%B4%A2%E5%BC%95"><span class="toc-number">3.1.</span> <span class="toc-text">pandas 布尔索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pandas-%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.1.</span> <span class="toc-text">pandas 统计方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6%E5%92%8C%E5%88%86%E7%BB%84"><span class="toc-number">3.1.2.</span> <span class="toc-text">数据合并和分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%92%8C%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95"><span class="toc-number">3.1.3.</span> <span class="toc-text">索引和复合索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="toc-number">3.1.4.</span> <span class="toc-text">时间序列</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        </br>
+        
+        <span class="gradient-text">
+            <a href="https://beian.miit.gov.cn/" title="beian.miit.gov.cn" target="_blank" rel="noopener">beian.miit.gov.cn</a>
+        </span>
+        
+        
+        </br>
+        <span style="display: inline-block;"> <img src=/null></span>
+        
+        <span class="gradient-text">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602009049" title="www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049" target="_blank" rel="noopener">www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049</a>
+        </span>
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>

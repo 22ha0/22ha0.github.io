@@ -1,0 +1,865 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>算法例题&amp;LeetCode--Python - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="1.贪心算法1 最优合并问题 问题描述：
+给定k 个排好序的序列s1, s2 , …, sk, 用2 路合并算法将这k 个序列合并成一个序列。假设所采用的2 路合并算法合并2 个长度分别为m和n的序,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/dog.jpg"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+    
+    <script>var musiclist = ""</script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+
+    
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">算法例题&LeetCode--Python</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                October 30, 2021
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/" title="算法例题&amp;LeetCode--Python" class="">算法例题&amp;LeetCode--Python</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    25k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    22 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="1-贪心算法"><a href="#1-贪心算法" class="headerlink" title="1.贪心算法"></a>1.贪心算法</h1><h2 id="1-最优合并问题"><a href="#1-最优合并问题" class="headerlink" title="1 最优合并问题"></a>1 最优合并问题</h2><p> <strong>问题描述：</strong></p>
+<p>给定k 个排好序的序列s1, s2 , …, sk, 用2 路合并算法将这k 个序列合并成一个序列。假设所采用的2 路合并算法合并2 个长度分别为m和n的序列需要m + n -1次比较。试设计一个算法确定合并这个序列的最优合并顺序，使所需的总比较次数最少。</p>
+<p>为了进行比较，还需要确定合并这个序列的最差合并顺序，使所需的总比较次数最多。</p>
+<p><strong>编程任务：</strong></p>
+<p>对于给定的k个待合并序列，编程计算最多比较次数和最少比较次数合并方案。</p>
+<p><strong>数据输入：</strong></p>
+<p>由文件input.txt给出输入数据。第一行有1 个正整数k，表示有k个待合并序列。接下来的1 行中，有k个正整数，表示k个待合并序列的长度。</p>
+<p><strong>结果输出</strong>:</p>
+<p>将编程计算出的最多比较次数和最少比较次数输出到文件output.txt。</p>
+<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/clip_image002.jpg" alt="img"></p>
+<p><strong>思想</strong>：最小对比次数就为最小的先相加，最大的则相反，区别为求最小 每次都要排序，最大则不需要</p>
+<p><strong>代码</strong></p>
+<pre><code class="python">def readData(n):
+    Path = &#39;E:\桌面\新建文件夹\大三 上\大数据算法分析与设计/5-贪心算法-含测试数据\OPTIMAL MERGE\TEST\MERGE&#39;+str(n)+&#39;.IN&#39;
+    f = open(Path,&#39;r&#39;)
+    num = int(f.readline().strip(&#39;\n&#39;))
+    data = f.readline().strip(&#39;\n&#39;).split(&quot; &quot;)
+    data = [int(data[j]) for j in range(num)]
+    return data
+def MINcount(data):
+    ANS=0
+    for i in range(len(data)-1):
+        data.sort()
+        A = data[0]+data[1]
+        ANS = ANS+A-1
+        data=data[2:]
+        data.append(A)
+    return ANS
+def MAXcount(data):
+    ANS=0
+    data.sort()
+    for i in range(len(data)-1):
+        A = data[-1]+data[-2]
+        ANS = ANS+A-1
+        data=data[:-2]
+        data.append(A)
+    return ANS
+def readANS(i):
+    Path = &quot;E:\桌面\新建文件夹\大三 上\大数据算法分析与设计/5-贪心算法-含测试数据\OPTIMAL MERGE\ANSWER\MERGE&quot;+str(i)+&quot;.OUT&quot;
+    f = open(Path,&quot;r&quot;)
+    ANS = f.readline().strip(&#39;\n&#39;).split(&quot; &quot;)
+    ANS = [int(ANS[i]) for i in range(len(ANS))]
+    return ANS
+def main():
+    for i in range(0,11):
+        data = readData(i)
+        MIN = MINcount(data)
+        MAX = MAXcount(data)
+        ANS = readANS(i)
+        print(&quot;运算结果：&quot;,MAX,MIN,MAX == ANS[0] and MIN == ANS[1])
+if __name__ ==&#39;__main__&#39;:
+    main()
+</code></pre>
+<h2 id="2-汽车加油问题"><a href="#2-汽车加油问题" class="headerlink" title="2 汽车加油问题"></a>2 汽车加油问题</h2><p> <strong>问题描述：</strong></p>
+<p>一辆汽车加满油后可行驶n公里。旅途中有若干个加油站。设计一个有效算法，指出应在哪些加油站停靠加油，使沿途加油次数最少。并证明算法能产生一个最优解。</p>
+<p> <strong>编程任务：</strong></p>
+<p>对于给定的n和k个加油站位置，编程计算最少加油次数。</p>
+<p> <strong>数据输入：</strong></p>
+<p>由文件input.txt给出输入数据。第一行有2 个正整数n和k，表示汽车加满油后可行驶n公里，且旅途中有k个加油站。接下来的1 行中，有k+1 个整数，表示第k个加油站与第k-1 个加油站之间的距离。第0 个加油站表示出发地，汽车已加满油。第k+1 个加油站表示目的地。</p>
+<p> <strong>结果输出</strong>:</p>
+<p>将编程计算出的最少加油次数输出到文件output.txt。如果无法到达目的地，则输出”No Solution”。</p>
+<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/clip_image004.jpg" alt="img"></p>
+<p> <strong>代码</strong></p>
+<pre><code class="python">def readData(i):
+    Path = &#39;E:\桌面\新建文件夹\大三 上\大数据算法分析与设计/5-贪心算法-含测试数据\OILING CAR\TEST\OIL&#39;+str(i)+&#39;.IN&#39;
+    f = open(Path,&#39;r&#39;)
+    tempData = f.readline().strip(&#39;\n&#39;).split(&#39; &#39;)
+    n,k = int(tempData[0]),int(tempData[1])
+    tempData = f.readline().strip(&#39;\n&#39;).split(&#39; &#39;)
+    data = [int(tempData[i]) for i in range(k+1)]
+    return n,k,data
+def count(i):
+    Times = 0
+    Tn,k,data = readData(i)
+    n=Tn
+    for tempData in data:
+        if n&gt;=tempData:
+            n = n-tempData
+        else:
+            n=Tn
+            Times +=1
+            if n&lt;tempData:
+                return (&quot;No Solution!&quot;)
+            n = n-tempData
+    return Times
+def readANS(i):
+    Path = &#39;E:\桌面\新建文件夹\大三 上\大数据算法分析与设计/5-贪心算法-含测试数据\OILING CAR\ANSWER\OIL&#39;+str(i)+&#39;.OUT&#39;
+    f = open(Path,&#39;r&#39;)
+    tempData = f.readline().strip(&#39;\n&#39;)
+    return tempData
+def main():
+    for i in range(11):
+        Times = count(i)
+        ANS = readANS(i)
+        print(&quot;第&quot;+str(i)+&quot;个测试数据&quot;,&#39;运算结果：&#39;+str(Times),&#39;答案：&#39;+ANS)
+if __name__ ==&quot;__main__&quot;:
+    main()
+</code></pre>
+<h2 id="实验5附加题-汽车加油问题（选做）"><a href="#实验5附加题-汽车加油问题（选做）" class="headerlink" title="实验5附加题-汽车加油问题（选做）"></a>实验5附加题-汽车加油问题（选做）</h2><p>力扣题号134：</p>
+<p>在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。</p>
+<p>你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。你从其中的一个加油站出发，开始时油箱为空。</p>
+<p>如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。</p>
+<p>说明: </p>
+<p>如果题目有解，该答案即为唯一答案。<br>输入数组均为非空数组，且长度相同。<br>输入数组中的元素均为非负数。<br><strong>示例 1:</strong></p>
+<pre><code>输入: 
+
+gas  = [1,2,3,4,5]
+cost = [3,4,5,1,2]
+
+输出: 3
+
+解释:
+从 3 号加油站(索引为 3 处)出发，可获得 4 升汽油。此时油箱有 = 0 + 4 = 4 升汽油
+开往 4 号加油站，此时油箱有 4 - 1 + 5 = 8 升汽油
+开往 0 号加油站，此时油箱有 8 - 2 + 1 = 7 升汽油
+开往 1 号加油站，此时油箱有 7 - 3 + 2 = 6 升汽油
+开往 2 号加油站，此时油箱有 6 - 4 + 3 = 5 升汽油
+开往 3 号加油站，你需要消耗 5 升汽油，正好足够你返回到 3 号加油站。
+因此，3 可为起始索引。
+</code></pre>
+<p><strong>示例 2:</strong></p>
+<pre><code>输入: 
+gas  = [2,3,4]
+cost = [3,4,3]
+
+输出: -1
+
+解释:
+你不能从 0 号或 1 号加油站出发，因为没有足够的汽油可以让你行驶到下一个加油站。
+我们从 2 号加油站出发，可以获得 4 升汽油。 此时油箱有 = 0 + 4 = 4 升汽油
+开往 0 号加油站，此时油箱有 4 - 3 + 2 = 3 升汽油
+开往 1 号加油站，此时油箱有 3 - 3 + 3 = 3 升汽油
+你无法返回 2 号加油站，因为返程需要消耗 4 升汽油，但是你的油箱只有 3 升汽油。
+因此，无论怎样，你都不可能绕环路行驶一周。
+</code></pre>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/gas-station">https://leetcode-cn.com/problems/gas-station</a></p>
+<p><strong>思路：</strong></p>
+<p>爆破会超时，</p>
+<p>参考LeetCode-陈允怀:</p>
+<p>车子开完全程需要满足两个条件：</p>
+<ul>
+<li>车从i站能开到i+1</li>
+<li>所有站里的油总量要》&#x3D;车子的总油耗</li>
+</ul>
+<p>假设从0号开始，一直到k都可以走完，在开往k+1时没油了，这时，应该将起点设为k+1站</p>
+<p>问题1: 为什么应该将起始站点设为<code>k+1</code>？</p>
+<ul>
+<li>因为<code>k-&gt;k+1</code>站耗油太大，<code>0-&gt;k</code>站剩余油量都是不为负的，每减少一站，就少了一些剩余油量。所以如果从<code>k</code>前面的站点作为起始站，剩余油量不可能冲过<code>k+1</code>站。</li>
+</ul>
+<p>问题2:  为什么如果<code>k+1-&gt;end</code>全部可以正常通行，且<code>rest&gt;=0</code>就可以说明车子从<code>k+1</code>站点出发可以开完全程？</p>
+<ul>
+<li>因为，起始点将当前路径分为<code>A</code>、<code>B</code>两部分。其中，必然有(1)A部分剩余油量&lt;0。(2)B部分剩余油量&gt;0。</li>
+<li>所以，无论多少个站，都可以抽象为两个站点（A、B）。(1)从B站加满油出发，(2)开往A站，车加油，(3)再开回B站的过程。</li>
+</ul>
+<p>重点：B剩余的油&gt;&#x3D;A缺少的总油。必然可以推出，B剩余的油&gt;&#x3D;A站点的每个子站点缺少的油。</p>
+<p>1）整个过程分为[A, B]两阶段；2）总油量是足够的；3）B阶段还剩余油量，那么A阶段肯定是ok的。</p>
+<p><strong>自己的理解：</strong>当B段走完时，run为剩余的油，当rest为总的剩余的油，A段需要的等于run-rest ,如果rest是大于0的 则A段需要的总油量小于B段剩余的油量 就可以走完。</p>
+<p><strong>代码：</strong></p>
+<pre><code class="python">def canCompleteCircuit(gas, cost):
+    rest,run,start = 0,0,0
+    for i in range(len(gas)):
+        run +=(gas[i]-cost[i])
+        rest +=(gas[i]-cost[i])
+        if run&lt;0:
+            start = i+1
+            run = 0
+    return (-1 if rest&lt;0 else start)
+def main():
+    gas  = [1,2,3,4,5]
+    cost = [3,4,5,1,2]
+    n = canCompleteCircuit(gas,cost)
+    print(n)
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h1 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h1><h2 id="LeetCode-53-最大子序和"><a href="#LeetCode-53-最大子序和" class="headerlink" title="LeetCode-53. 最大子序和"></a>LeetCode-<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a></h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<pre><code>示例 1：
+输入：nums = [-2,1,-3,4,-1,2,1,-5,4]
+输出：6
+解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。
+</code></pre>
+<p><strong>进阶：</strong>如果你已经实现复杂度为 <code>O(n)</code> 的解法，尝试使用更为精妙的 <strong>分治法</strong> 求解。</p>
+<p>思路：动态规划<br>是首先对数组进行遍历，当前最大连续子序列和为 sum，结果为 ans<br>如果 sum &gt; 0，则说明 sum 对结果有增益效果，则 sum 保留并加上当前遍历数字<br>如果 sum &lt;&#x3D; 0，则说明 sum 对结果无增益效果，需要舍弃，则 sum 直接更新为当前遍历数字<br>每次比较 sum 和 ans的大小，将最大值置为ans，遍历结束返回结果<br>时间复杂度：O(n)</p>
+<pre><code class="python">def maxSubArray(nums):
+    sum = 0
+    ans=nums[0]
+    for num in nums:
+        if sum&gt;0:
+            sum +=num
+        else :
+            sum = num
+        ans = max(sum,ans)
+    return ans
+    
+    pass
+def main():
+    nums = [-2,1,-3,4,-1,2,1,-5,4]
+    ans = maxSubArray(nums)
+    print(ans)
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h2 id="LeetCode-69-Sqrt-x"><a href="#LeetCode-69-Sqrt-x" class="headerlink" title="LeetCode-69. Sqrt(x)"></a>LeetCode-<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sqrtx/">69. Sqrt(x)</a></h2><p>给你一个非负整数 <code>x</code> ，计算并返回 <code>x</code> 的 <strong>算术平方根</strong> 。</p>
+<p>由于返回类型是整数，结果只保留 <strong>整数部分</strong> ，小数部分将被 <strong>舍去 。</strong></p>
+<p><strong>注意：</strong>不允许使用任何内置指数函数和算符，例如 <code>pow(x, 0.5)</code> 或者 <code>x ** 0.5</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：x = 4
+输出：2
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入：x = 8
+输出：2
+解释：8 的算术平方根是 2.82842..., 由于返回类型是整数，小数部分将被舍去。
+</code></pre>
+<p><strong>思路：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%89%9B%E9%A1%BF%E8%BF%AD%E4%BB%A3%E6%B3%95">牛顿迭代法</a>是一种可以用来快速求解函数零点的方法。</p>
+<p>为了叙述方便，我们用 C 表示待求出平方根的那个整数。显然，C 的平方根就是函数<img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031095838657.png" alt="image-20211031095838657">的零点。</p>
+<p>牛顿迭代法的本质是借助泰勒级数，从初始值开始快速向零点逼近。我们任取一个 x0 作为初始值，在每一步的迭代中，我们找到函数图像上的点 (xi,f(xi))，过该点作一条斜率为该点导数 f′(xi)f’(x_i)f′(xi) 的直线，与横轴的交点记为 xi+1。xi+1相较于 xi而言距离零点更近。在经过多次迭代后，我们就可以得到一个距离零点非常接近的交点。下图给出了从 x0开始迭代两次，得到 x1 和 x2 的过程。</p>
+<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031100317623.png" alt="image-20211031100317623"></p>
+<p><strong>算法：</strong></p>
+<p><img src="/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/image-20211031100917975.png" alt="image-20211031100917975"></p>
+<p><strong>代码：</strong></p>
+<pre><code class="python">def mySqrt(x):
+    if x == 0:
+        return 0
+    C,x0 = x,x
+    while True:
+        xi = 0.5*(x0+C/x0)
+        if abs(xi-x0)&lt;1e-7:
+            break
+        x0 = xi
+    return int(x0)
+def main():
+    x=9
+    n=mySqrt(x)
+    print(n)
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h2 id="LeetCode-70-爬楼梯"><a href="#LeetCode-70-爬楼梯" class="headerlink" title="LeetCode-70. 爬楼梯"></a>LeetCode-<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯</a></h2><p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。</p>
+<p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
+<p>注意：给定 n 是一个正整数。</p>
+<p>示例 1：</p>
+<pre><code>输入： 2
+输出： 2
+解释： 有两种方法可以爬到楼顶。
+
+1.  1 阶 + 1 阶
+2.  2 阶
+</code></pre>
+<p>示例 2：</p>
+<pre><code>输入： 3
+输出： 3
+解释： 有三种方法可以爬到楼顶。
+
+1.  1 阶 + 1 阶 + 1 阶
+2.  1 阶 + 2 阶
+3.  2 阶 + 1 阶
+</code></pre>
+<p><strong>题解1：</strong>递归，但是递归要加上装饰器不然会超时</p>
+<pre><code class="python">@functools.lru_cache(100) #该函数是一个装饰器，为函数提供缓存功能。在下次以相同参数调用时直接返回上一次的结果。
+</code></pre>
+<pre><code class="python">import functools
+@functools.lru_cache(100) #该函数是一个装饰器，为函数提供缓存功能。在下次以相同参数调用时直接返回上一次的结果。
+def climbStairs(n):
+    return climbStairs(n-1)+climbStairs(n-2) if n &gt; 2 else n
+def main():
+    n=100
+    m=climbStairs(n)
+    print(m)
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p><strong>题解2：</strong>动态规划</p>
+<p>  <strong>思路</strong><br>当走到i层时，只要加上i-2时的次数和i-1的次数<br>因为i-2层在跨2层，就到了i层，i-1层在跨1层，就到了i层<br>每次只能跨1层或者2层，所以把这两种情况相加就是有多少种情况可以到i层。</p>
+<pre><code class="python">def climbStairs(n):
+    if n&lt;=2 :
+        return n
+    dp = [1,2]
+    for i in range(2,n):
+        dp.append(dp[i-1]+dp[i-2])
+    return dp[i]
+def main():
+    n=5
+    m=climbStairs(n)
+    print(m)
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h1 id="LeetCode经典题"><a href="#LeetCode经典题" class="headerlink" title="LeetCode经典题"></a>LeetCode经典题</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a><strong>数据结构</strong></h2><h3 id="数组-amp-双指针"><a href="#数组-amp-双指针" class="headerlink" title="数组&amp;双指针"></a><strong>数组&amp;双指针</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/two-sum/">LeetCode 1. 两数之和</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">LeetCode 4. 寻找两个正序数组的中位数</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/3sum/">LeetCode 15. 三数之和</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/sort-colors/">LeetCode 75. 颜色分类</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/minimum-window-substring/">LeetCode 76. 最小覆盖子串</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/linked-list-cycle-ii/">LeetCode 142. 环形链表 II</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/palindrome-linked-list/">LeetCode 234. 回文链表</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/move-zeroes/">LeetCode 283. 移动零</a></li>
+</ol>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a><strong>链表</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/">LeetCode 19. 删除链表的倒数第 N 个结点</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/sort-list/">LeetCode 148. 排序链表</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/intersection-of-two-linked-lists/">LeetCode 160. 相交链表</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/reverse-linked-list/">LeetCode 206. 反转链表</a></li>
+</ol>
+<h3 id="队列-amp-栈"><a href="#队列-amp-栈" class="headerlink" title="队列&amp;栈"></a><strong>队列&amp;栈</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/valid-parentheses/">LeetCode 20. 有效的括号</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/merge-two-sorted-lists/">LeetCode 21. 合并两个有序链表</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/largest-rectangle-in-histogram/">LeetCode 84. 柱状图中最大的矩形</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/maximal-rectangle/">LeetCode 85. 最大矩形</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/min-stack/">LeetCode 155. 最小栈</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/sliding-window-maximum/">LeetCode 239. 滑动窗口最大值</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/decode-string/">LeetCode 394. 字符串解码</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/daily-temperatures/">LeetCode 739. 每日温度</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">LeetCode 3. 无重复字符的最长子串</a></li>
+</ol>
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a><strong>哈希表</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/group-anagrams/">LeetCode 49. 字母异位词分组</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/longest-consecutive-sequence/">128. 最长连续序列</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/linked-list-cycle/">LeetCode 141. 环形链表</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/lru-cache/">LeetCode 146. LRU 缓存机制</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/subarray-sum-equals-k/">LeetCode 560. 和为K的子数组</a></li>
+</ol>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a><strong>二叉树</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">LeetCode 94. 二叉树的中序遍历</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/symmetric-tree/">101. 对称二叉树</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">102. 二叉树的层序遍历</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">LeetCode 104. 二叉树的最大深度</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">LeetCode 105. 从前序与中序遍历序列构造二叉树</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/">LeetCode 114. 二叉树展开为链表</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/diameter-of-binary-tree/">LeetCode 543. 二叉树的直径</a></li>
+</ol>
+<h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a><strong>二叉搜索树</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/unique-binary-search-trees/">LeetCode 96. 不同的二叉搜索树</a></li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/validate-binary-search-tree/">LeetCode 98. 验证二叉搜索树</a></li>
+</ol>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a><strong>算法</strong></h2><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a><strong>模拟</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/rotate-image/">LeetCode 48. 旋转图像</a></li>
+</ol>
+<h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a><strong>贪心</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/container-with-most-water/">LeetCode 11. 盛最多水的容器</a></li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/">LeetCode 714. 买卖股票的最佳时机含手续费</a></li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/">LeetCode 122. 买卖股票的最佳时机 II</a></li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/jump-game/">LeetCode 55. 跳跃游戏</a></li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/">LeetCode 309. 最佳买卖股票时机含冷冻期</a></li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/queue-reconstruction-by-height/">LeetCode 406. 根据身高重建队列</a></li>
+</ol>
+<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a><strong>二分</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">LeetCode 33. 搜索旋转排序数组</a></li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/">LeetCode 34. 在排序数组中查找元素的第一个和最后一个位置</a></li>
+</ol>
+<h3 id="递归-amp-回溯"><a href="#递归-amp-回溯" class="headerlink" title="递归&amp;回溯"></a><strong>递归&amp;回溯</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/">LeetCode 17. 电话号码的字母组合</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/generate-parentheses/">LeetCode 22. 括号生成</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/combination-sum/">LeetCode 39. 组合总和</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/permutations/">LeetCode 46. 全排列</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/subsets/">LeetCode 78. 子集</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/word-search/">LeetCode 79. 单词搜索</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/invert-binary-tree/">LeetCode 226. 翻转二叉树</a></li>
+</ol>
+<h3 id="深度优先搜索DFS"><a href="#深度优先搜索DFS" class="headerlink" title="深度优先搜索DFS"></a><strong>深度优先搜索DFS</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">LeetCode 236. 二叉树的最近公共祖先</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/remove-invalid-parentheses/">LeetCode 301. 删除无效的括号</a></li>
+</ol>
+<h3 id="宽度优先搜索BFS"><a href="#宽度优先搜索BFS" class="headerlink" title="宽度优先搜索BFS"></a><strong>宽度优先搜索BFS</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/number-of-islands/">LeetCode 200. 岛屿数量</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/merge-two-binary-trees/">LeetCode 617. 合并二叉树</a></li>
+</ol>
+<h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a><strong>分治</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/maximum-subarray/">LeetCode 53. 最大子序和</a></li>
+</ol>
+<h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a><strong>排序算法</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/merge-intervals/">LeetCode 56. 合并区间</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">LeetCode 215. 数组中的第K个最大元素</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/top-k-frequent-elements/">LeetCode 347. 前 K 个高频元素</a></li>
+</ol>
+<h3 id="Manacher算法"><a href="#Manacher算法" class="headerlink" title="Manacher算法"></a><strong>Manacher算法</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/longest-palindromic-substring/">LeetCode 5. 最长回文子串</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/palindromic-substrings/">LeetCode 647. 回文子串</a></li>
+</ol>
+<h3 id="字典树Trie"><a href="#字典树Trie" class="headerlink" title="字典树Trie"></a><strong>字典树Trie</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/word-break/">LeetCode 139. 单词拆分</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/implement-trie-prefix-tree/">LeetCode 208. 实现 Trie (前缀树)</a></li>
+</ol>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a><strong>动态规划</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/regular-expression-matching/">LeetCode 10. 正则表达式匹配</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/longest-valid-parentheses/">LeetCode 32. 最长有效括号</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/trapping-rain-water/">LeetCode 42. 接雨水</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/unique-paths/">LeetCode 62. 不同路径</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/minimum-path-sum/">LeetCode 64. 最小路径和</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/climbing-stairs/">LeetCode 70. 爬楼梯</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/edit-distance/">LeetCode 72. 编辑距离</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/word-break/">LeetCode 139. 单词拆分</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/maximum-product-subarray/">LeetCode 152. 乘积最大子数组</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/house-robber/">LeetCode 198. 打家劫舍</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/maximal-square/">LeetCode 221. 最大正方形</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/longest-increasing-subsequence/">LeetCode 300. 最长递增子序列</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/house-robber-iii/">LeetCode 337. 打家劫舍 III</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/partition-equal-subset-sum/">LeetCode 416. 分割等和子集</a> </li>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/target-sum/">LeetCode 494. 目标和</a></li>
+</ol>
+<h3 id="最短路算法"><a href="#最短路算法" class="headerlink" title="最短路算法"></a><strong>最短路算法</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/network-delay-time/">LeetCode 743. 网络延迟时间</a></li>
+</ol>
+<h3 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a><strong>最小生成树</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/min-cost-to-connect-all-points/">1584. 连接所有点的最小费用</a></li>
+</ol>
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a><strong><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:388470520%7D">拓扑排序</a></strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/course-schedule/">LeetCode 207. 课程表</a></li>
+</ol>
+<h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a><strong>并查集</strong></h3><ol>
+<li><a href="https://link.zhihu.com/?target=https://leetcode-cn.com/problems/evaluate-division/">LeetCode 399. 除法求值</a></li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/dog.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">22 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">1.贪心算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9C%80%E4%BC%98%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">1 最优合并问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B1%BD%E8%BD%A6%E5%8A%A0%E6%B2%B9%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">2 汽车加油问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C5%E9%99%84%E5%8A%A0%E9%A2%98-%E6%B1%BD%E8%BD%A6%E5%8A%A0%E6%B2%B9%E9%97%AE%E9%A2%98%EF%BC%88%E9%80%89%E5%81%9A%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">实验5附加题-汽车加油问题（选做）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LeetCode"><span class="toc-number">2.</span> <span class="toc-text">LeetCode</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode-53-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C"><span class="toc-number">2.1.</span> <span class="toc-text">LeetCode-53. 最大子序和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode-69-Sqrt-x"><span class="toc-number">2.2.</span> <span class="toc-text">LeetCode-69. Sqrt(x)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode-70-%E7%88%AC%E6%A5%BC%E6%A2%AF"><span class="toc-number">2.3.</span> <span class="toc-text">LeetCode-70. 爬楼梯</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LeetCode%E7%BB%8F%E5%85%B8%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">LeetCode经典题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.</span> <span class="toc-text">数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-amp-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-number">3.1.1.</span> <span class="toc-text">数组&amp;双指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8"><span class="toc-number">3.1.2.</span> <span class="toc-text">链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97-amp-%E6%A0%88"><span class="toc-number">3.1.3.</span> <span class="toc-text">队列&amp;栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-number">3.1.4.</span> <span class="toc-text">哈希表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">3.1.5.</span> <span class="toc-text">二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91"><span class="toc-number">3.1.6.</span> <span class="toc-text">二叉搜索树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F"><span class="toc-number">3.2.1.</span> <span class="toc-text">模拟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83"><span class="toc-number">3.2.2.</span> <span class="toc-text">贪心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%88%86"><span class="toc-number">3.2.3.</span> <span class="toc-text">二分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92-amp-%E5%9B%9E%E6%BA%AF"><span class="toc-number">3.2.4.</span> <span class="toc-text">递归&amp;回溯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2DFS"><span class="toc-number">3.2.5.</span> <span class="toc-text">深度优先搜索DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2BFS"><span class="toc-number">3.2.6.</span> <span class="toc-text">宽度优先搜索BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%B2%BB"><span class="toc-number">3.2.7.</span> <span class="toc-text">分治</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">3.2.8.</span> <span class="toc-text">排序算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Manacher%E7%AE%97%E6%B3%95"><span class="toc-number">3.2.9.</span> <span class="toc-text">Manacher算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E6%A0%91Trie"><span class="toc-number">3.2.10.</span> <span class="toc-text">字典树Trie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">3.2.11.</span> <span class="toc-text">动态规划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95"><span class="toc-number">3.2.12.</span> <span class="toc-text">最短路算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="toc-number">3.2.13.</span> <span class="toc-text">最小生成树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F"><span class="toc-number">3.2.14.</span> <span class="toc-text">拓扑排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-number">3.2.15.</span> <span class="toc-text">并查集</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        </br>
+        
+        <span class="gradient-text">
+            <a href="https://beian.miit.gov.cn/" title="beian.miit.gov.cn" target="_blank" rel="noopener">beian.miit.gov.cn</a>
+        </span>
+        
+        
+        </br>
+        <span style="display: inline-block;"> <img src=/null></span>
+        
+        <span class="gradient-text">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602009049" title="www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049" target="_blank" rel="noopener">www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049</a>
+        </span>
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>

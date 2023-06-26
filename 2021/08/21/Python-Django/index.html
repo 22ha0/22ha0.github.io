@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Python Django - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="Django框架的MVC流程
+Django框架目录介绍
+入门比较重要的命令django-admin startproject mainproject # 创建项目
+python manage.py ,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/dog.jpg"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+    
+    <script>var musiclist = ""</script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+
+    
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Python Django</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                August 21, 2021
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/08/21/Python-Django/" title="Python Django" class="">Python Django</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    11k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    10 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Django/" rel="tag">Django</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="Django框架的MVC流程"><a href="#Django框架的MVC流程" class="headerlink" title="Django框架的MVC流程"></a>Django框架的MVC流程</h1><p><img src="/Python-Django/image-20210821112056057.png" alt="image-20210821112056057"></p>
+<h1 id="Django框架目录介绍"><a href="#Django框架目录介绍" class="headerlink" title="Django框架目录介绍"></a>Django框架目录介绍</h1><p><img src="/Python-Django/image-20210821112901395.png" alt="image-20210821112901395"></p>
+<h1 id="入门比较重要的命令"><a href="#入门比较重要的命令" class="headerlink" title="入门比较重要的命令"></a>入门比较重要的命令</h1><pre><code class="python">django-admin startproject mainproject # 创建项目
+python manage.py firstWEB #创建APP（进入工程目录）
+python manage.py makemigrations #创建库表（进入工程目录）
+python manage.py migrate  #执行库表建立（进入工程目录）
+#模板渲染嵌入语法：在html可以嵌入后台语言 区分符号-》&gt;   &#123;%命令%&#125; &#123;&#123;变量&#125;&#125;
+</code></pre>
+<p>入门的几个设置</p>
+<ul>
+<li>Django框架时间设置</li>
+<li>Django APP添加</li>
+<li>Templates目录设置（在APP目录下，需要独立创建）</li>
+</ul>
+<p>安装Django</p>
+<pre><code class="shell">pip install django
+</code></pre>
+<pre><code>django-admin startproject mainproject # 创建项目
+python manage.py startapp firstWEB 
+</code></pre>
+<pre><code class="python">#--setting.py
+
+#允许什么地址访问你 如果主要内网访问 就加上“*,”
+ALLOWED_HOSTS = []
+
+# Application definition
+INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;firstWEB&#39;, #添加firstWEB
+]
+
+LANGUAGE_CODE = &#39;zh-Hans&#39; #语言
+
+TIME_ZONE = &#39;Asia/Beijing&#39; #时间
+
+STATIC_URL = &#39;/static/&#39; #静态文件目录
+</code></pre>
+<p>点击运行，访问<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p><img src="/Python-Django/image-20210821151001681.png" alt="image-20210821151001681"></p>
+<pre><code class="python">#--urls.py
+urlpatterns = [
+    path(&#39;admin/&#39;, admin.site.urls),
+   #path(&#39;打开的地址&#39;, 要调用映射的views中的文件)
+]
+</code></pre>
+<pre><code class="python">#--views.py
+def index(request): #request 请求
+    return render(request,&#39;index.html&#39;) #render渲染 
+#--urls.py
+from firstWEB import views
+urlpatterns = [
+    path(&#39;admin/&#39;, admin.site.urls),
+    path(&#39;index/&#39;, views.index)
+]
+#在templates文件夹添加一个index.html文件，写上自己的网址即可，然后运行
+</code></pre>
+<h1 id="创建一个加法页面"><a href="#创建一个加法页面" class="headerlink" title="创建一个加法页面"></a>创建一个加法页面</h1><pre><code class="python">#-- views.py
+def CalPage(request):
+    return render(request,&#39;cal.html&#39;)
+#在templates文件夹下创建一个cal.html文件
+
+#--urls.py
+path(&#39;calpage/&#39;,views.CalPage)
+path(&#39;cal&#39;,views.Cal) #调用加法函数
+</code></pre>
+<pre><code class="python">#--views.py
+def Cal(request):
+
+    value_a = request.POST[&#39;valueA&#39;]
+    value_b = request.POST[&#39;valueB&#39;]
+    result = int(value_b) + int(value_a)
+    return render(request,&quot;result.html&quot;,context=&#123;&#39;data&#39;:result&#125;)
+</code></pre>
+<p>cal.html</p>
+<pre><code class="HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;计算页面&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form method=&quot;POST&quot; action=&quot;/cal&quot;&gt;
+    &#123;% csrf_token %&#125;
+    &lt;input type=&quot;number&quot; name=&quot;valueA&quot;&gt;
+    &lt;input type=&quot;number&quot; name=&quot;valueB&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交计算&quot;&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>result.html</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;结果页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;计算结果是:&lt;/h1&gt;&lt;h2&gt;&#123;&#123; data &#125;&#125;&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="保存数据到数据库"><a href="#保存数据到数据库" class="headerlink" title="保存数据到数据库"></a>保存数据到数据库</h2><p>models.py用来创建数据库</p>
+<pre><code class="python">#--models.py
+class cal(models.Model): #表的描述
+    value_a = models.CharField(max_length=10)#定义字段类型
+    value_b = models.FloatField(max_length=10)
+    result = models.CharField(max_length=10)
+</code></pre>
+<p>​	</p>
+<p>pycharm链接数据库</p>
+<p><img src="/Python-Django/image-20210822150531120.png" alt="image-20210822150531120"></p>
+<p><img src="/Python-Django/image-20210822150603585.png" alt="image-20210822150603585"></p>
+<p>创建了表的描述并不是创建了表</p>
+<p>所以还需要创建表</p>
+<p><img src="/Python-Django/image-20210822150851925.png" alt="image-20210822150851925"></p>
+<p><img src="/Python-Django/image-20210822151229961.png" alt="image-20210822151229961"></p>
+<pre><code class="shell">python manage.py makemigrations
+python manage.py migrate
+</code></pre>
+<p><img src="/Python-Django/image-20210822151337682.png" alt="image-20210822151337682"></p>
+<h3 id="保存数据库"><a href="#保存数据库" class="headerlink" title="保存数据库"></a>保存数据库</h3><pre><code class="python">#--views.py
+from .models import cal
+
+def Cal(request):
+
+    value_a = request.POST[&#39;valueA&#39;]
+    value_b = request.POST[&#39;valueB&#39;]
+    result = int(value_b) + int(value_a)
+    cal.objects.create(value_a = value_a,value_b = value_b,result = result)
+
+    return render(request,&quot;result.html&quot;,context=&#123;&#39;data&#39;:result&#125;) 
+</code></pre>
+<h3 id="把页面打印出来"><a href="#把页面打印出来" class="headerlink" title="把页面打印出来"></a>把页面打印出来</h3><p>在templates中创建一个list.html的文件</p>
+<pre><code class="python">#--views.py
+def CalList(request):
+    data = cal.objects.all()
+    retuen render(request,&#39;list.html&#39;,context=&#123;&#39;data&#39;:data&#125;)
+</code></pre>
+<pre><code class="python">#--urls.py
+path(&#39;list&#39;,views.CalList)
+</code></pre>
+<p>list.html</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Cal list&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table border=&quot;1&quot;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;valueA&lt;/th&gt;
+        &lt;th&gt;valueB&lt;/th&gt;
+        &lt;th&gt;result&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &#123;% for data1 in data %&#125;
+    <tr>
+        <td>&#123;&#123; data.value_a &#125;&#125;</td>
+        <td>&#123;&#123; data.value_b &#125;&#125;</td>
+        <td>&#123;&#123; data.result &#125;&#125;</td>
+    </tr>
+    &#123;% endfor %&#125;
+
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="/Python-Django/image-20210823154237357.png" alt="image-20210823154237357"></p>
+<h3 id="清库功能"><a href="#清库功能" class="headerlink" title="清库功能"></a>清库功能</h3><p>list.html</p>
+<pre><code class="html">&lt;form method=&quot;POST&quot; action=&quot;/del&quot;&gt;
+    &#123;% csrf_token %&#125;
+    &lt;input type=&quot;submit&quot; value=&quot;清库&quot;&gt;
+&lt;/form&gt;
+</code></pre>
+<pre><code class="python">#--urls.py
+path(&#39;del&#39;,views.deldata)
+</code></pre>
+<pre><code class="python">#--views.py
+from django.http import HttpResponse
+def deldata(request):
+    cal.objects.all().delete()
+    return HttpResponse(&#39;Data Deleted&#39;)
+</code></pre>
+<h2 id="加法页面总结"><a href="#加法页面总结" class="headerlink" title="加法页面总结"></a>加法页面总结</h2><pre><code class="python">#--models.py
+from django.db import models
+
+# Create your models here.
+class cal(models.Model): #表的描述
+    value_a = models.CharField(max_length=10)#定义字段类型
+    value_b = models.FloatField(max_length=10)
+    result = models.CharField(max_length=10)
+</code></pre>
+<pre><code class="python">#--views.py
+from django.shortcuts import render
+from firstWEB import models
+from .models import cal
+from django.http import HttpResponse
+# Create your views here.
+
+#渲染页面返回到前端
+def index(request): #request 请求
+    return render(request,&#39;index.html&#39;) #render渲染
+
+def CalPage(request):
+    return render(request,&#39;cal.html&#39;)
+
+def Cal(request):
+
+    value_a = request.POST[&#39;valueA&#39;]
+    value_b = request.POST[&#39;valueB&#39;]
+    result = int(value_b) + int(value_a)
+    cal.objects.create(value_a = value_a,value_b = value_b,result = result)
+
+    return render(request,&quot;result.html&quot;,context=&#123;&#39;data&#39;:result&#125;)
+
+def CalList(request):
+    data = cal.objects.all()
+    return render(request,&#39;list.html&#39;,context=&#123;&#39;data&#39;:data&#125;)
+
+def deldata(request):
+    cal.objects.all().delete()
+    return HttpResponse(&#39;Data Deleted&#39;)
+</code></pre>
+<pre><code class="python">#--urls.py
+&quot;&quot;&quot;mainproject URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path(&#39;&#39;, views.home, name=&#39;home&#39;)
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path(&#39;&#39;, Home.as_view(), name=&#39;home&#39;)
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path(&#39;blog/&#39;, include(&#39;blog.urls&#39;))
+&quot;&quot;&quot;
+from django.contrib import admin
+from django.urls import path
+from firstWEB import views
+urlpatterns = [
+    path(&#39;admin/&#39;, admin.site.urls),
+    path(&#39;index/&#39;, views.index),
+    path(&#39;calpage/&#39;,views.CalPage),
+    path(&#39;cal&#39;,views.Cal),
+    path(&#39;list&#39;,views.CalList),
+    path(&#39;del&#39;,views.deldata)
+]
+</code></pre>
+<pre><code class="html">&lt;!--cal.html--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;计算页面&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form method=&quot;POST&quot; action=&quot;/cal&quot;&gt;
+    &#123;% csrf_token %&#125;
+    &lt;input type=&quot;number&quot; name=&quot;valueA&quot;&gt;
+    &lt;input type=&quot;number&quot; name=&quot;valueB&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交计算&quot;&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="html">&lt;!--list.html--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Cal list&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table border=&quot;1&quot;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;valueA&lt;/th&gt;
+        &lt;th&gt;valueB&lt;/th&gt;
+        &lt;th&gt;result&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &#123;% for data1 in data %&#125;
+    <tr>
+        <td>&#123;&#123; data1.value_a &#125;&#125;</td>
+        <td>&#123;&#123; data1.value_b &#125;&#125;</td>
+        <td>&#123;&#123; data1.result &#125;&#125;</td>
+    </tr>
+    &#123;% endfor %&#125;
+&lt;/table&gt;
+&lt;form method=&quot;POST&quot; action=&quot;/del&quot;&gt;
+    &#123;% csrf_token %&#125;
+    &lt;input type=&quot;submit&quot; value=&quot;清库&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="html">&lt;!--result.html--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;结果页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;计算结果是:&lt;/h1&gt;&lt;h2&gt;&#123;&#123; data &#125;&#125;&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/dog.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">22 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Django%E6%A1%86%E6%9E%B6%E7%9A%84MVC%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">Django框架的MVC流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Django%E6%A1%86%E6%9E%B6%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">Django框架目录介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A5%E9%97%A8%E6%AF%94%E8%BE%83%E9%87%8D%E8%A6%81%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">入门比较重要的命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8A%A0%E6%B3%95%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">创建一个加法页面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">4.1.</span> <span class="toc-text">保存数据到数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">4.1.1.</span> <span class="toc-text">保存数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%8A%E9%A1%B5%E9%9D%A2%E6%89%93%E5%8D%B0%E5%87%BA%E6%9D%A5"><span class="toc-number">4.1.2.</span> <span class="toc-text">把页面打印出来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E5%BA%93%E5%8A%9F%E8%83%BD"><span class="toc-number">4.1.3.</span> <span class="toc-text">清库功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E9%A1%B5%E9%9D%A2%E6%80%BB%E7%BB%93"><span class="toc-number">4.2.</span> <span class="toc-text">加法页面总结</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        </br>
+        
+        <span class="gradient-text">
+            <a href="https://beian.miit.gov.cn/" title="beian.miit.gov.cn" target="_blank" rel="noopener">beian.miit.gov.cn</a>
+        </span>
+        
+        
+        </br>
+        <span style="display: inline-block;"> <img src=/null></span>
+        
+        <span class="gradient-text">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602009049" title="www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049" target="_blank" rel="noopener">www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049</a>
+        </span>
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>

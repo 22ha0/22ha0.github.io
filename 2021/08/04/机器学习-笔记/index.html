@@ -1,0 +1,997 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>机器学习-笔记 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="NumPy函数库from numpy import *
+
+生成一个4*4的数组
+&amp;gt;&amp;gt;&amp;gt; numpy.random.rand(4,4)
+array([[0.80163081, 0.2,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/dog.jpg"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+    
+    <script>var musiclist = ""</script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+
+    
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">机器学习-笔记</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                August 04, 2021
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/08/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/" title="机器学习-笔记" class="">机器学习-笔记</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    28k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    26 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="NumPy函数库"><a href="#NumPy函数库" class="headerlink" title="NumPy函数库"></a>NumPy函数库</h1><pre><code class="python">from numpy import *
+</code></pre>
+<p>生成一个4*4的数组</p>
+<pre><code class="python">&gt;&gt;&gt; numpy.random.rand(4,4)
+array([[0.80163081, 0.23008351, 0.44863583, 0.92603239],
+       [0.63965392, 0.54158411, 0.14149293, 0.96833658],
+       [0.65969625, 0.27623482, 0.04088929, 0.33459342],
+       [0.86289853, 0.25951974, 0.74760047, 0.34809279]])
+</code></pre>
+<p>numpy中存在两种不同的数据类型（矩阵matrix和数组array），都可以用于处理行列表示的数字元素，虽然看起来相似但在处理相同的数学运算可得到不同的结果。</p>
+<pre><code class="python">mat(numpy.random.rand(4,4)) #可将数组转化为矩阵
+</code></pre>
+<pre><code class="python">&gt;&gt;&gt; randMat = numpy.mat(numpy.random.rand(4,4))
+&gt;&gt;&gt; print(randMat)
+[[0.71706946 0.1258772  0.55510408 0.12352685]
+ [0.11085632 0.4458693  0.02158896 0.67959614]
+ [0.23393777 0.9965666  0.1254053  0.92926846]
+ [0.02608629 0.5341115  0.57497612 0.97052454]]
+</code></pre>
+<p>.I操作符实现了矩阵求逆的运算</p>
+<pre><code class="python">&gt;&gt;&gt;randMat.I
+matrix([[ 1.26256632e+00,  2.11443878e+00, -4.63873260e-01,
+         -1.19714901e+00],
+        [-3.29391380e-01, -3.30669883e+00,  2.59029623e+00,
+         -1.22791482e-01],
+        [ 2.44676089e-01, -2.73432913e+00,  3.75829650e-01,
+          1.52367998e+00],
+        [ 2.38340118e-03,  3.38287376e+00, -1.63571275e+00,
+          2.27437740e-01]])
+</code></pre>
+<p>eye(4)可生成一个4*4的单位阵</p>
+<pre><code class="python">&gt;&gt;&gt; numpy.eye(4)
+array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+</code></pre>
+<pre><code class="python">dataSet.shape[0] #读取矩阵的长度,读取第一维度的长度
+</code></pre>
+<p>tile函数</p>
+<pre><code class="python">Examples
+    --------
+    &gt;&gt;&gt; a = np.array([0, 1, 2])
+    &gt;&gt;&gt; np.tile(a, 2)
+    array([0, 1, 2, 0, 1, 2]) #向一个维度扩展（横向）
+    &gt;&gt;&gt; np.tile(a, (2, 2))
+    array([[0, 1, 2, 0, 1, 2],
+           [0, 1, 2, 0, 1, 2]]) #向两个维度扩展【行方向（横向）与列方向（纵向）】
+    &gt;&gt;&gt; np.tile(a, (2, 1, 2))
+    array([[[0, 1, 2, 0, 1, 2]],
+           [[0, 1, 2, 0, 1, 2]]])#向3个维度扩展，与二维的不同在于reps的第一个参数代表扩展几块，这里是2块，第二和第三个参数才代表扩展后的维度（有几行，有几列）
+</code></pre>
+<p>​    </p>
+<pre><code class="python">&gt;&gt;&gt; b = np.array([[1, 2], [3, 4]])
+&gt;&gt;&gt; np.tile(b, 2) #b是一个整体元素，这里在一维上进行扩展，也就是横向复制
+array([[1, 2, 1, 2],
+       [3, 4, 3, 4]]) 
+&gt;&gt;&gt; np.tile(b, (2, 1))#b是一个整体元素，在行方向上由1个复制为2个，列方向为1，所以不复制
+array([[1, 2],
+       [3, 4],
+       [1, 2],
+       [3, 4]])
+
+&gt;&gt;&gt; c = np.array([1,2,3,4])
+&gt;&gt;&gt; np.tile(c,(4,1))
+array([[1, 2, 3, 4],
+       [1, 2, 3, 4],
+       [1, 2, 3, 4],
+       [1, 2, 3, 4]])
+</code></pre>
+<p>numpy.sum中axis属性</p>
+<p>现在对于数据的处理更多的还是numpy。没有axis参数表示全部相加，axis＝0表示按列相加，axis＝1表示按照行的方向相加</p>
+<pre><code class="python">&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; a=np.sum([[0,1,2],[2,1,3]])
+&gt;&gt;&gt; a
+9
+&gt;&gt;&gt; a.shape
+()
+&gt;&gt;&gt; a=np.sum([[0,1,2],[2,1,3]],axis=0)
+&gt;&gt;&gt; a
+array([2, 2, 5])
+&gt;&gt;&gt; a.shape
+(3,)
+&gt;&gt;&gt; a=np.sum([[0,1,2],[2,1,3]],axis=1)
+&gt;&gt;&gt; a
+array([3, 6])
+&gt;&gt;&gt; a.shape
+(2,)
+</code></pre>
+<p>argsort()函数是将x中的元素从小到大排列，提取其对应的index(索引号)</p>
+<pre><code class="python">&gt;&gt;&gt; x = np.array([3, 1, 2])
+&gt;&gt;&gt; np.argsort(x) #按升序排列
+array([1, 2, 0])
+&gt;&gt;&gt; np.argsort(-x) #按降序排列
+array([0, 2, 1])
+
+One dimensional array:一维数组
+
+    &gt;&gt;&gt; x = np.array([3, 1, 2])
+    &gt;&gt;&gt; np.argsort(x)
+    array([1, 2, 0])
+
+    Two-dimensional array:二维数组
+
+    &gt;&gt;&gt; x = np.array([[0, 3], [2, 2]])
+    &gt;&gt;&gt; x
+    array([[0, 3],
+           [2, 2]])
+
+    &gt;&gt;&gt; np.argsort(x, axis=0) #按列排序
+    array([[0, 1],
+           [1, 0]])
+
+    &gt;&gt;&gt; np.argsort(x, axis=1) #按行排序
+    array([[0, 1],
+           [0, 1]])
+</code></pre>
+<h2 id="将文本记录到转换NumPy的解析程序"><a href="#将文本记录到转换NumPy的解析程序" class="headerlink" title="将文本记录到转换NumPy的解析程序"></a>将文本记录到转换NumPy的解析程序</h2><pre><code class="python">def file2matrix(filename):
+    love_dictionary = &#123;&#39;largeDoses&#39;:3, &#39;smallDoses&#39;:2, &#39;didntLike&#39;:1&#125;
+    fr = open(filename)
+    arrayOLines = fr.readlines()#readlines() 方法用于读取所有行(直到结束符 EOF)并返回列表。
+    numberOfLines = len(arrayOLines)#获取文件行数
+    returnMat = np.zeros((numberOfLines, 3))        ## 创建一个初始值为0，大小为 numberOfLines x 3 的数组
+    classLabelVector = []#用于保存每个数据的类别标签
+    index = 0
+    for line in arrayOLines:
+        line = line.strip()#截取掉所有的回车字符
+        listFromLine = line.split(&#39;\t&#39;) # 分割每行数据，保存到一个列表中
+        returnMat[index, :] = listFromLine[0:3]#将数据前三列提取出来，存放到returnMat的numpy矩阵中，也就是不含标签变量，只有特征变量。
+        if(listFromLine[-1].isdigit()):
+            # 直接赋值给classLabelVector
+            classLabelVector.append(int(listFromLine[-1]))# 保存分类标签
+        else:
+            # 如果listFromLine最后一个元素不是数字，而是字符串。根据字典love_dictionary转化为数字
+            # Python 字典(Dictionary) get() 函数返回指定键的值
+            classLabelVector.append(love_dictionary.get(listFromLine[-1]))
+        index += 1
+    return returnMat,classLabelVector
+</code></pre>
+<h1 id="operator函数库"><a href="#operator函数库" class="headerlink" title="operator函数库"></a>operator函数库</h1><h2 id="itemgetter"><a href="#itemgetter" class="headerlink" title="itemgetter"></a>itemgetter</h2><p>operator模块提供的itemgetter函数用于获取对象的哪些维的数据，参数为一些序号（即需要获取的数据在对象中的序号），下面看例子。</p>
+<pre><code class="python">1 k = [3,6,8]
+2 b = operator.itemgetter(1)
+3 print(b(k))
+4 #输出6
+1 k = [3,6,8]
+2 b = operator.itemgetter(2,0)
+3 print(b(k))
+4 #输出(8, 3)
+</code></pre>
+<p>要注意，operator.itemgetter函数获取的不是值，而是定义了一个函数，通过该函数作用到对象上才能获取值。</p>
+<pre><code class="python">1 students = [(&#39;john&#39;, &#39;C&#39;, 15), (&#39;jane&#39;, &#39;A&#39;, 12), (&#39;dave&#39;, &#39;B&#39;, 10)]
+2 s = sorted(students,key = operator.itemgetter(1,2))
+3 print(s)
+4 #输出[(&#39;jane&#39;, &#39;A&#39;, 12), (&#39;dave&#39;, &#39;B&#39;, 10), (&#39;john&#39;, &#39;C&#39;, 15)]
+</code></pre>
+<h1 id="Matplotlib函数库"><a href="#Matplotlib函数库" class="headerlink" title="Matplotlib函数库"></a>Matplotlib函数库</h1><p><a target="_blank" rel="noopener" href="https://www.runoob.com/numpy/numpy-matplotlib.html">https://www.runoob.com/numpy/numpy-matplotlib.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/matplotlib-tutorial.html">https://www.runoob.com/w3cnote/matplotlib-tutorial.html</a></p>
+<p>subplot() 函数允许你在同一图中绘制不同的东西。</p>
+<pre><code class="python">from matplotlib import pyplot as plt
+plt.savefig(‘test’, dpi = 600) #将绘制的图画保存成png格式，命名为 test
+plt.ylabel(&#39;y坐标名称&#39;) # y轴的名称
+plt.xlabel(&#39;x坐标名称&#39;)
+plt.axis([-1, 10, 0, 6]) #x轴起始于-1，终止于10 ，y轴起始于0，终止于6
+plt.plot(x,y)#绘制
+plt.subplot(3,2,4) #分成3行2列，共6个绘图区域，在第4个区域绘图。排序为行优先。也可 plt.subplot(324)，将逗号省略。
+plt.show() #显示图形
+</code></pre>
+<h2 id="plot函数"><a href="#plot函数" class="headerlink" title=".plot函数"></a>.plot函数</h2><pre><code>plt.plot(x, y, format_string, **kwargs): x为x轴数据，可为列表或数组；y同理；format_string 为控制曲线的格式字符串， **kwargs 第二组或更多的（x, y, format_string）
+
+format_string: 由 颜色字符、风格字符和标记字符组成。
+
+颜色字符：‘b’蓝色 ；‘#008000’RGB某颜色；‘0.8’灰度值字符串
+
+风格字符：‘-’实线；‘--’破折线； ‘-.’点划线； ‘：’虚线 ； ‘’‘’无线条
+
+标记字符：‘.’点标记 ‘o’ 实心圈 ‘v’倒三角 ‘^’上三角
+
+ 
+
+eg： plt.plot(a, a*1.5, ‘go-’,  a, a*2, ‘*’)  第二条无曲线，只有点
+</code></pre>
+<h2 id="plot-显示中文字符"><a href="#plot-显示中文字符" class="headerlink" title=".plot 显示中文字符"></a>.plot 显示中文字符</h2><pre><code>pyplot并不默认支持中文显示，需要rcParams修改字体来实现
+rcParams的属性：
+‘font.family’ 用于显示字体的名字
+‘font.style’ 字体风格，正常’normal’ 或斜体’italic’
+‘font.size’ 字体大小，整数字号或者’large’  ‘x-small’
+eg:
+import matplotlib
+matplotlib.rcParams[‘font.family’] = ‘STSong’
+matplotlib.rcParams[‘font.size’] = 20
+设定绘制区域的全部字体变成 华文仿宋，字体大小为20
+中文显示2：只希望在某地方绘制中文字符，不改变别的地方的字体
+在有中文输出的地方，增加一个属性： fontproperties
+eg:
+plt.xlabel(‘横轴：时间’, fontproperties = ‘simHei’, fontsize = 20)
+</code></pre>
+<h2 id="pyplot文本显示函数："><a href="#pyplot文本显示函数：" class="headerlink" title="pyplot文本显示函数："></a>pyplot文本显示函数：</h2><pre><code class="python">plt.xlabel()#对x轴增加文本标签
+plt.ylabel()#同理
+plt.title()#对图形整体增加文本标签
+plt.text()#在任意位置增加文本
+plt. annotate(s, xy = arrow_crd, xytext = text_crd, arrowprops = dict)
+#在图形中增加带箭头的注解。s表示要注解的字符串是什么，xy对应箭头所在的位置，xytext对应文本所在位置，arrowprops定义显示的属性
+eg:
+plt.xlabel(‘横轴：时间’， fontproperties = ‘SimHei’, fontsize = 15, color = ‘green’)
+plt.ylabel(‘纵轴：振幅’, fontproperties = ‘SimHei’, fontsize = 15)
+plt.title(r’正弦波实例 $y=cons(2\pi x)$’ , fontproperties = ‘SimHei’, fontsize = 25)
+plt.annotate (r’%mu=100$, xy = (2, 1), xytext = (3, 1.5),
+arrowprops = dict(facecolor = ‘black’, shrink = 0.1, width = 2)) # width表示箭头宽度
+plt.text (2, 1, r’$\mu=100$, fontsize = 15)
+plt.grid(True)
+plt. annotate(s, xy = arrow_crd, xytext = text_crd, arrowprops = dict)
+</code></pre>
+<h2 id="使用Matplotlib创建散点图"><a href="#使用Matplotlib创建散点图" class="headerlink" title="使用Matplotlib创建散点图"></a>使用Matplotlib创建散点图</h2><pre><code class="python">&gt;&gt;&gt; import matplotlib
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; fig = plt.figure()
+&gt;&gt;&gt; ax=fig.add_subplot(111)
+&gt;&gt;&gt;ax.scatter(datingDataMat[:,1],datingDataMat[:,2])
+&lt;matplotlib.collections.PathCollection object at 0x00000271B608B460&gt;
+&gt;&gt;&gt; plt.show()
+</code></pre>
+<p>figure语法说明</p>
+<p>figure(num&#x3D;None, figsize&#x3D;None, dpi&#x3D;None, facecolor&#x3D;None, edgecolor&#x3D;None, frameon&#x3D;True)</p>
+<p>num:图像编号或名称，数字为编号 ，字符串为名称</p>
+<p>figsize:指定figure的宽和高，单位为英寸；</p>
+<p>dpi参数指定绘图对象的分辨率，即每英寸多少个像素，缺省值为80 1英寸等于2.5cm,A4纸是 21*30cm的纸张</p>
+<p>facecolor:背景颜色</p>
+<p>edgecolor:边框颜色</p>
+<p>frameon:是否显示边框</p>
+<p>add_subplot(3, 2, 1) # 推荐此种写法</p>
+<p>add_subplot(321)</p>
+<table>
+<thead>
+<tr>
+<th>(3,2,1)</th>
+<th>(3,2,2)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(3,2,3)</td>
+<td>(3,2,4)</td>
+</tr>
+<tr>
+<td>(3,2,5)</td>
+<td>(3,2,6)</td>
+</tr>
+</tbody></table>
+<pre><code class="python">ax.scatter(datingDataMat[:,1],datingDataMat[:,2],15.0*array(datingLabels),15.0*array(datingLabels))
+#https://blog.csdn.net/weixin_30364325/article/details/96601143
+#scatter（x,y,s=1,c=&quot;g&quot;,marker=&quot;s&quot;,linewidths=0）
+#s:散列点的大小,c:散列点的颜色，marker：形状，linewidths：边框宽度
+</code></pre>
+<h1 id="K-近邻算法"><a href="#K-近邻算法" class="headerlink" title="K-近邻算法"></a>K-近邻算法</h1><p>简单的说，K-近邻算法采用测量不同特征值之间的距离方法进行分类。</p>
+<p>K-近邻算法</p>
+<p>优点：精度高、对异常值不敏感、无数据输入假定</p>
+<p>缺点：计算复杂度高、空间复杂度高</p>
+<p>适用数据范围：数值型和标称型</p>
+<h2 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h2><p>存在一个样本数据集合,也称作训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系。输入没有标签的新数据后,将新数据的每个特征与样本集中数据对应的特征进行比较,然后算法提取样本集中特征最相似数据(最近邻）的分类标签。一般来说，我们只选择样本数据集中前k个最相似的数据,这就是k-近邻算法中k的出处,通常k是不大于20的整数。最后,选择k个最相似数据中出现次数最多的分类，作为新数据的分类。</p>
+<h2 id="K-近邻算法的一般流程"><a href="#K-近邻算法的一般流程" class="headerlink" title="K-近邻算法的一般流程"></a>K-近邻算法的一般流程</h2><p>k-近邻算法的一般流程<br>(1)收集数据:可以使用任何方法。</p>
+<p>(2)准备数据:距离计算所需要的数值，最好是结构化的数据格式。T(3)分析数据:可以使用任何方法。</p>
+<p>(4)训练算法:此步骤不适用于k-近邻算法。</p>
+<p>(5)测试算法:计算错误率。</p>
+<p>(6)使用算法:首先需要输入样本数据和结构化的输出结果，然后运行k-近邻算法判定输入数据分别属于哪个分类，最后应用对计算出的分类执行后续的处理。</p>
+<h2 id="数据准备：归一化数值"><a href="#数据准备：归一化数值" class="headerlink" title="数据准备：归一化数值"></a>数据准备：归一化数值</h2><pre><code class="python">def autoNorm(dataSet):
+    minVals = dataSet.min(0)
+    maxVals = dataSet.max(0)#参数0使得函数可以从列选取最大最小值，而不是选取当前行的最大最小值
+    ranges = maxVals - minVals
+    normDataSet = np.zeros(np.shape(dataSet))
+    #shape：查看矩阵或者数组的维数
+    #创建一个和dataSet一样维度的数组
+    m = dataSet.shape[0]
+    #返回第一维的长度
+    normDataSet = dataSet - np.tile(minVals, (m, 1))
+    normDataSet = normDataSet/np.tile(ranges, (m, 1))   #特征矩阵有1000*3个值，而minVals，range的值为1*3.为解决这个问题我们使用Numpy中tile()函数将变量内容复制成输入矩阵同等大小的矩阵
+    return normDataSet, ranges, minVals
+</code></pre>
+<p>在处理不同取值范围的特征值时，我们通常采用的方法是将数值归一化如将数值处理为0到1 或-1到1之间，下面的公式可以将任意取值范围的特征值转化为0到1区间内的值：</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151905615.png" alt="image-20210804151905615"></p>
+<p>min和max为数据集中最小特征值和最大特征值</p>
+<h2 id="分类器针对网站的测试代码"><a href="#分类器针对网站的测试代码" class="headerlink" title="分类器针对网站的测试代码"></a>分类器针对网站的测试代码</h2><pre><code class="python">def datingClassTest():
+    hoRatio = 0.10      #10%拿去做测试
+    datingDataMat, datingLabels = file2matrix(&#39;datingTestSet2.txt&#39;)       #从文件加载数据集
+    normMat, ranges, minVals = autoNorm(datingDataMat) #数据处理-归一化数值
+    m = normMat.shape[0] #第一维的长度
+    numTestVecs = int(m*hoRatio)#测试集的个数
+    errorCount = 0.0 #记录出错的次数
+    for i in range(numTestVecs):
+                #0~numTestVecs为测试集 numTestVecs~m为训练集个数
+        classifierResult=classify0(normMat[i,:],normMat[numTestVecs:m,:],datingLabels[numTestVecs:m],3)
+        #打印预测结果
+        print(&quot;the classifier came back with: %d, the real answer is: %d&quot; % (classifierResult, datingLabels[i]))
+        #判断是否错误
+        if (classifierResult != datingLabels[i]): errorCount += 1.0
+            #打印错误率
+    print(&quot;the total error rate is: %f&quot; % (errorCount / float(numTestVecs)))
+    print(errorCount)
+</code></pre>
+<h2 id="预测函数"><a href="#预测函数" class="headerlink" title="预测函数"></a>预测函数</h2><pre><code class="python">def classifyPerson():
+    resultList = [&#39;not at all&#39;, &#39;in small doses&#39;, &#39;in large doses&#39;] #预测结果
+    percentTats = float(input(&quot;percentage of time spent playing video games?&quot;))
+    ffMiles = float(input(&quot;frequent flier miles earned per year?&quot;))
+    iceCream = float(input(&quot;liters of ice cream consumed per year?&quot;))
+    datingDataMat, datingLabels = file2matrix(&#39;datingTestSet2.txt&#39;)#导入数据
+    normMat, ranges, minVals = autoNorm(datingDataMat)
+    inArr = np.array([ffMiles, percentTats, iceCream, ])#需要预测的数据
+    classifierResult = classify0((inArr - minVals)/ranges, normMat, datingLabels, 3)
+    print(&quot;You will probably like this person: %s&quot; % resultList[classifierResult - 1])
+</code></pre>
+<h1 id="决策树（ID3，C4-5，CART，C5）"><a href="#决策树（ID3，C4-5，CART，C5）" class="headerlink" title="决策树（ID3，C4.5，CART，C5）"></a>决策树（ID3，C4.5，CART，C5）</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/c406495762/article/details/75663451?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162090531916780255260545%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=162090531916780255260545&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-3-75663451.nonecase&utm_term=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&spm=1018.2226.3001.4450">https://blog.csdn.net/c406495762/article/details/75663451?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162090531916780255260545%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=162090531916780255260545&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-3-75663451.nonecase&amp;utm_term=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&amp;spm=1018.2226.3001.4450</a></p>
+<p>决策树是什么？决策树(decision tree)是一种基本的分类与回归方法。举个通俗易懂的例子，如下图所示的流程图就是一个决策树，长方形代表判断模块(decision block)，椭圆形成代表终止模块(terminating block)，表示已经得出结论，可以终止运行。从判断模块引出的左右箭头称作为分支(branch)，它可以达到另一个判断模块或者终止模块。我们还可以这样理解，分类决策树模型是一种描述对实例进行分类的树形结构。决策树由结点(node)和有向边(directed edge)组成。结点有两种类型：内部结点(internal node)和叶结点(leaf node)。内部结点表示一个特征或属性，叶结点表示一个类。蒙圈没？？如下图所示的决策树，长方形和椭圆形都是结点。长方形的结点属于内部结点，椭圆形的结点属于叶结点，从结点引出的左右箭头就是有向边。而最上面的结点就是决策树的根结点(root node)。这样，结点说法就与模块说法对应上了，理解就好。</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/20170721162306492" alt="img"></p>
+<p>使用决策树做预测需要以下过程：</p>
+<pre><code>收集数据：可以使用任何方法。比如想构建一个相亲系统，我们可以从媒婆那里，或者通过参访相亲对象获取数据。根据他们考虑的因素和最终的选择结果，就可以得到一些供我们利用的数据了。
+准备数据：收集完的数据，我们要进行整理，将这些所有收集的信息按照一定规则整理出来，并排版，方便我们进行后续处理。
+分析数据：可以使用任何方法，决策树构造完成之后，我们可以检查决策树图形是否符合预期。
+训练算法：这个过程也就是构造决策树，同样也可以说是决策树学习，就是构造一个决策树的数据结构。
+测试算法：使用经验树计算错误率。当错误率达到了可接收范围，这个决策树就可以投放使用了。
+使用算法：此步骤可以使用适用于任何监督学习算法，而使用决策树可以更好地理解数据的内在含义。
+</code></pre>
+<h2 id="熵（entropy）："><a href="#熵（entropy）：" class="headerlink" title="熵（entropy）："></a>熵（entropy）：</h2><p>熵（entropy）：表示随机变量的不确定性</p>
+<p>熵定义为信息的期望值 </p>
+<p>xi的信息定义为</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151930702.png" alt="image-20210804151930702"></p>
+<p>熵:</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804151948585.png" alt="image-20210804151948585"></p>
+<p><strong>熵越大，随机变量的不确定性越大。</strong></p>
+<p><strong>熵越小，随机变量的不确定性越小。</strong> </p>
+<h2 id="经验熵"><a href="#经验熵" class="headerlink" title="经验熵"></a>经验熵</h2><p>当熵中的概率由数据估计(特别是最大似然估计)得到时，所对应的熵称为经验熵(empirical entropy)。什么叫由数据估计？比如有10个数据，一共有两个类别，A类和B类。其中有7个数据属于A类，则该A类的概率即为十分之七。其中有3个数据属于B类，则该B类的概率即为十分之三。浅显的解释就是，这概率是我们根据数据数出来的。我们定义贷款申请样本数据表中的数据为训练数据集D，则训练数据集D的经验熵为H(D)，|D|表示其样本容量，及样本个数。设有K个类Ck，k &#x3D; 1,2,3,···,K，|Ck|为属于类Ck的样本个数，这经验熵公式可以写为：</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804152006522.png" alt="image-20210804152006522"></p>
+<h2 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h2><p>在划分数据集之前之后信息发生的改变称为信息增益，获得信息增益最高的特征就是最好的选择。</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804152018577.png" alt="image-20210804152018577"></p>
+<p>其中D时训练数据集，A时某个特征</p>
+<p>根据信息增益准则的特征选择方法是：</p>
+<p>1.对训练集（或子集）D，计算其每个特征的信息增益</p>
+<p>2.比较他们的大小，选择信息增益最大的特征</p>
+<h2 id="计算给定数据集的香农熵"><a href="#计算给定数据集的香农熵" class="headerlink" title="计算给定数据集的香农熵"></a><strong>计算给定数据集的香农熵</strong></h2><pre><code class="python">def calcShannonEnt(dataSet):
+    numEntries = len(dataSet) #返回数据集的行数
+    labelCounts = &#123;&#125;  #保存每个标签（label）出现次数的字典
+    for featVec in dataSet: #对每组特征向量进行统计 统计频数
+        currentLabel = featVec[-1] #提取标签（label）信息
+        if currentLabel not in labelCounts.keys(): #如果标签（label）没有放入统计次数的字典，添加进去
+            labelCounts[currentLabel] = 0
+        labelCounts[currentLabel] += 1   
+    shannonEnt = 0.0  #经验熵（香农熵）
+    for key in labelCounts: #计算香农熵
+        prob = float(labelCounts[key])/numEntries #选择该标签（label）的概率
+        shannonEnt -= prob * log(prob, 2) #log base 2（利用公式计算）
+    return shannonEnt  #返回经验熵
+</code></pre>
+<h2 id="划分数据集"><a href="#划分数据集" class="headerlink" title="划分数据集"></a>划分数据集</h2><h3 id="按照给定特征划分数据集"><a href="#按照给定特征划分数据集" class="headerlink" title="按照给定特征划分数据集"></a>按照给定特征划分数据集</h3><pre><code class="python">#按照给定特征划分数据集
+def splitDataSet(dataSet, axis, value): #待划分的数据集、划分数据集的特征、特征的返回值
+    retDataSet = []   #创建分会的数据列表
+    for featVec in dataSet: #遍历数据集
+        if featVec[axis] == value:
+            reducedFeatVec = featVec[:axis]     #去掉axis特征
+            reducedFeatVec.extend(featVec[axis+1:]) #把axis后面的特征添加到列表
+            retDataSet.append(reducedFeatVec)
+    return retDataSet
+</code></pre>
+<p>列表中的extend()和append()</p>
+<pre><code class="python">#extend() 函数用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。
+#append（）是将你传入的参数看做一个元素，拼到 上一个list中。
+a=[1, 2, &#39;3&#39;, &#39;1&#39;]
+a.extend([1,2])
+print(a)
+#[1, 2, &#39;3&#39;, &#39;1&#39;, 1, 2]
+
+b=[1, 2, &#39;3&#39;, &#39;1&#39;]
+b.append([1,2])
+print(b)
+#[1, 2, &#39;3&#39;, &#39;1&#39;, [1, 2]]
+</code></pre>
+<h3 id="选择最好的数据集划分方式"><a href="#选择最好的数据集划分方式" class="headerlink" title="选择最好的数据集划分方式"></a>选择最好的数据集划分方式</h3><p>遍历数据集，循环计算香农熵和splitDataSet()函数，找到最好的特征划分方式，熵计算将会告诉我们如何划分数据集事最好的数据组织方式。</p>
+<pre><code class="python">#选择最好的数据集划分方式
+def chooseBestFeatureToSplit(dataSet):
+    numFeatures = len(dataSet[0]) - 1      #特征的数量（最后一个为类别所以要减一）
+    baseEntropy = calcShannonEnt(dataSet)   #计算数据集的熵
+    bestInfoGain = 0.0 #信息增益变量
+    bestFeature = -1    #最佳特征
+    for i in range(numFeatures):        #遍历所有特征
+        featList = [example[i] for example in dataSet]#获取dataSet的所有第i个特征
+        uniqueVals = set(featList)       #去除重复的特征（set中元素不可重复）
+        newEntropy = 0.0  #初始化熵
+        for value in uniqueVals:   #计算信息增益
+            subDataSet = splitDataSet(dataSet, i, value) #划分子集
+            prob = len(subDataSet)/float(len(dataSet)) #计算自己的频率
+            newEntropy += prob * calcShannonEnt(subDataSet) # 计算熵
+        infoGain = baseEntropy - newEntropy     #计算信息增益
+        if (infoGain &gt; bestInfoGain):       
+            bestInfoGain = infoGain         #更新信息增益为最大的信息增益
+            bestFeature = i    #记录信息增益最大的特征的索引值
+    return bestFeature   #返回索引值
+</code></pre>
+<p><code>featList = [example[i] for example in dataSet]</code>的用法</p>
+<pre><code class="python">&gt;&gt;&gt; dataSet
+[[1, 1, &#39;yes&#39;], [1, 1, &#39;yes&#39;], [1, 0, &#39;no&#39;], [0, 1, &#39;no&#39;], [0, 1, &#39;no&#39;]]
+
+&gt;&gt;&gt; i = 0
+&gt;&gt;&gt; featList = [example[i] for example in dataSet]
+&gt;&gt;&gt; featList
+[1, 1, 1, 0, 0]
+&gt;&gt;&gt; i = 0
+
+&gt;&gt;&gt; classList = [example[-1] for example in dataSet]
+&gt;&gt;&gt; classList
+[&#39;yes&#39;, &#39;yes&#39;, &#39;no&#39;, &#39;no&#39;, &#39;no&#39;]
+</code></pre>
+<p><code>set()</code>用法：set顾名思义是集合，里面不能包含重复的元素，接收一个list作为参数</p>
+<pre><code class="python"> #python set类是在python的sets模块中，大家现在使用的python2.3中，不需要导入sets模块可以直接创建集合。
+&gt;&gt;&gt;set(&#39;boy&#39;)
+set([&#39;y&#39;, &#39;b&#39;, &#39;o&#39;])
+#集合添加、删除
+
+#集合的添加有两种常用方法，分别是add和update。
+#集合add方法：是把要传入的元素做为一个整个添加到集合中，例如：
+&gt;&gt;&gt; a = set(&#39;boy&#39;)
+&gt;&gt;&gt; a.add(&#39;python&#39;)
+&gt;&gt;&gt; a
+set([&#39;y&#39;, &#39;python&#39;, &#39;b&#39;, &#39;o&#39;])
+
+#集合update方法：是把要传入的元素拆分，做为个体传入到集合中，例如：
+&gt;&gt;&gt; a = set(&#39;boy&#39;)
+&gt;&gt;&gt; a.update(&#39;python&#39;)
+&gt;&gt;&gt; a
+set([&#39;b&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;, &#39;p&#39;, &#39;t&#39;, &#39;y&#39;])
+
+#集合删除操作方法：remove
+set([&#39;y&#39;, &#39;python&#39;, &#39;b&#39;, &#39;o&#39;])
+&gt;&gt;&gt; a.remove(&#39;python&#39;)
+&gt;&gt;&gt; a
+set([&#39;y&#39;, &#39;b&#39;, &#39;o&#39;])
+</code></pre>
+<h3 id="递归构建决策树"><a href="#递归构建决策树" class="headerlink" title="递归构建决策树"></a>递归构建决策树</h3><p>工作原理：得到原始数据集，然后基于最好的属性值划分数据集，有趣特征可能多余两个，因此可能存在大于两个支点的数据集划分。第一次划分之后，数据将被向下传递到树分支点的下一个节点，在这个节点上，我们可以再次划分数据。因此我们可以采用递归的原理处理数据。</p>
+<p>递归结束的条件是：程序遍历完所有划分数据集的属性，或者每个分支下的所有实例都具有相同的分类。如果所有实例具有相同的分类，则得到的一个叶子节点或者终止块。任何到达叶子节点的数据必然属于叶子节点的分类。如下图所示。</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210804200335848.png" alt="image-20210804200335848"></p>
+<p>majorityCnt函数的作用，就是找出classList这堆标签里，出现次数最多的哪个标签。</p>
+<p>classCount是个字典，记录每个标签出现的次数。</p>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/65702708/archive/2010/09/14/1826362.html">sorted函数</a>把classCount按照键值对的值进行降序排序，返回一个tuple的list。sortedClassCount[0][0]就是出现次数最多的那个标签了。</p>
+<pre><code class="python">import operator 
+def majorityCnt(classList):#投票表决法
+    classCount=&#123;&#125;
+    for vote in classList:
+        if vote not in classCount.keys(): classCount[vote] = 0
+        classCount[vote] += 1
+    sortedClassCount = sorted(classCount.items(), key=operator.itemgetter(1), reverse=True)
+    return sortedClassCount[0][0] #返回次数最多的标签
+</code></pre>
+<h2 id="创建树的函数代码"><a href="#创建树的函数代码" class="headerlink" title="创建树的函数代码"></a>创建树的函数代码</h2><pre><code class="python">def createTree(dataSet, labels):
+    classList = [example[-1] for example in dataSet]   #当前数据集的所有标签
+    if classList.count(classList[0]) == len(classList): #计算有几个标签和第一个标签是一样的，如果个数和总个数相等，所有标签就一样
+        return classList[0]   # 如果数据集的所有标签（类别） 都相同，则不需要划分
+    if len(dataSet[0]) == 1: #如果当前数据集一个特征都不剩了，那就不用再划分下去了
+        return majorityCnt(classList)
+    bestFeat = chooseBestFeatureToSplit(dataSet) #选出用于划分的最佳属性
+    bestFeatLabel = labels[bestFeat]  #最佳属性的属性名称
+    myTree = &#123;bestFeatLabel:&#123;&#125;&#125; #字典：记录最佳属性对应的标签种类、出现次数情况
+    del(labels[bestFeat])#在属性名称列表中剔除最佳属性
+    featValues = [example[bestFeat] for example in dataSet]#当前数据集中最佳属性的所有属性值
+    uniqueVals = set(featValues)#最佳属性的不同属性值 
+    for value in uniqueVals:
+        subLabels = labels[:]       #复制所有的标签，这样树就不会破坏现有的  
+        # 构建最佳属性的值为value的子树  
+        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels)
+    return myTree
+</code></pre>
+<h2 id="测试算法：使用决策树执行分类"><a href="#测试算法：使用决策树执行分类" class="headerlink" title="测试算法：使用决策树执行分类"></a>测试算法：使用决策树执行分类</h2><pre><code class="python">def classify(inputTree, featLabels, testVec):
+    firstStr = list(inputTree)[0] #获取决策树节点（当前树的根节点的特征名称）
+    secondDict = inputTree[firstStr] #根节点的所有子节点
+    featIndex = featLabels.index(firstStr)#找到根节点特征对应的下标 
+    key = testVec[featIndex]#找出待测数据的特征值  
+    valueOfFeat = secondDict[key]#拿这个特征值在根节点的子节点中查找，看它是不是叶节点
+    if isinstance(valueOfFeat, dict):#如果不是叶节点
+        classLabel = classify(valueOfFeat, featLabels, testVec) #递归地进入下一层节点
+    else: classLabel = valueOfFeat#如果是叶节点：确定待测数据的分类 
+    return classLabel
+</code></pre>
+<h2 id="决策树的可视化"><a href="#决策树的可视化" class="headerlink" title="决策树的可视化"></a>决策树的可视化</h2><h3 id="在Python中使用Matplotlib注解绘制树形图"><a href="#在Python中使用Matplotlib注解绘制树形图" class="headerlink" title="在Python中使用Matplotlib注解绘制树形图"></a>在Python中使用Matplotlib注解绘制树形图</h3><h1 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h1><p>基于概率论的分类方法。</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210815160640647.png" alt="image-20210815160640647"></p>
+<p><strong>朴素贝叶斯</strong></p>
+<p>优点：在数据少的情况下仍然有效</p>
+<p>缺点：对于输入数据的准备方式较为敏感</p>
+<p>适用数据类型：标称型数据</p>
+<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210809161610428.png" alt="image-20210809161610428"></p>
+<p>已知p(x|c)求p(c|x)   （贝叶斯准则，交换条件概率中的条件和结果）</p>
+<p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210809162911242.png" alt="image-20210809162911242"></p>
+<h2 id="使用条件概率来分类"><a href="#使用条件概率来分类" class="headerlink" title="使用条件概率来分类"></a>使用条件概率来分类</h2><p>贝叶斯决策理论要求计算两个概率p1(x,y)和p2(x,y):</p>
+<ul>
+<li>如果p1(x,y)&gt;p2(x,y),那么属于类别1</li>
+<li>如果p2(x,y)&gt;p1(x,y),那么属于类别2</li>
+</ul>
+<p>但是这两个准则并不是贝叶斯决策的所有内容。</p>
+<p>用p1、p2只是为了尽可能简化描述，而真正需要计算和比较的是p(c1|x,y)和p(c2|x,y)</p>
+<p>可以定义贝叶斯分类准则为：</p>
+<ul>
+<li>如果p(c1|x,y)&gt;p(c2|x,y)，那么属于类别1</li>
+<li>如果p(c1|x,y)&gt;p(c2|x,y)，那么属于类别2</li>
+</ul>
+<h2 id="使用Python进行文本分类"><a href="#使用Python进行文本分类" class="headerlink" title="使用Python进行文本分类"></a>使用Python进行文本分类</h2><h3 id="准备数据：从文本中构建词向量"><a href="#准备数据：从文本中构建词向量" class="headerlink" title="准备数据：从文本中构建词向量"></a>准备数据：从文本中构建词向量</h3><h4 id="词表到向量的转换函数"><a href="#词表到向量的转换函数" class="headerlink" title="词表到向量的转换函数"></a>词表到向量的转换函数</h4><pre><code class="python">def loadDataSet():
+    postingList = [[&#39;my&#39;, &#39;dog&#39;, &#39;has&#39;, &#39;flea&#39;, &#39;problems&#39;, &#39;help&#39;, &#39;please&#39;],
+                   [&#39;maybe&#39;, &#39;not&#39;, &#39;take&#39;, &#39;him&#39;, &#39;to&#39;, &#39;dog&#39;, &#39;park&#39;, &#39;stupid&#39;],
+                   [&#39;my&#39;, &#39;dalmation&#39;, &#39;is&#39;, &#39;so&#39;, &#39;cute&#39;, &#39;I&#39;, &#39;love&#39;, &#39;him&#39;],
+                   [&#39;stop&#39;, &#39;posting&#39;, &#39;stupid&#39;, &#39;worthless&#39;, &#39;garbage&#39;],
+                   [&#39;mr&#39;, &#39;licks&#39;, &#39;ate&#39;, &#39;my&#39;, &#39;steak&#39;, &#39;how&#39;, &#39;to&#39;, &#39;stop&#39;, &#39;him&#39;],
+                   [&#39;quit&#39;, &#39;buying&#39;, &#39;worthless&#39;, &#39;dog&#39;, &#39;food&#39;, &#39;stupid&#39;]]
+    classVec = [0, 1, 0, 1, 0, 1]    #1 代表侮辱性文字, 0 代表正常言论
+    return postingList, classVec
+
+def createVocabList(dataSet):
+    vocabSet = set([])  #创建一个空集
+    for document in dataSet:
+        vocabSet = vocabSet | set(document) #两个集合的并集
+    return list(vocabSet)
+
+def setOfWords2Vec(vocabList, inputSet):
+    returnVec = [0]*len(vocabList)   #创建一个其中元素都为0的向量
+    for word in inputSet:
+        if word in vocabList:
+            returnVec[vocabList.index(word)] = 1
+        else: print(&quot;the word: %s is not in my Vocabulary!&quot; % word)
+    return returnVec #输出文档向量，每个元素为1或0，fe
+</code></pre>
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/image-20210816110929505.png" alt="image-20210816110929505"></p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><h2 id="1-MNIST"><a href="#1-MNIST" class="headerlink" title="1. MNIST"></a>1. MNIST</h2><p>获取MNIST数据集</p>
+<pre><code class="python">&gt;&gt;&gt; from sklearn.datasets import fetch_openml
+&gt;&gt;&gt; mnist = fetch_openml(&#39;mnist_784&#39;,version = 1)
+&gt;&gt;&gt; mnist.keys()
+dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;frame&#39;, &#39;categories&#39;, &#39;feature_names&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;details&#39;, &#39;url&#39;])
+</code></pre>
+<p>查看这些数组</p>
+<pre><code class="python">&gt;&gt;&gt; X,y = mnist[&#39;data&#39;],mnist[&#39;target&#39;]
+&gt;&gt;&gt; X.shape
+(70000, 784)
+</code></pre>
+<p>将这些数据使用Matplotlib的imshow()函数将其显示出来</p>
+<pre><code class="python">
+</code></pre>
+<p>SKLEARN</p>
+<p>参考:</p>
+<ol>
+<li>《机器学习实战》 [美]Peter Harrington</li>
+<li>《机器学习》 周志华</li>
+<li>神经网络15分钟入门 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65472471">https://zhuanlan.zhihu.com/p/65472471</a></li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/dog.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">22 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NumPy%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">NumPy函数库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E6%96%87%E6%9C%AC%E8%AE%B0%E5%BD%95%E5%88%B0%E8%BD%AC%E6%8D%A2NumPy%E7%9A%84%E8%A7%A3%E6%9E%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">将文本记录到转换NumPy的解析程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#operator%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">operator函数库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#itemgetter"><span class="toc-number">2.1.</span> <span class="toc-text">itemgetter</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Matplotlib%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">Matplotlib函数库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#plot%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">.plot函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plot-%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6"><span class="toc-number">3.2.</span> <span class="toc-text">.plot 显示中文字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pyplot%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">3.3.</span> <span class="toc-text">pyplot文本显示函数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Matplotlib%E5%88%9B%E5%BB%BA%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="toc-number">3.4.</span> <span class="toc-text">使用Matplotlib创建散点图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#K-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">K-近邻算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">工作原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E8%88%AC%E6%B5%81%E7%A8%8B"><span class="toc-number">4.2.</span> <span class="toc-text">K-近邻算法的一般流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87%EF%BC%9A%E5%BD%92%E4%B8%80%E5%8C%96%E6%95%B0%E5%80%BC"><span class="toc-number">4.3.</span> <span class="toc-text">数据准备：归一化数值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%99%A8%E9%92%88%E5%AF%B9%E7%BD%91%E7%AB%99%E7%9A%84%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-number">4.4.</span> <span class="toc-text">分类器针对网站的测试代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E6%B5%8B%E5%87%BD%E6%95%B0"><span class="toc-number">4.5.</span> <span class="toc-text">预测函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%EF%BC%88ID3%EF%BC%8CC4-5%EF%BC%8CCART%EF%BC%8CC5%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">决策树（ID3，C4.5，CART，C5）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%86%B5%EF%BC%88entropy%EF%BC%89%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">熵（entropy）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E7%86%B5"><span class="toc-number">5.2.</span> <span class="toc-text">经验熵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%A2%9E%E7%9B%8A"><span class="toc-number">5.3.</span> <span class="toc-text">信息增益</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%BB%99%E5%AE%9A%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E9%A6%99%E5%86%9C%E7%86%B5"><span class="toc-number">5.4.</span> <span class="toc-text">计算给定数据集的香农熵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%92%E5%88%86%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">5.5.</span> <span class="toc-text">划分数据集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E7%85%A7%E7%BB%99%E5%AE%9A%E7%89%B9%E5%BE%81%E5%88%92%E5%88%86%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">5.5.1.</span> <span class="toc-text">按照给定特征划分数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%9C%80%E5%A5%BD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%92%E5%88%86%E6%96%B9%E5%BC%8F"><span class="toc-number">5.5.2.</span> <span class="toc-text">选择最好的数据集划分方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%9E%84%E5%BB%BA%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-number">5.5.3.</span> <span class="toc-text">递归构建决策树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%91%E7%9A%84%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81"><span class="toc-number">5.6.</span> <span class="toc-text">创建树的函数代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%AE%97%E6%B3%95%EF%BC%9A%E4%BD%BF%E7%94%A8%E5%86%B3%E7%AD%96%E6%A0%91%E6%89%A7%E8%A1%8C%E5%88%86%E7%B1%BB"><span class="toc-number">5.7.</span> <span class="toc-text">测试算法：使用决策树执行分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">5.8.</span> <span class="toc-text">决策树的可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8Python%E4%B8%AD%E4%BD%BF%E7%94%A8Matplotlib%E6%B3%A8%E8%A7%A3%E7%BB%98%E5%88%B6%E6%A0%91%E5%BD%A2%E5%9B%BE"><span class="toc-number">5.8.1.</span> <span class="toc-text">在Python中使用Matplotlib注解绘制树形图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF"><span class="toc-number">6.</span> <span class="toc-text">朴素贝叶斯</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="toc-number">6.1.</span> <span class="toc-text">条件概率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E6%9D%A5%E5%88%86%E7%B1%BB"><span class="toc-number">6.2.</span> <span class="toc-text">使用条件概率来分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Python%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-number">6.3.</span> <span class="toc-text">使用Python进行文本分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE%EF%BC%9A%E4%BB%8E%E6%96%87%E6%9C%AC%E4%B8%AD%E6%9E%84%E5%BB%BA%E8%AF%8D%E5%90%91%E9%87%8F"><span class="toc-number">6.3.1.</span> <span class="toc-text">准备数据：从文本中构建词向量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">7.</span> <span class="toc-text">神经网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">8.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-MNIST"><span class="toc-number">8.1.</span> <span class="toc-text">1. MNIST</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        </br>
+        
+        <span class="gradient-text">
+            <a href="https://beian.miit.gov.cn/" title="beian.miit.gov.cn" target="_blank" rel="noopener">beian.miit.gov.cn</a>
+        </span>
+        
+        
+        </br>
+        <span style="display: inline-block;"> <img src=/null></span>
+        
+        <span class="gradient-text">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602009049" title="www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049" target="_blank" rel="noopener">www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049</a>
+        </span>
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>

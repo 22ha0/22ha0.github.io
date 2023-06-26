@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>YOLO V5 学习笔记 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="环境配置可以利用作者提供的requirements.txt 文件进行安装
+利用 pip install -r requirements.txt安装环境
+Inference（推测）命令行运行代码
+$ ,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/dog.jpg"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+    
+    <script>var musiclist = ""</script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+
+    
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">YOLO V5 学习笔记</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                November 21, 2021
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/11/21/YOLO-V5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="YOLO V5 学习笔记" class="">YOLO V5 学习笔记</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    20k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    18 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/YOLO/" rel="tag">YOLO</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/computer-visual/" rel="tag">computer visual</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>可以利用作者提供的requirements.txt 文件进行安装</p>
+<p>利用 <code>pip install -r requirements.txt</code>安装环境</p>
+<h1 id="Inference（推测）"><a href="#Inference（推测）" class="headerlink" title="Inference（推测）"></a>Inference（推测）</h1><p>命令行运行代码</p>
+<pre><code class="bash">$ python detect.py --source 0  # webcam 输入源
+                            file.jpg  # image 
+                            file.mp4  # video
+                            path/  # directory
+                            path/*.jpg  # glob
+                            &#39;https://youtu.be/NUsoVlDFqZg&#39;  # YouTube video
+                            &#39;rtsp://example.com/media.mp4&#39;  # RTSP, RTMP, HTTP stream
+</code></pre>
+<p>运行在 <code>data/images</code>文件夹中的例子:</p>
+<pre><code class="bash">$ python detect.py --source data/images --weights yolov5s.pt --conf 0.25
+
+Namespace(agnostic_nms=False, augment=False, classes=None, conf_thres=0.25, device=&#39;&#39;, exist_ok=False, img_size=640, iou_thres=0.45, name=&#39;exp&#39;, project=&#39;runs/detect&#39;, save_conf=False, save_txt=False, source=&#39;data/images/&#39;, update=False, view_img=False, weights=[&#39;yolov5s.pt&#39;])
+YOLOv5 v4.0-96-g83dc1b4 torch 1.7.0+cu101 CUDA:0 (Tesla V100-SXM2-16GB, 16160.5MB)
+
+Fusing layers... 
+Model Summary: 224 layers, 7266973 parameters, 0 gradients, 17.0 GFLOPS
+image 1/2 /content/yolov5/data/images/bus.jpg: 640x480 4 persons, 1 bus, Done. (0.010s)
+image 2/2 /content/yolov5/data/images/zidane.jpg: 384x640 2 persons, 1 tie, Done. (0.011s)
+Results saved to runs/detect/exp2
+Done. (0.103s)
+</code></pre>
+<img src="YOLO-V5-学习笔记/97107365-685a8d80-16c7-11eb-8c2e-83aac701d8b9.jpeg" width="500">  
+
+<h1 id="代码注释"><a href="#代码注释" class="headerlink" title="代码注释"></a>代码注释</h1><p><img src="/YOLO-V5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211122172051386.png" alt="image-20211122172051386"></p>
+<p>detect.py</p>
+<pre><code class="python">&quot;&quot;&quot;
+    weights:训练的权重 
+    source:测试数据，可以是图片/视频路径，也可以是&#39;0&#39;(电脑自带摄像头),也可以是rtsp等视频流
+    output:网络预测之后的图片/视频的保存路径
+    img-size:网络输入图片大小
+    conf-thres:置信度阈值 大于多少才显示出来
+    iou-thres:做nms的iou阈值 IoU交并比
+    device:设置设备
+    view-img:是否展示预测之后的图片/视频，默认False
+    save-txt:是否将预测的框坐标以txt文件形式保存，默认False
+    classes:设置只保留某一部分类别，形如0或者0 2 3
+    agnostic-nms:进行nms是否也去除不同类别之间的框，默认False
+    augment:推理的时候进行多尺度，翻转等操作(TTA)推理
+    update:如果为True，则对所有模型进行strip_optimizer操作，去除pt文件中的优化器等信息，默认为False
+    
+    
+    &quot;&quot;&quot;
+
+if __name__ == &#39;__main__&#39;:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&#39;--weights&#39;, nargs=&#39;+&#39;, type=str, default=&#39;yolov5s.pt&#39;, help=&#39;model.pt path(s)&#39;)
+    parser.add_argument(&#39;--source&#39;, type=str, default=&#39;data/images&#39;, help=&#39;source&#39;)  # file/folder, 0 for webcam
+    parser.add_argument(&#39;--img-size&#39;, type=int, default=640, help=&#39;inference size (pixels)&#39;)
+    parser.add_argument(&#39;--conf-thres&#39;, type=float, default=0.25, help=&#39;object confidence threshold&#39;)
+    parser.add_argument(&#39;--iou-thres&#39;, type=float, default=0.45, help=&#39;IOU threshold for NMS&#39;)
+    parser.add_argument(&#39;--device&#39;, default=&#39;&#39;, help=&#39;cuda device, i.e. 0 or 0,1,2,3 or cpu&#39;)
+    parser.add_argument(&#39;--view-img&#39;, action=&#39;store_true&#39;, help=&#39;display results&#39;)
+    parser.add_argument(&#39;--save-txt&#39;, action=&#39;store_true&#39;, help=&#39;save results to *.txt&#39;)
+    parser.add_argument(&#39;--save-conf&#39;, action=&#39;store_true&#39;, help=&#39;save confidences in --save-txt labels&#39;)
+    parser.add_argument(&#39;--nosave&#39;, action=&#39;store_true&#39;, help=&#39;do not save images/videos&#39;)
+    parser.add_argument(&#39;--classes&#39;, nargs=&#39;+&#39;, type=int, help=&#39;filter by class: --class 0, or --class 0 2 3&#39;)
+    parser.add_argument(&#39;--agnostic-nms&#39;, action=&#39;store_true&#39;, help=&#39;class-agnostic NMS&#39;)
+    parser.add_argument(&#39;--augment&#39;, action=&#39;store_true&#39;, help=&#39;augmented inference&#39;)
+    parser.add_argument(&#39;--update&#39;, action=&#39;store_true&#39;, help=&#39;update all models&#39;)
+    parser.add_argument(&#39;--project&#39;, default=&#39;runs/detect&#39;, help=&#39;save results to project/name&#39;)
+    parser.add_argument(&#39;--name&#39;, default=&#39;exp&#39;, help=&#39;save results to project/name&#39;)
+    parser.add_argument(&#39;--exist-ok&#39;, action=&#39;store_true&#39;, help=&#39;existing project/name ok, do not increment&#39;)
+    opt = parser.parse_args()
+    print(opt)
+    check_requirements(exclude=(&#39;pycocotools&#39;, &#39;thop&#39;))
+
+    with torch.no_grad():
+        if opt.update:  # update all models (to fix SourceChangeWarning)
+            for opt.weights in [&#39;yolov5s.pt&#39;, &#39;yolov5m.pt&#39;, &#39;yolov5l.pt&#39;, &#39;yolov5x.pt&#39;]:
+                detect()
+                strip_optimizer(opt.weights)
+        else:
+            detect()
+
+</code></pre>
+<h1 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h1><p>超参数文件hyp解析</p>
+<pre><code class="bash"># Hyperparameters for VOC finetuning
+# python train.py --batch 64 --weights yolov5m.pt --data voc.yaml --img 512 --epochs 50
+# See tutorials for hyperparameter evolution https://github.com/ultralytics/yolov5#tutorials
+# Hyperparameter Evolution Results
+# Generations: 51
+#                   P         R     mAP.5 mAP.5:.95       box       obj       cls
+# Metrics:      0.625     0.926      0.89     0.677    0.0111   0.00849   0.00124
+
+lr0: 0.00447  # 学习率
+lrf: 0.114    # 余弦退火超参数
+momentum: 0.873 # 学习率动量
+weight_decay: 0.00047 # 权重衰减系数
+giou: 0.0306 # giou损失的系数
+cls: 0.211 # 分类损失的系数
+cls_pw: 0.546 # 分类BCELoss中正样本的权重
+obj: 0.421 # 有无物体损失的系数
+obj_pw: 0.972 # 有无物体BCELoss中正样本的权重
+iou_t: 0.2 # 标签与anchors的iou阈值iou training threshold
+anchor_t: 2.26 # 标签的长h宽w/anchor的长h_a宽w_a阈值, 即h/h_a, w/w_a都要在(1/2.26, 2.26)之间anchor-multiple threshold
+
+# anchors: 5.07
+
+fl_gamma: 0.0  # 设为0则表示不使用focal loss(efficientDet default is gamma=1.5)
+
+# 下面是一些数据增强的系数, 包括颜色空间和图片空间
+
+hsv_h: 0.0154 # 色调
+hsv_s: 0.9 # 饱和度
+hsv_v: 0.619 # 明度
+degrees: 0.404 #旋转角度
+translate: 0.206　 # 水平和垂直平移
+scale: 0.86　  # 缩放
+shear: 0.795  # 剪切
+perspective: 0.0  # 透视变换参数
+flipud: 0.00756  # 上下翻转
+fliplr: 0.5  # 左右翻转
+mixup: 0.153  # mixup系数
+</code></pre>
+<p>training.py</p>
+<pre><code class="python">    &quot;&quot;&quot;
+    
+    opt参数解析：
+    weights：训练模型的路径（普通模型），也可以用自己的模型，为空就进行初始化
+    cfg:模型配置文件，网络结构
+    data:数据集配置文件，数据集路径，类名等，指定训练数据集
+    hyp:超参数文件 
+    epochs:训练总轮次
+    batch-size:批次大小
+    img-size:输入图片分辨率大小
+    rect:是否采用矩形训练，默认False，进行填充
+    resume:接着打断训练上次的结果接着训练
+    nosave:不保存模型，默认False pt文件
+    notest:不进行test，默认False
+    noautoanchor:不自动调整anchor，默认False 添加锚点
+    evolve:是否进行超参数进化，默认False 寻找最优参数
+    bucket:谷歌云盘bucket，一般不会用到
+    cache-images:是否提前缓存图片到内存，以加快训练速度，默认False
+    image-weights:加载的权重文件
+    name:数据集名字，如果设置：results.txt to results_name.txt，默认无
+    device:训练的设备，cpu；0(表示一个gpu设备cuda:0)；0,1,2,3(多个gpu设备)
+    multi-scale:是否进行多尺度训练，默认False 对图片进行一个变换
+    single-cls:数据集是否只有一个类别，默认False
+    adam:是否使用adam优化器 如果没有选择就会选择随机梯度下降
+    sync-bn:是否使用跨卡同步BN,在DDP模式使用 分布式训练
+    local_rank:gpu编号
+    logdir:存放日志的目录
+    workers:dataloader的最大worker数量
+    quad :开启之后大于640测试的效果会比较好
+    linear-lr :学习速率的调整方式
+    label-smoothing:标签平滑，防止过拟合
+    save_period:是否开启W&amp;B
+    &quot;&quot;&quot;
+    
+if __name__ == &#39;__main__&#39;:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&#39;--weights&#39;, type=str, default=&#39;yolov5s.pt&#39;, help=&#39;initial weights path&#39;)
+    parser.add_argument(&#39;--cfg&#39;, type=str, default=&#39;&#39;, help=&#39;model.yaml path&#39;)
+    parser.add_argument(&#39;--data&#39;, type=str, default=&#39;data/coco128.yaml&#39;, help=&#39;data.yaml path&#39;)
+    parser.add_argument(&#39;--hyp&#39;, type=str, default=&#39;data/hyp.scratch.yaml&#39;, help=&#39;hyperparameters path&#39;)
+    parser.add_argument(&#39;--epochs&#39;, type=int, default=300)
+    parser.add_argument(&#39;--batch-size&#39;, type=int, default=16, help=&#39;total batch size for all GPUs&#39;)
+    parser.add_argument(&#39;--img-size&#39;, nargs=&#39;+&#39;, type=int, default=[640, 640], help=&#39;[train, test] image sizes&#39;)
+    parser.add_argument(&#39;--rect&#39;, action=&#39;store_true&#39;, help=&#39;rectangular training&#39;)
+    parser.add_argument(&#39;--resume&#39;, nargs=&#39;?&#39;, const=True, default=False, help=&#39;resume most recent training&#39;)
+    parser.add_argument(&#39;--nosave&#39;, action=&#39;store_true&#39;, help=&#39;only save final checkpoint&#39;)
+    parser.add_argument(&#39;--notest&#39;, action=&#39;store_true&#39;, help=&#39;only test final epoch&#39;)
+    parser.add_argument(&#39;--noautoanchor&#39;, action=&#39;store_true&#39;, help=&#39;disable autoanchor check&#39;)
+    parser.add_argument(&#39;--evolve&#39;, action=&#39;store_true&#39;, help=&#39;evolve hyperparameters&#39;)
+    parser.add_argument(&#39;--bucket&#39;, type=str, default=&#39;&#39;, help=&#39;gsutil bucket&#39;)
+    parser.add_argument(&#39;--cache-images&#39;, action=&#39;store_true&#39;, help=&#39;cache images for faster training&#39;)
+    parser.add_argument(&#39;--image-weights&#39;, action=&#39;store_true&#39;, help=&#39;use weighted image selection for training&#39;)
+    parser.add_argument(&#39;--device&#39;, default=&#39;&#39;, help=&#39;cuda device, i.e. 0 or 0,1,2,3 or cpu&#39;)
+    parser.add_argument(&#39;--multi-scale&#39;, action=&#39;store_true&#39;, help=&#39;vary img-size +/- 50%%&#39;)
+    parser.add_argument(&#39;--single-cls&#39;, action=&#39;store_true&#39;, help=&#39;train multi-class data as single-class&#39;)
+    parser.add_argument(&#39;--adam&#39;, action=&#39;store_true&#39;, help=&#39;use torch.optim.Adam() optimizer&#39;)
+    parser.add_argument(&#39;--sync-bn&#39;, action=&#39;store_true&#39;, help=&#39;use SyncBatchNorm, only available in DDP mode&#39;)
+    parser.add_argument(&#39;--local_rank&#39;, type=int, default=-1, help=&#39;DDP parameter, do not modify&#39;)
+    parser.add_argument(&#39;--workers&#39;, type=int, default=8, help=&#39;maximum number of dataloader workers&#39;)
+    parser.add_argument(&#39;--project&#39;, default=&#39;runs/train&#39;, help=&#39;save to project/name&#39;)
+    parser.add_argument(&#39;--entity&#39;, default=None, help=&#39;W&amp;B entity&#39;)
+    parser.add_argument(&#39;--name&#39;, default=&#39;exp&#39;, help=&#39;save to project/name&#39;)
+    parser.add_argument(&#39;--exist-ok&#39;, action=&#39;store_true&#39;, help=&#39;existing project/name ok, do not increment&#39;)
+    parser.add_argument(&#39;--quad&#39;, action=&#39;store_true&#39;, help=&#39;quad dataloader&#39;)
+    parser.add_argument(&#39;--linear-lr&#39;, action=&#39;store_true&#39;, help=&#39;linear LR&#39;)
+    parser.add_argument(&#39;--label-smoothing&#39;, type=float, default=0.0, help=&#39;Label smoothing epsilon&#39;)
+    parser.add_argument(&#39;--upload_dataset&#39;, action=&#39;store_true&#39;, help=&#39;Upload dataset as W&amp;B artifact table&#39;)
+    parser.add_argument(&#39;--bbox_interval&#39;, type=int, default=-1, help=&#39;Set bounding-box image logging interval for W&amp;B&#39;)
+    parser.add_argument(&#39;--save_period&#39;, type=int, default=-1, help=&#39;Log model after every &quot;save_period&quot; epoch&#39;)
+    parser.add_argument(&#39;--artifact_alias&#39;, type=str, default=&quot;latest&quot;, help=&#39;version of dataset artifact to be used&#39;)
+    opt = parser.parse_args()
+
+    # Set DDP variables
+    opt.world_size = int(os.environ[&#39;WORLD_SIZE&#39;]) if &#39;WORLD_SIZE&#39; in os.environ else 1
+    opt.global_rank = int(os.environ[&#39;RANK&#39;]) if &#39;RANK&#39; in os.environ else -1
+    set_logging(opt.global_rank)
+    if opt.global_rank in [-1, 0]:
+        check_git_status()
+        check_requirements()
+
+    # Resume
+    wandb_run = check_wandb_resume(opt)
+    if opt.resume and not wandb_run:  # resume an interrupted run
+        ckpt = opt.resume if isinstance(opt.resume, str) else get_latest_run()  # specified or most recent path
+        assert os.path.isfile(ckpt), &#39;ERROR: --resume checkpoint does not exist&#39;
+        apriori = opt.global_rank, opt.local_rank
+        with open(Path(ckpt).parent.parent / &#39;opt.yaml&#39;) as f:
+            opt = argparse.Namespace(**yaml.load(f, Loader=yaml.SafeLoader))  # replace
+        opt.cfg, opt.weights, opt.resume, opt.batch_size, opt.global_rank, opt.local_rank = &#39;&#39;, ckpt, True, opt.total_batch_size, *apriori  # reinstate
+        logger.info(&#39;Resuming training from %s&#39; % ckpt)
+    else:
+        # opt.hyp = opt.hyp or (&#39;hyp.finetune.yaml&#39; if opt.weights else &#39;hyp.scratch.yaml&#39;)
+        opt.data, opt.cfg, opt.hyp = check_file(opt.data), check_file(opt.cfg), check_file(opt.hyp)  # check files
+        assert len(opt.cfg) or len(opt.weights), &#39;either --cfg or --weights must be specified&#39;
+        opt.img_size.extend([opt.img_size[-1]] * (2 - len(opt.img_size)))  # extend to 2 sizes (train, test)
+        opt.name = &#39;evolve&#39; if opt.evolve else opt.name
+        opt.save_dir = increment_path(Path(opt.project) / opt.name, exist_ok=opt.exist_ok | opt.evolve)  # increment run
+
+    # DDP mode
+    opt.total_batch_size = opt.batch_size
+    device = select_device(opt.device, batch_size=opt.batch_size)
+    if opt.local_rank != -1:
+        assert torch.cuda.device_count() &gt; opt.local_rank
+        torch.cuda.set_device(opt.local_rank)
+        device = torch.device(&#39;cuda&#39;, opt.local_rank)
+        dist.init_process_group(backend=&#39;nccl&#39;, init_method=&#39;env://&#39;)  # distributed backend
+        assert opt.batch_size % opt.world_size == 0, &#39;--batch-size must be multiple of CUDA device count&#39;
+        opt.batch_size = opt.total_batch_size // opt.world_size
+
+    # Hyperparameters
+    with open(opt.hyp) as f:
+        hyp = yaml.load(f, Loader=yaml.SafeLoader)  # load hyps
+
+    # Train
+    logger.info(opt)
+    if not opt.evolve:
+        tb_writer = None  # init loggers
+        if opt.global_rank in [-1, 0]:
+            prefix = colorstr(&#39;tensorboard: &#39;)
+            logger.info(f&quot;&#123;prefix&#125;Start with &#39;tensorboard --logdir &#123;opt.project&#125;&#39;, view at http://localhost:6006/&quot;)
+            tb_writer = SummaryWriter(opt.save_dir)  # Tensorboard
+        train(hyp, opt, device, tb_writer)
+
+    # Evolve hyperparameters (optional)
+    else:
+        # Hyperparameter evolution metadata (mutation scale 0-1, lower_limit, upper_limit)
+        meta = &#123;&#39;lr0&#39;: (1, 1e-5, 1e-1),  # initial learning rate (SGD=1E-2, Adam=1E-3)
+                &#39;lrf&#39;: (1, 0.01, 1.0),  # final OneCycleLR learning rate (lr0 * lrf)
+                &#39;momentum&#39;: (0.3, 0.6, 0.98),  # SGD momentum/Adam beta1
+                &#39;weight_decay&#39;: (1, 0.0, 0.001),  # optimizer weight decay
+                &#39;warmup_epochs&#39;: (1, 0.0, 5.0),  # warmup epochs (fractions ok)
+                &#39;warmup_momentum&#39;: (1, 0.0, 0.95),  # warmup initial momentum
+                &#39;warmup_bias_lr&#39;: (1, 0.0, 0.2),  # warmup initial bias lr
+                &#39;box&#39;: (1, 0.02, 0.2),  # box loss gain
+                &#39;cls&#39;: (1, 0.2, 4.0),  # cls loss gain
+                &#39;cls_pw&#39;: (1, 0.5, 2.0),  # cls BCELoss positive_weight
+                &#39;obj&#39;: (1, 0.2, 4.0),  # obj loss gain (scale with pixels)
+                &#39;obj_pw&#39;: (1, 0.5, 2.0),  # obj BCELoss positive_weight
+                &#39;iou_t&#39;: (0, 0.1, 0.7),  # IoU training threshold
+                &#39;anchor_t&#39;: (1, 2.0, 8.0),  # anchor-multiple threshold
+                &#39;anchors&#39;: (2, 2.0, 10.0),  # anchors per output grid (0 to ignore)
+                &#39;fl_gamma&#39;: (0, 0.0, 2.0),  # focal loss gamma (efficientDet default gamma=1.5)
+                &#39;hsv_h&#39;: (1, 0.0, 0.1),  # image HSV-Hue augmentation (fraction)
+                &#39;hsv_s&#39;: (1, 0.0, 0.9),  # image HSV-Saturation augmentation (fraction)
+                &#39;hsv_v&#39;: (1, 0.0, 0.9),  # image HSV-Value augmentation (fraction)
+                &#39;degrees&#39;: (1, 0.0, 45.0),  # image rotation (+/- deg)
+                &#39;translate&#39;: (1, 0.0, 0.9),  # image translation (+/- fraction)
+                &#39;scale&#39;: (1, 0.0, 0.9),  # image scale (+/- gain)
+                &#39;shear&#39;: (1, 0.0, 10.0),  # image shear (+/- deg)
+                &#39;perspective&#39;: (0, 0.0, 0.001),  # image perspective (+/- fraction), range 0-0.001
+                &#39;flipud&#39;: (1, 0.0, 1.0),  # image flip up-down (probability)
+                &#39;fliplr&#39;: (0, 0.0, 1.0),  # image flip left-right (probability)
+                &#39;mosaic&#39;: (1, 0.0, 1.0),  # image mixup (probability)
+                &#39;mixup&#39;: (1, 0.0, 1.0)&#125;  # image mixup (probability)
+
+        assert opt.local_rank == -1, &#39;DDP mode not implemented for --evolve&#39;
+        opt.notest, opt.nosave = True, True  # only test/save final epoch
+        # ei = [isinstance(x, (int, float)) for x in hyp.values()]  # evolvable indices
+        yaml_file = Path(opt.save_dir) / &#39;hyp_evolved.yaml&#39;  # save best result here
+        if opt.bucket:
+            os.system(&#39;gsutil cp gs://%s/evolve.txt .&#39; % opt.bucket)  # download evolve.txt if exists
+
+        for _ in range(300):  # generations to evolve
+            if Path(&#39;evolve.txt&#39;).exists():  # if evolve.txt exists: select best hyps and mutate
+                # Select parent(s)
+                parent = &#39;single&#39;  # parent selection method: &#39;single&#39; or &#39;weighted&#39;
+                x = np.loadtxt(&#39;evolve.txt&#39;, ndmin=2)
+                n = min(5, len(x))  # number of previous results to consider
+                x = x[np.argsort(-fitness(x))][:n]  # top n mutations
+                w = fitness(x) - fitness(x).min()  # weights
+                if parent == &#39;single&#39; or len(x) == 1:
+                    # x = x[random.randint(0, n - 1)]  # random selection
+                    x = x[random.choices(range(n), weights=w)[0]]  # weighted selection
+                elif parent == &#39;weighted&#39;:
+                    x = (x * w.reshape(n, 1)).sum(0) / w.sum()  # weighted combination
+
+                # Mutate
+                mp, s = 0.8, 0.2  # mutation probability, sigma
+                npr = np.random
+                npr.seed(int(time.time()))
+                g = np.array([x[0] for x in meta.values()])  # gains 0-1
+                ng = len(meta)
+                v = np.ones(ng)
+                while all(v == 1):  # mutate until a change occurs (prevent duplicates)
+                    v = (g * (npr.random(ng) &lt; mp) * npr.randn(ng) * npr.random() * s + 1).clip(0.3, 3.0)
+                for i, k in enumerate(hyp.keys()):  # plt.hist(v.ravel(), 300)
+                    hyp[k] = float(x[i + 7] * v[i])  # mutate
+
+            # Constrain to limits
+            for k, v in meta.items():
+                hyp[k] = max(hyp[k], v[1])  # lower limit
+                hyp[k] = min(hyp[k], v[2])  # upper limit
+                hyp[k] = round(hyp[k], 5)  # significant digits
+
+            # Train mutation
+            results = train(hyp.copy(), opt, device)
+
+            # Write mutation results
+            print_mutation(hyp.copy(), results, yaml_file, opt.bucket)
+
+        # Plot results
+        plot_evolution(yaml_file)
+        print(f&#39;Hyperparameter evolution complete. Best results saved as: &#123;yaml_file&#125;\n&#39;
+              f&#39;Command to train a new model with these hyperparameters: $ python train.py --hyp &#123;yaml_file&#125;&#39;)
+</code></pre>
+<p>训练结果保存在runs&#x2F;train目录下</p>
+<pre><code>base.pt //选取在某个训练轮数最好的模型参数
+last.py //最后一轮训练的模型参数
+hyp.yaml //训练过程中模型的超参数
+labels.jpg //标注分布
+labels_correlogram.jpg //标注的相关矩阵
+opt.yaml //训练参数设置
+results.txt //训练的结果
+train_batch.jpg //训练的图片
+</code></pre>
+<p><img src="/YOLO-V5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211230104835262.png" alt="image-20211230104835262"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/dog.jpg" height=300 width=300></img>
+                    <p>John Doe</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">22 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Inference%EF%BC%88%E6%8E%A8%E6%B5%8B%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">Inference（推测）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A"><span class="toc-number">3.</span> <span class="toc-text">代码注释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Training"><span class="toc-number">4.</span> <span class="toc-text">Training</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            John Doe
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        </br>
+        
+        <span class="gradient-text">
+            <a href="https://beian.miit.gov.cn/" title="beian.miit.gov.cn" target="_blank" rel="noopener">beian.miit.gov.cn</a>
+        </span>
+        
+        
+        </br>
+        <span style="display: inline-block;"> <img src=/null></span>
+        
+        <span class="gradient-text">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602009049" title="www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049" target="_blank" rel="noopener">www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049</a>
+        </span>
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>
