@@ -1,78 +1,141 @@
-// Global searchConfig
+(function () {
 
-document.addEventListener('DOMContentLoaded', () => {
+    var G = window || this,
+        even = G.BLOG.even,
+        $ = G.BLOG.$,
+        searchIco = $('#search'),
+        searchWrap = $('#search-wrap'),
+        keyInput = $('#key'),
+        back = $('#back'),
+        searchPanel = $('#search-panel'),
+        searchResult = $('#search-result'),
+        searchTpl = $('#search-tpl').innerHTML,
+        JSON_DATA = (G.BLOG.ROOT + '/content.json').replace(/\/{2}/g, '/'),
+        searchData;
 
-  const input = document.querySelector('.search-input');
-  const container = document.querySelector('.search-result-container');
+    function loadData(success) {
 
-  const localSearch = new LocalSearch({
-    path             : searchConfig.path,
-    top_n_per_article: searchConfig.top_n_per_article,
-    unescape         : searchConfig.unescape
-  });
+        if (!searchData) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', JSON_DATA, true);
 
-  if (searchConfig.preload) {
-    // preload the search data when the page loads
-    console.log("loading page");
-    localSearch.fetchData();
-  }
+            xhr.onload = function () {
+                if (this.status >= 200 && this.status < 300) {
+                    var res = JSON.parse(this.response);
+                    searchData = res instanceof Array ? res : res.posts;
+                    success(searchData);
+                } else {
+                    console.error(this.statusText);
+                }
+            };
 
-  function openSearchPopup() {
-    document.querySelector('.search-popup').classList.add('search-activate');
-    if (!localSearch.isfetched) {
-      localSearch.fetchData();
-    } 
-  }
+            xhr.onerror = function () {
+                console.error(this.statusText);
+            };
 
-  function closeSearchPopup() {
-    document.querySelector('.search-popup').classList.remove('search-activate');
-    // refresh search box
-    input.value = '';
-    container.innerHTML = `<div class="search-result-message" ></div>`;
-  }
+            xhr.send();
 
-  // open search box
-  document.querySelector('.search-btn').addEventListener('click', openSearchPopup);
-
-  // close search box
-  document.querySelector('.search-popup-overlay').addEventListener('click', closeSearchPopup);
-  document.querySelector('.search-close-btn').addEventListener('click', closeSearchPopup);
-
-  function displaySearchResult() {
-    if (!localSearch.isfetched) return;
-    const searchText = input.value.trim().toLowerCase();
-    const keywords = searchText.split(/[-\s]+/);
-    if (searchText.length > 0) {
-      resultItems = localSearch.getResultItems(keywords);
+        } else {
+            success(searchData);
+        }
     }
 
-    if (keywords.length === 1 && keywords[0] === '') {
-      // no input
-      container.innerHTML = `<div class="search-result-message" ></div>`
-    } else if (resultItems.length === 0) {
-      // no result
-      container.innerHTML = `<div class="search-result-message" >No result found</div>`;
-    } else {
-      // display result(s)
-      container.innerHTML = `
-      <div class="search-result-message">${resultItems.length} result(s) found</div>
-      <ul class="search-result-list">${resultItems.map(result => result.item).join('<div class="h-line-secondary"></div>')}
-      </ul>`;
+    function tpl(html, data) {
+        return html.replace(/\{\w+\}/g, function (str) {
+            var prop = str.replace(/\{|\}/g, '');
+            return data[prop] || '';
+        });
     }
 
-  };
+    var noop = G.BLOG.noop;
+    var root = $('html');
 
-  if (searchConfig.trigger == 'auto') {
-    // whenever there is input, update search result
-    input.addEventListener('input', displaySearchResult);
-  } else {
-    // update search result when press "enter"
-    input.addEventListener('keypress', event => {
-      if (event.key === 'Enter') {
-        displaySearchResult();
-      }
-    })
-  }
-  window.addEventListener('search:loaded', displaySearchResult);
-});
-  
+    var Control = {
+        show: function () {
+            G.innerWidth < 760 ? root.classList.add('lock-size') : noop;
+            searchPanel.classList.add('in');
+        },
+        hide: function () {
+            G.innerWidth < 760 ? root.classList.remove('lock-size') : noop;
+            searchPanel.classList.remove('in');
+        }
+    };
+
+    function render(data) {
+        var html = '';
+        if (data.length) {
+
+            html = data.map(function (post) {
+
+                return tpl(searchTpl, {
+                    title: post.title,
+                    path: (G.BLOG.ROOT + '/' + post.path).replace(/\/{2,}/g, '/'),
+                    date: new Date(post.date).toLocaleDateString(),
+                    tags: post.tags.map(function (tag) {
+                        return '<span>#' + tag.name + '</span>';
+                    }).join('')
+                });
+
+            }).join('');
+
+        } else {
+            html = '<li class="tips"><i class="icon icon-coffee icon-3x"></i><p>Results not found!</p></li>';
+        }
+
+        searchResult.innerHTML = html;
+    }
+
+    function regtest(raw, regExp) {
+        regExp.lastIndex = 0;
+        return regExp.test(raw);
+    }
+
+    function matcher(post, regExp) {
+        return regtest(post.title, regExp) || post.tags.some(function (tag) {
+            return regtest(tag.name, regExp);
+        }) || regtest(post.text, regExp);
+    }
+
+    function search(e) {
+        var key = this.value.trim();
+        if (!key) {
+            return;
+        }
+
+        var regExp = new RegExp(key.replace(/[ ]/g, '|'), 'gmi');
+
+        loadData(function (data) {
+
+            var result = data.filter(function (post) {
+                return matcher(post, regExp);
+            });
+
+            render(result);
+            Control.show();
+        });
+
+        e.preventDefault();
+    }
+
+
+    searchIco.addEventListener(even, function () {
+        searchWrap.classList.toggle('in');
+        keyInput.value = '';
+        searchWrap.classList.contains('in') ? keyInput.focus() : keyInput.blur();
+    });
+
+    back.addEventListener(even, function () {
+        searchWrap.classList.remove('in');
+        Control.hide();
+    });
+
+    document.addEventListener(even, function (e) {
+        if (e.target.id !== 'key' && even === 'click') {
+            Control.hide();
+        }
+    });
+
+    keyInput.addEventListener('input', search);
+    keyInput.addEventListener(even, search);
+
+}).call(this);
