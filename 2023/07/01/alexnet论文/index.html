@@ -116,13 +116,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    1.1k
+                    3.8k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    1 mins.
+                    3 mins.
                 </span>
                 
                 
@@ -171,8 +171,27 @@
 <li><p>本文使用了两条GTX580 3GB GPU进行训练，训练了5-6天的时间。</p>
 </li>
 </ol>
-<h1 id="2-The-Dataset"><a href="#2-The-Dataset" class="headerlink" title="2 The Dataset"></a>2 The Dataset</h1><p>ImageNet是一个包含超过1500万张被标记的高分辨率图像的数据集，大约有22,000个类别。从2010年开始，作为PASCAL视觉目标挑战赛的一部分，一个名为ImageNet大规模视觉识别挑战（ILSVRC）的年度比赛已经举行。ILSVRC使用了ImageNet的一个子集，在1000个类别中，每个类别中有大约1000张图像。总共，大约有120万张训练图像，5万张验证图像和15万张测试图像。</p>
+<h1 id="2-The-Dataset"><a href="#2-The-Dataset" class="headerlink" title="2 The Dataset"></a>2 The Dataset</h1><p>ImageNet是一个包含超过1500万张被标记的高分辨率图像的数据集，大约有22,000个类别。</p>
+<p>ILSVRC使用了ImageNet的一个子集，在1000个类别中，每个类别中有大约1000张图像。总共，大约有120万张训练图像，5万张验证图像和15万张测试图像。</p>
+<p>ImageNet由各种分辨率的图像组成，而我们的系统需要一个恒定的输入维数。因此，我们将图像进行降采样到256×256的固定分辨率。首先重新将图像缩放，使较短的一侧长度为256，然后从结果图像中裁剪出中间256×256的图像。</p>
+<p>除了在训练集上对像素减去平均活跃度（mean activity）外,没有进行其他的预处理，我们根使用原始RGB值来训练我们的网络。</p>
+<h1 id="3-The-Architecture"><a href="#3-The-Architecture" class="headerlink" title="3 The Architecture"></a>3 The Architecture</h1><img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701170713367.png" class title="image-20230701170713367">
 
+<p>如图，AlexNet的网络架构包含8层——5个卷积层和3个全连接层。</p>
+<h2 id="3-1ReLU-Nonlinearity"><a href="#3-1ReLU-Nonlinearity" class="headerlink" title="3.1ReLU Nonlinearity"></a>3.1<strong>ReLU Nonlinearity</strong></h2><p>ReLU <em>f</em>(<em>x</em>) &#x3D; max(0*, x*) 为非饱和激活函数</p>
+<p>在梯度下降的训练时间方面，这些饱和非线性比非饱和非线性要慢得多。具有ReLUs的深度卷积神经网络的训练速度比具有其他单位的同类神经网络快几倍。</p>
+<img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701171510101.png" class title="image-20230701171510101">A four-layer convolutional neuralnetwork with ReLUs **(solid line)** reaches a 25%training error rate on CIFAR-10 six times fasterthan an equivalent network with tanh neurons**(dashed line)**.
+
+<p>图中显示了在一个特定的四层卷积网络的CIFAR-10数据集上达到25%的训练误差所需的迭代次数。这幅图表明，如果使用传统的饱和神经元模型，我们就不可能用如此大型的神经网络进行实验。</p>
+<h2 id="3-2-Training-on-Multiple-GPUs"><a href="#3-2-Training-on-Multiple-GPUs" class="headerlink" title="3.2 Training on Multiple GPUs"></a><strong>3.2 Training on Multiple GPUs</strong></h2><p>（偏工程细节，非机器学习重点，略）</p>
+<h2 id="3-3-Local-Response-Normalization"><a href="#3-3-Local-Response-Normalization" class="headerlink" title="3.3 Local Response Normalization"></a><strong>3.3 Local Response Normalization</strong></h2><p> 局部响应归一化方法</p>
+<img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701172739424.png" class title="image-20230701172739424">
+
+<p>其中，和在n个“相邻的”核映射上运行，N是该层中的核总数。核映射的顺序当然是任意的，并且在训练开始之前就已经确定了。这种反应标准化实现了一种侧抑制形式，灵感来自于在真实神经元中发现的类型，在使用不同内核计算的神经元输出之间创造了对大活动的竞争。常数k、n、α和β是超参数，其值通过验证集确定，使用了k&#x3D;2，n&#x3D;5，α&#x3D;10−4和β &#x3D; 0.75。</p>
+<p>局部归一化的作用是分别减少了top-1 1.4%，top-5 1.2%的错误率。我们也在CIFAR-10数据集上验证了这个方案的有效性：没有归一化的四层CNN取得了13%的错误率，而使用归一化取得了11%的错误率。</p>
+<h2 id="3-4-Overlapping-Pooling"><a href="#3-4-Overlapping-Pooling" class="headerlink" title="3.4 Overlapping Pooling"></a><strong>3.4 Overlapping Pooling</strong></h2><p>重叠池化和普通池化不同的地方就是，重叠池化的步长比核的长和宽都要小，这样就会导致下一步的池化的像素点和上一步的池化的像素点有重叠，故称为重叠池化。  网格间距为s个像素，这里的s就是step，每个网格归纳池化单元中心位置z × z大小的邻居。如果设置s &#x3D; z，我们会得到通常在CNN中采用的传统局部池化。如果设置s &lt;  z，就会得到重叠池化。这就是AlexNet网络中使用的方法，设置s &#x3D; 2，z &#x3D; 3。</p>
+<p>这个方案与非重叠方案s &#x3D; 2, z &#x3D;  2相比，分别降低了top-1 0.4%，top-5  0.3%的错误率，两者的输出维度是相等的。我们在训练过程发现，采用重叠池化的模型更难以过拟合。</p>
+<h2 id="3-5-Overall-Architecture"><a href="#3-5-Overall-Architecture" class="headerlink" title="3.5 Overall Architecture"></a><strong>3.5 Overall Architecture</strong></h2>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
@@ -224,7 +243,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-introduction"><span class="toc-number">2.</span> <span class="toc-text">1 introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-The-Dataset"><span class="toc-number">3.</span> <span class="toc-text">2 The Dataset</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-introduction"><span class="toc-number">2.</span> <span class="toc-text">1 introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-The-Dataset"><span class="toc-number">3.</span> <span class="toc-text">2 The Dataset</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-The-Architecture"><span class="toc-number">4.</span> <span class="toc-text">3 The Architecture</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1ReLU-Nonlinearity"><span class="toc-number">4.1.</span> <span class="toc-text">3.1ReLU Nonlinearity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Training-on-Multiple-GPUs"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 Training on Multiple GPUs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-Local-Response-Normalization"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 Local Response Normalization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Overlapping-Pooling"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 Overlapping Pooling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-Overall-Architecture"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 Overall Architecture</span></a></li></ol></li></ol>
                 </div>
             </div>
             
