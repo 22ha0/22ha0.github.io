@@ -5,16 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>爬虫笔记-基本库的使用-urllib - ZZH&#39;s NoteBook</title>
+    <title>ImageNet Classification with Deep Convolutional Neural Networks - ZZH&#39;s NoteBook</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="1.使用urlliburllib包含以下4个模块：
-request：用来模拟发送请求。
-error：异常处理模块。
-parse：提供URL处理方法
-robotparser: 识别网站的robot.t,"> 
+    
     <meta name="author" content="ZZH"> 
     <link rel="alternative" href="atom.xml" title="ZZH&#39;s NoteBook" type="application/atom+xml"> 
     <link rel="icon" href="/img/dog.jpg"> 
@@ -78,7 +74,7 @@ robotparser: 识别网站的robot.t,">
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">爬虫笔记-基本库的使用-urllib</h3>
+        <h3 class="subtitle">ImageNet Classification with Deep Convolutional Neural Networks</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -103,29 +99,30 @@ robotparser: 识别网站的robot.t,">
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url('/img/cover.jpg') ">
+                url('https://img-blog.csdnimg.cn/20210116151738910.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZlbmdiaW5nY2h1bg==,size_16,color_FFFFFF,t_70') ">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                <a href="/categories/论文总结&笔记"><b>「
+                    </b>论文总结&笔记<b> 」</b></a>
                 
-                June 30, 2021
+                July 01, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2021/06/30/%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8-urllib/" title="爬虫笔记-基本库的使用-urllib" class="">爬虫笔记-基本库的使用-urllib</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/" title="ImageNet Classification with Deep Convolutional Neural Networks" class="">ImageNet Classification with Deep Convolutional Neural Networks</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3.3k
+                    0
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    3 mins.
+                    1 mins.
                 </span>
                 
                 
@@ -138,7 +135,7 @@ robotparser: 识别网站的robot.t,">
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0/" rel="tag">爬虫笔记</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/AlexNet/" rel="tag">AlexNet</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Deep-Learn/" rel="tag">Deep Learn</a></li></ul>
             
         </div>
     </div>
@@ -159,89 +156,7 @@ robotparser: 识别网站的robot.t,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="1-使用urllib"><a href="#1-使用urllib" class="headerlink" title="1.使用urllib"></a>1.使用urllib</h1><p>urllib包含以下4个模块：</p>
-<p><strong>request</strong>：用来模拟发送请求。</p>
-<p><strong>error</strong>：异常处理模块。</p>
-<p><strong>parse</strong>：提供URL处理方法</p>
-<p><strong>robotparser</strong>: 识别网站的robot.txt文件</p>
-<h2 id="1-1-1-发送请求"><a href="#1-1-1-发送请求" class="headerlink" title="1.1.1 发送请求"></a>1.1.1 发送请求</h2><p>使用urllib的request模块</p>
-<h3 id="1-urlopen"><a href="#1-urlopen" class="headerlink" title="1.urlopen()"></a>1.urlopen()</h3><p>抓取整个python官网</p>
-<pre><code class="python">import urllib.request
-response = urllib.request.urlopen(&#39;https://www.python.org&#39;)
-print(response.read().decode(&#39;utf-8&#39;))
-</code></pre>
-<p>利用type()查看输出响应的类型</p>
-<pre><code class="python">print(type(response))
-#输出结果如下
-&lt;class &#39;http.client.HTTPResponse&#39;&gt;
-</code></pre>
-<p>可以看出是一个HTTPResponse类型的对象，主要包含read()、readinto()、getheader(name)、getheaders()、fileno()等方法，以及msg、version、status、reason、debuglevel、closed等属性。</p>
-<p>urlopen中参数的用法：</p>
-<p><strong>data参数</strong></p>
-<p>data参数是可选的，如果添加该参数并且它是字节流编码格式的内容，即bytes类型，需要通过bytes()方法转化。使用data参数时候请求方式为POST请求。</p>
-<pre><code class="python">import urllib.request
-import urllib.parse
-data = bytes(urllib.parse.urlencode(&#123;&#39;word&#39;:&#39;hello&#39;&#125;),encoding=&#39;utf8&#39;)
-response = urllib.request.urlopen(&#39;https://www.httpbin.org/post&#39;,data=data)
-print(response.read())
-</code></pre>
-<p>urlencode():将字典转化为字符串。</p>
-<p><strong>timeout参数</strong></p>
-<p>timeout参数用于设置超时时间，单位为秒。</p>
-<pre><code class="python">import urllib.request
-response = urllib.request.urlopen(&#39;https://www.httpbin.org/get&#39;,timeout=1)
-print(response.read())
-</code></pre>
-<p>可以利用try except语句来实现，一个网页请求时间过长就抛弃。</p>
-<p><strong>其他参数</strong></p>
-<p>context：用来指定SSL设置。</p>
-<p>cafile和capath：用来指定CA证书和路径</p>
-<h3 id="2-Requset"><a href="#2-Requset" class="headerlink" title="2.Requset"></a>2.Requset</h3><p>请求中如果想加入Headers等信息，就可以用Request类构造</p>
-<p>Request用法：</p>
-<pre><code class="python">import urllib.request
-request = urllib.request.Request(&#39;https://python.org&#39;)
-response = urllib.request.urlopen(request)
-print(response.read())
-</code></pre>
-<p>Request构造方法</p>
-<pre><code class="python">urllib.request.Request(url,data=None,headers=&#123;&#125;,origin_req_host=None,unverifiable=False,method=None)
-#url用于请求的URL，必选，其他参数为可选
-#data如果要传，必须要bytes（字节流）类型的，如果是字典可以先用urllib.parse模块里的urlencode()编码
-#header是一个字典 请求头
-#origin_req_host请求方的host名称或IP地址
-#unverifiable表示是否无法验证
-#method请求方法
-</code></pre>
-<h3 id="3-高级用法"><a href="#3-高级用法" class="headerlink" title="3.高级用法"></a>3.高级用法</h3><p>1.验证（账号密码）</p>
-<pre><code class="python">from urllib.request import HTTPPasswordMgrWithDefaultRealm,HTTPBasicAuthHandler,build_opener
-from urllib.error import URLError
-
-username = &quot;username&quot;
-password = &quot;password&quot;
-url = &#39;http://localhost:5000&#39;
-
-#建立了一个处理验证的Handler
-p = HTTPPasswordMgrWithDefaultRealm()
-p.add_password(None,url,username,password) #添加用户和密码
-auth_handler = HTTPBasicAuthHandler(p) #实例化对象
-#创建一个Opener
-opener = build_opener(auth_handler)
-
-try:
-    result = opener.open(url) #打开链接
-    html = result.read().decode(&#39;utf-8&#39;)
-    print(html)
-except URLError as e:
-    print(e.reason)
-</code></pre>
-<p>2.代理（添加代理）</p>
-<pre><code>
-</code></pre>
-<p>参考：</p>
-<ol>
-<li>《Python3网络爬虫实战开发》 崔庆</li>
-</ol>
-
+            
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
@@ -289,13 +204,6 @@ except URLError as e:
             </div>
             
             
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8urllib"><span class="toc-number">1.</span> <span class="toc-text">1.使用urllib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-1-%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">1.1.1 发送请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-urlopen"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.urlopen()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Requset"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.Requset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.高级用法</span></a></li></ol></li></ol></li></ol>
-                </div>
-            </div>
             
             
         </div>

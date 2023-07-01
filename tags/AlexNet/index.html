@@ -5,14 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>博客搭建-本地图片上传 - ZZH&#39;s NoteBook</title>
+    <title>Tag: AlexNet - ZZH&#39;s NoteBook</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="1.前提在md文件中插入图片，将博客上传到服务器后，网站中并不会显示图片。
-2.安装插件安装hexo-zngw-asset-image插件
-npm install hexo-zngw-asset-i,"> 
+    
     <meta name="author" content="ZZH"> 
     <link rel="alternative" href="atom.xml" title="ZZH&#39;s NoteBook" type="application/atom+xml"> 
     <link rel="icon" href="/img/dog.jpg"> 
@@ -69,78 +67,129 @@ npm install hexo-zngw-asset-i,">
     </div>
     <span id="config-title" style="display:none">ZZH&#39;s NoteBook</span>
     <div id="loader"></div>
-    <div id="single">
-    <div class="scrollbar gradient-bg-rev"></div>
-<div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/dog.jpg" alt="" data-url="http://example.com">
-        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">博客搭建-本地图片上传</h3>
-        <div class="social">
-            <!--        <div class="like-icon">-->
-            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
-            <!--        </div>-->
-            <div>
-                <div class="share">
-                    
-                        <a href="javascript:;" class="iconfont icon-share1"></a>
-                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
-                    
-                </div>
-            </div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="TAGS" external="false">TAGS</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="ARCHIVES" external="false">ARCHIVES</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="CATEGORIES" external="false">CATEGORIES</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/whoami/" title="ABOUT" external="false">ABOUT</a>
+        </li>
+        
+    </ul>
+    <p class="copyright" id="copyright">
+        &copy; 2023 ZZH.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+    </p>
+</div>
+
+<div id="container">
+    
+<div class="search-box">
+    <form class="site-search-form">
+        <span class="iconfont icon-search"></span>
+        <input type="text" id="local-search-input" class="st-search-input" />
+        <div class="iconfont icon-cross search-box-close"></div>
+    </form>
+    <div class="search-scrollable">
+        <div id="local-search-result" class="local-search-result-cls" data-initialise="Initialising search index..."
+            data-start="Please input search keywords." data-empty="No result found, please try other keywords.">
+            <span>Please input search keywords.</span>
         </div>
     </div>
 </div>
-
-    <div class="section">
-        <div class=article-header-wrapper>
-    <div class="article-header">
-        <div class="article-cover animated fadeIn" style="
-            animation-delay: 600ms;
-            animation-duration: 1.2s;
-            background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url('/img/cover.jpg') ">
+<div id="header">
+    <div>
+        <div class="logo animated fadeInDown">
+            <img src="/img/dog.jpg" alt="">
+            <a class="image-logo" href="/"></a>
         </div>
-        <div class="else">
-            <p class="animated fadeInDown">
-                
-                <a href="/categories/博客搭建"><b>「
-                    </b>博客搭建<b> 」</b></a>
-                
-                June 28, 2021
-            </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2021/06/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="博客搭建-本地图片上传" class="">博客搭建-本地图片上传</a>
-            </h3>
+        <ul id="menu-menu" class="menu text-menu">
             
-            <p class="post-count animated fadeInDown">
-                
-                <span>
-                    <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    1.5k
-                </span>
-                
-                
-                <span>
-                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    1 mins.
-                </span>
-                
-                
-                
-                <span id="busuanzi_container_page_pv">
-                    <b class="iconfont icon-read"></b> <i>Read count</i>
-                    <span id="busuanzi_value_page_pv">0</span>
-                </span>
-                
-            </p>
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/tags/" title="TAGS" external="false" class="menu-link">TAGS</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/archives/" title="ARCHIVES" external="false" class="menu-link">ARCHIVES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/categories/" title="CATEGORIES" external="false" class="menu-link">CATEGORIES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/whoami/" title="ABOUT" external="false" class="menu-link">ABOUT</a>
+            </li>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/BLOG/" rel="tag">BLOG</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li></ul>
+            <li class="animated fadeInDown search-bar iconfont icon-search"></li>
             
+        </ul>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
+    </div>
+</div>
+<div id="screen">
+    <div id="mark">
+        <div class="cover animated fadeIn" style="
+            animation-delay: 900ms;
+            animation-duration: 2.8s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(https://img-blog.csdnimg.cn/20210116151738910.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZlbmdiaW5nY2h1bg==,size_16,color_FFFFFF,t_70);">
         </div>
     </div>
+    
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            
+            <a href="/categories/论文总结&笔记"><b>「
+                </b>论文总结&笔记<b> 」</b></a>
+            
+            July 01, 2023
+        </p>
+        <h3 class="post-title animated fadeInDown">
+            <a href="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/" title="ImageNet Classification with Deep Convolutional Neural Networks" class="posttitle">ImageNet Classification with Deep Convolutional Neural Networks</a></h3>
+        
+        <p class="post-count animated fadeInDown">
+            
+            <span>
+                <b class="iconfont icon-text2"></b> <i>Words count</i>
+                0
+            </span>
+            
+            
+            <span>
+                <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                1 mins.
+            </span>
+            
+            
+        </p>
+        
+        
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/AlexNet/" rel="tag">AlexNet</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Deep-Learn/" rel="tag">Deep Learn</a></li></ul>
+        
+        <div class="md-content animated fadeIn">
+            
+            
+            
+            <span class="read-more"><a href="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/" title="Read article" class="posttitle">Read article</a>
+                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+    
 </div>
 
 <div class="screen-gradient-after">
@@ -148,100 +197,21 @@ npm install hexo-zngw-asset-i,">
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    <span class="animated fadeIn delay-1s"></span>
+                    <span class="typed-text"></span>
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="article">
-    <div class='main'>
-        <div class="content markdown animated fadeIn">
-            <h2 id="1-前提"><a href="#1-前提" class="headerlink" title="1.前提"></a>1.前提</h2><p>在md文件中插入图片，将博客上传到服务器后，网站中并不会显示图片。</p>
-<h2 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2.安装插件"></a>2.安装插件</h2><p>安装<code>hexo-zngw-asset-image</code>插件</p>
-<pre><code>npm install hexo-zngw-asset-image --save
-</code></pre>
-<h2 id="3-修改配置"><a href="#3-修改配置" class="headerlink" title="3. 修改配置"></a>3. 修改配置</h2><p>打开根目录下<code>_config.yml</code>配置文件，修改</p>
-<pre><code class="bash">post_asset_folder: true
-</code></pre>
-<p>添加</p>
-<pre><code class="bash">imgroot: /  #如查有第三方图片存储添写，如果用本地用`/`
-</code></pre>
-<h2 id="4-使用"><a href="#4-使用" class="headerlink" title="4. 使用"></a>4. 使用</h2><ul>
-<li>在<code>*.md</code>文件所在的目录下，创建与<code>*.md</code>文件同名的文件夹。如 在<code>hello-world.md</code>文件新建<code>hello-world</code>目录</li>
-<li>然后将需要的图片放到<code>hello-world</code>目录中</li>
-<li>引用的时候使用<code>[图片上传失败...(image-3a8964-1581251871499)]</code></li>
-</ul>
-<h2 id="5-Typora-MarkDown编辑使用"><a href="#5-Typora-MarkDown编辑使用" class="headerlink" title="5. Typora MarkDown编辑使用"></a>5. Typora MarkDown编辑使用</h2><p>用Typora编辑文件时，可以调整一下图片插入配置，直接拖入本地图片或远程图片自动直接保存为<code>*.md</code>同名文件夹目录</p>
-<img src="/2021/06/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/image-20210628174601123.png" class title="image-20210628174601123">
-
-
-
-<p><strong>参考：</strong><br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/53caddb9f857">https://www.jianshu.com/p/53caddb9f857</a></p>
-
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls"
-                data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-            <ul id="audio-list" style="display:none">
-                
-            </ul>
-            
-                        
-            
-            
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
-    >Comments</div>
-
-
-            
-            
-        </div>
-        <div class="sidebar">
-            <div class="box animated fadeInRight">
-                <div class="subbox">
-                    <img src="/img/dog.jpg" height=300 width=300></img>
-                    <p>ZZH</p>
-                    <span>Think like an artist, develop like an artisan</span>
-                    <dl>
-                        
-                        
-                    </dl>
-                </div>
-                <ul>
-                    <li><a href="/">20 <p>Articles</p></a></li>
-                    <li><a href="/categories">2 <p>Categories</p></a></li>
-                    <li><a href="/tags">26 <p>Tags</p></a></li>
-                </ul>
-            </div>
-            
-            
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E6%8F%90"><span class="toc-number">1.</span> <span class="toc-text">1.前提</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">2.安装插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">3. 修改配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">4. 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Typora-MarkDown%E7%BC%96%E8%BE%91%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">5. Typora MarkDown编辑使用</span></a></li></ol>
-                </div>
-            </div>
-            
-            
-        </div>
+    <div id="primary">
+        
     </div>
+    
 </div>
+<div id="preview"></div>
 
-    </div>
-</div>
+
     <div id="back-to-top" class="animated fadeIn faster">
         <div class="flow"></div>
         <span class="percentage animated fadeIn faster">0%</span>
