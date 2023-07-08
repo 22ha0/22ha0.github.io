@@ -116,7 +116,7 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    9.7k
+                    9.8k
                 </span>
                 
                 
@@ -208,7 +208,7 @@
 
 <p>我们使用均值为0，标准差为0.01的高斯分布对每一层的权重进行初始化。我们在第2，4，5卷积层和全连接隐层将神经元偏置初始化为常量1。这个初始化通过为ReLU提供正输入加速了早期阶段的学习。我们对剩下的层的神经元偏置初始化为0。</p>
 <p>我们对所有的层使用相等的学习率，这个是在整个训练过程中我们手动调整得到的。当验证误差在当前的学习率下停止改善时，我们遵循启发式的方法将学习率除以10。学习率初始化为0.01，在训练停止之前降低三次。我们在120万图像的训练数据集上训练神经网络大约90个循环，在两个NVIDIA GTX 580 3GB GPU上花费了五到六天。</p>
-<h1 id="6-Results"><a href="#6-Results" class="headerlink" title="6 Results"></a><strong>6 Results</strong></h1><img src="undefined2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701174550292.png" alt="image-20230701174550292" style="zoom:50%;">
+<h1 id="6-Results"><a href="#6-Results" class="headerlink" title="6 Results"></a><strong>6 Results</strong></h1><img src="undefined2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701174550292.png" alt="image-20230701174550292">
 
 <img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701174602623.png" class title="image-20230701174602623">
 
@@ -225,13 +225,15 @@
 <p>输出saturating neurons的activation：<br> sigmoid: input neurons的值会被挤压到[0,1]的区间</p>
 <img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701175247186.png" class title="image-20230701175247186">
 
-<p>anh：input neurons的值会被挤压到[-1,1]的区间</p>
-<img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701175331841.png" class title="image-20230701175331841">
+<p>tanh：input neurons的值会被挤压到[-1,1]的区间</p>
+<img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701230023756.png" class title="image-20230701230023756">
 
 <p>输出non-saturating neurons 的activation：<br>relu：input neurons的值，要么变0， 要么保持原值（无挤压，无最大最小值限制）</p>
 <img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701175338432.png" class title="image-20230701175338432">
 
-<p>leaky_relu：input neurons的值， 要么按照某比例缩小，要么保持原值（无挤压，无最大最小值限制）<br>在这里插入图片描述</p>
+<p>leaky_relu：input neurons的值， 要么按照某比例缩小，要么保持原值（无挤压，无最大最小值限制）</p>
+<img src="/2023/07/01/alexnet%E8%AE%BA%E6%96%87/image-20230701230040072.png" class title="image-20230701230040072">
+
 <p>为什么要用relu这样的能生成non-saturating neurons的non-linear activations, 而不用生成saturating neurons的sigmoid或tanh?<br>规避vanishing, exploding of gradients 带来的gradient值过大过小，导致训练效率低下。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -274,9 +276,9 @@
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">20 <p>Articles</p></a></li>
+                    <li><a href="/">21 <p>Articles</p></a></li>
                     <li><a href="/categories">2 <p>Categories</p></a></li>
-                    <li><a href="/tags">28 <p>Tags</p></a></li>
+                    <li><a href="/tags">29 <p>Tags</p></a></li>
                 </ul>
             </div>
             
