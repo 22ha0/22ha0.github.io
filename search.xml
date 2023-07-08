@@ -8,7 +8,7 @@
       <link href="/2023/07/08/resnet%E8%AE%BA%E6%96%87/"/>
       <url>/2023/07/08/resnet%E8%AE%BA%E6%96%87/</url>
       
-        <content type="html"><![CDATA[<img src="/2023/07/08/resnet%E8%AE%BA%E6%96%87/image-20230708225855177.png" class title="image-20230708225855177">]]></content>
+        <content type="html"><![CDATA[<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>摘要部分提出了更深层次的神经网络更难被训练。并提出了一种残差学习框架，以简化网络的训练，使得网络的层数能够更深。在ImageNet数据集上，本文使用的ResNet深度高达152层是VGG网络的8倍，但仍然具有较低的复杂度。这些残差网的集合在ImageNet测试集上达到了3.57%的错误率。该结果在ILSVRC 2015年分类任务中获得了第一名。（简要介绍网络，主要是介绍取得的成功）</p><h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a><strong>1. Introduction</strong></h1><p>介绍中强调了网络的深度是很重要的。提出了学习更好的网络就像堆叠更多的层次一样容易吗？在层数加深时可能会出现梯度消失或者梯度爆炸的问题。虽然这个问题已经被归一化初始化和中间归一化层所解决，但是当更深层次的网络能够开始收敛时，一个退化问题就暴露出来了：随着网络深度的增加，精度达到饱和（这可能并不奇怪），然后迅速下降。出乎意料的是，这种退化不是由过拟合引起的，在适当的深度模型中添加更多的层会导致更高的训练误差。</p><img src="/2023/07/08/resnet%E8%AE%BA%E6%96%87/image-20230708235435788.png" class title="image-20230708235435788"><p>使用20层和56层“普通”网络的CIFAR-10上的训练误差（左）和测试误差（右）。较深的网络具有较高的训练误差，因此存在测试误差。</p>]]></content>
       
       
       <categories>
