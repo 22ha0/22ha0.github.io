@@ -116,13 +116,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    827
+                    2.4k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    1 mins.
+                    2 mins.
                 </span>
                 
                 
@@ -157,10 +157,29 @@
     <div class='main'>
         <div class="content markdown animated fadeIn">
             <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>摘要部分提出了更深层次的神经网络更难被训练。并提出了一种残差学习框架，以简化网络的训练，使得网络的层数能够更深。在ImageNet数据集上，本文使用的ResNet深度高达152层是VGG网络的8倍，但仍然具有较低的复杂度。这些残差网的集合在ImageNet测试集上达到了3.57%的错误率。该结果在ILSVRC 2015年分类任务中获得了第一名。（简要介绍网络，主要是介绍取得的成功）</p>
-<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a><strong>1. Introduction</strong></h1><p>介绍中强调了网络的深度是很重要的。提出了学习更好的网络就像堆叠更多的层次一样容易吗？在层数加深时可能会出现梯度消失或者梯度爆炸的问题。虽然这个问题已经被归一化初始化和中间归一化层所解决，但是当更深层次的网络能够开始收敛时，一个退化问题就暴露出来了：随着网络深度的增加，精度达到饱和（这可能并不奇怪），然后迅速下降。出乎意料的是，这种退化不是由过拟合引起的，在适当的深度模型中添加更多的层会导致更高的训练误差。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a><strong>Introduction</strong></h1><p>介绍中强调了网络的深度是很重要的。提出了学习更好的网络就像堆叠更多的层次一样容易吗？在层数加深时可能会出现梯度消失或者梯度爆炸的问题。虽然这个问题已经被归一化初始化和中间归一化层所解决，但是当更深层次的网络能够开始收敛时，一个退化问题就暴露出来了：随着网络深度的增加，精度达到饱和（这可能并不奇怪），然后迅速下降。出乎意料的是，这种退化不是由过拟合引起的，在适当的深度模型中添加更多的层会导致更高的训练误差。</p>
 <img src="/2023/07/08/resnet%E8%AE%BA%E6%96%87/image-20230708235435788.png" class title="image-20230708235435788">
 
 <p>使用20层和56层“普通”网络的CIFAR-10上的训练误差（左）和测试误差（右）。较深的网络具有较高的训练误差，因此存在测试误差。</p>
+<h2 id="残差结构（本文提出的最重要的结构）"><a href="#残差结构（本文提出的最重要的结构）" class="headerlink" title="残差结构（本文提出的最重要的结构）"></a>残差结构（本文提出的最重要的结构）</h2><p>本文通过引入一个深度残差学习框架来解决退化问题。不是希望每几个堆叠层直接匹配所需的底层映射，而是明确地让这些层匹配残差映射。</p>
+<p>将期望的底层映射表示为H (x)，我们让堆叠的非线性层适合F (x)&#x3D;H(x)−x的另一个映射。原始映射被转化为F (x)+x。</p>
+<img src="/2023/07/08/resnet%E8%AE%BA%E6%96%87/image-20230719101035574.png" class title="image-20230719101035574">
+
+<blockquote>
+<p>这里也就是说，原始的思想是对H(x)进行学习，但是ResNet提出的残差网络结构是对F(x)进行学习，也就是原始的H(x) - x。最后往下一层输出的时候再让F(X) + x。</p>
+</blockquote>
+<p>F (x) + x的公式可以通过具有“shortcut connections”的前馈神经网络来实现（图2）。</p>
+<p><strong>作者在ImageNet上进行实验验证</strong></p>
+<p>在ImageNet上作者进行了全面的实验来表明退化问题，并评估了我们的方法。</p>
+<p>结果表明： </p>
+<p>1)本文提出的极深残差网很容易优化，但是对应的“plain”网络表现出比本文网络更高的训练误差；</p>
+<p>2)本文的深度残差网可以很容易地从大大增加的深度中获得精度，其结果明显优于以前的网络。</p>
+<p>在Introduction的后面主要是说明取得的一些比赛的成果，这里略。</p>
+<h1 id="Deep-Residual-Learning"><a href="#Deep-Residual-Learning" class="headerlink" title="Deep Residual Learning"></a><strong>Deep Residual Learning</strong></h1><h2 id="Residual-Learning"><a href="#Residual-Learning" class="headerlink" title="Residual Learning"></a><strong>Residual Learning</strong></h2><p>多层神经网络（不一定是整个网络）可以看做是一个隐含映射，我们把它记作H(x)，x表示其中第一层的输入。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>论文原文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1512.03385">https://arxiv.org/abs/1512.03385</a></p>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56961832">https://zhuanlan.zhihu.com/p/56961832</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/116694937">https://zhuanlan.zhihu.com/p/116694937</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -213,7 +232,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%8B%E5%B7%AE%E7%BB%93%E6%9E%84%EF%BC%88%E6%9C%AC%E6%96%87%E6%8F%90%E5%87%BA%E7%9A%84%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">残差结构（本文提出的最重要的结构）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deep-Residual-Learning"><span class="toc-number">3.</span> <span class="toc-text">Deep Residual Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Residual-Learning"><span class="toc-number">3.1.</span> <span class="toc-text">Residual Learning</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
                 </div>
             </div>
             
