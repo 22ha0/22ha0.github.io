@@ -116,13 +116,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    2.4k
+                    4.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    2 mins.
+                    4 mins.
                 </span>
                 
                 
@@ -175,7 +175,22 @@
 <p>1)本文提出的极深残差网很容易优化，但是对应的“plain”网络表现出比本文网络更高的训练误差；</p>
 <p>2)本文的深度残差网可以很容易地从大大增加的深度中获得精度，其结果明显优于以前的网络。</p>
 <p>在Introduction的后面主要是说明取得的一些比赛的成果，这里略。</p>
-<h1 id="Deep-Residual-Learning"><a href="#Deep-Residual-Learning" class="headerlink" title="Deep Residual Learning"></a><strong>Deep Residual Learning</strong></h1><h2 id="Residual-Learning"><a href="#Residual-Learning" class="headerlink" title="Residual Learning"></a><strong>Residual Learning</strong></h2><p>多层神经网络（不一定是整个网络）可以看做是一个隐含映射，我们把它记作H(x)，x表示其中第一层的输入。</p>
+<h1 id="Deep-Residual-Learning"><a href="#Deep-Residual-Learning" class="headerlink" title="Deep Residual Learning"></a><strong>Deep Residual Learning</strong></h1><h2 id="Residual-Learning"><a href="#Residual-Learning" class="headerlink" title="Residual Learning"></a><strong>Residual Learning</strong></h2><p>多层神经网络（不一定是整个网络）可以看做是一个隐含映射，我们把它记作H(x)，x表示其中第一层的输入。如果假设多个非线性层可以渐近近似复杂函数，那么它就等价于假设它们可以渐近近似残差函数，即H (x)−x（假设输入和输出具有相同的维数）。因此，我们不是期望堆叠的层近似于H (x)，而是明确地让这些层近似于一个残差函数F (x) &#x3D; H (x)−x。原来的函数就变成了F (x)+x。虽然这两种形式都应该能够渐近地近似于所期望的函数（如假设的那样），但学习的容易程度可能是不同的。</p>
+<h2 id="Identity-Mapping-by-Shortcuts"><a href="#Identity-Mapping-by-Shortcuts" class="headerlink" title="Identity Mapping by Shortcuts"></a><strong>Identity Mapping by Shortcuts</strong></h2><img src="/2023/07/08/resnet%E8%AE%BA%E6%96%87/image-20230719110343797.png" class title="image-20230719110343797">
+
+<p>这里的x和y是所考虑的层的输入和输出向量。函数F（x，{Wi}）表示要学习的残差映射。对于图2中有两层的例子，F &#x3D; W2σ（W1x），其中σ表示ReLU，为了简化符号，省略了偏差。操作F + x是通过一个快捷方式连接和元素级加法来执行的。我们采用了加法后的第二个非线性关系（即σ(y)，见图2）。</p>
+<p>这种操作既没有引入参数也没有带来额外的计算复杂度。这不仅在实践中具有吸引力，而且在我们比较普通网络和残差网络时也很重要。我们可以公平地比较同时具有相同数量的参数、深度、宽度和计算成本（除了可以忽略的逐元素加法）的普通&#x2F;残差网络。</p>
+<p>x和F的尺寸必须相等。如果不是这样（例如，当改变输入&#x2F;输出通道时），我们可以通过快捷连接执行一个线性投影Ws来匹配维度： y &#x3D; F（x，{Wi}）+ Wsx。</p>
+<img src="/2023/07/08/resnet%E8%AE%BA%E6%96%87/image-20230719111013278.png" class title="image-20230719111013278">
+
+<p>我们也可以在方程(1)中使用方阵。但我们将通过实验表明，恒等映射足以解决退化问题，并且是经济的，因此Ws只在匹配维数时使用。</p>
+<p>残差函数F的形式是灵活的。本文的实验涉及一个函数为两层或三层的函数F（图5），同时可能有更多的层。但如果F只有一个层，Eqn。(1)类似于线性层： y &#x3D; W1x + x，我们没有观察到其优势。</p>
+<p>我们还注意到，尽管为了简单起见，上述符号是关于全连接层的，但它们也适用于卷积层。函数F（x，{Wi}）可以表示多个卷积层。元素级添加将在两个特征映射上执行，一个通道一个通道。</p>
+<h2 id="Network-Architectures"><a href="#Network-Architectures" class="headerlink" title="Network Architectures"></a><strong>Network Architectures</strong></h2><p>作者已经测试了各种普通&#x2F;残余网，并观察到一致的现象。为了提供讨论的实例，我们描述了ImageNet的两个模型。</p>
+<img src="/2023/07/08/resnet%E8%AE%BA%E6%96%87/image-20230719111338815.png" class title="image-20230719111338815">
+
+<p><strong>Residual Network.</strong> 在上述普通网络的基础上，我们插入快捷连接（图3，右），将网络转化为对应的残余版本。身份认同的快捷方式(Eqn.(1))当输入和输出具有相同的尺寸时，可直接使用（图3中的实线快捷方式）。当尺寸增加时（图3中的虚线快捷方式），我们考虑两个选项： (A)快捷方式仍然执行身份映射，为增加尺寸填充额外的零条目。此选项不引入额外的参数；(B)方程中的投影快捷方式。(2)用于匹配尺寸（由1×1卷积完成）。对于这两个选项，当快捷方式跨越两种大小的特征映射时，它们将以2的步幅执行。</p>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a><strong>Implementation</strong></h2><p>随机缩放，然后其中及其水平翻转中随机采样224*224的尺寸，减去每个像素的均值，然后使用标准颜色增强。在卷积之后、激活之前使用batch normalization (BN)  。权重初始化好像用了Kaiming initialization。用了SGD，LR从0.1开始，每当误差平稳时便除以10，整个迭代次数高达60x10 4次方。weight decay&#x3D;0.0001，momentum&#x3D;0.0001，没有使用Dropout。</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>论文原文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1512.03385">https://arxiv.org/abs/1512.03385</a></p>
 <p>参考文章：</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56961832">https://zhuanlan.zhihu.com/p/56961832</a></p>
@@ -232,7 +247,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%8B%E5%B7%AE%E7%BB%93%E6%9E%84%EF%BC%88%E6%9C%AC%E6%96%87%E6%8F%90%E5%87%BA%E7%9A%84%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">残差结构（本文提出的最重要的结构）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deep-Residual-Learning"><span class="toc-number">3.</span> <span class="toc-text">Deep Residual Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Residual-Learning"><span class="toc-number">3.1.</span> <span class="toc-text">Residual Learning</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%8B%E5%B7%AE%E7%BB%93%E6%9E%84%EF%BC%88%E6%9C%AC%E6%96%87%E6%8F%90%E5%87%BA%E7%9A%84%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">残差结构（本文提出的最重要的结构）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deep-Residual-Learning"><span class="toc-number">3.</span> <span class="toc-text">Deep Residual Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Residual-Learning"><span class="toc-number">3.1.</span> <span class="toc-text">Residual Learning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Identity-Mapping-by-Shortcuts"><span class="toc-number">3.2.</span> <span class="toc-text">Identity Mapping by Shortcuts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network-Architectures"><span class="toc-number">3.3.</span> <span class="toc-text">Network Architectures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementation"><span class="toc-number">3.4.</span> <span class="toc-text">Implementation</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
                 </div>
             </div>
             
