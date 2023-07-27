@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>【论文笔记&amp;总结】（Transformer）Attention Is All You Need</title>
+      <link href="/2023/07/27/transformer%E8%AE%BA%E6%96%87/"/>
+      <url>/2023/07/27/transformer%E8%AE%BA%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727110315504.png" class title="image-20230727110315504"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111105996.png" class title="image-20230727111105996"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111116023.png" class title="image-20230727111116023"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111156591.png" class title="image-20230727111156591"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111232121.png" class title="image-20230727111232121"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111240186.png" class title="image-20230727111240186"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111250210.png" class title="image-20230727111250210"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111259462.png" class title="image-20230727111259462"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111309350.png" class title="image-20230727111309350"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727111318533.png" class title="image-20230727111318533"><img src="/2023/07/27/transformer%E8%AE%BA%E6%96%87/image-20230727110133722.png" class title="image-20230727110133722">]]></content>
+      
+      
+      <categories>
+          
+          <category> 论文总结&amp;笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learn </tag>
+            
+            <tag> Transformer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>机器视觉-图像处理-预处理笔记</title>
       <link href="/2023/07/10/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%84%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"/>
       <url>/2023/07/10/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%84%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/</url>

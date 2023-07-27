@@ -147,40 +147,127 @@
             animation-duration: 2.8s;
             background-image:
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(/img/cover.jpg);">
+                url(https://22ha0.github.io/2023/07/27/transformer论文/image-20230727110133722.png);">
         </div>
     </div>
     
     <div id="post0" class="else">
         <p class="animated fadeInDown">
             
-            <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            <a href="/categories/论文总结&笔记"><b>「
+                </b>论文总结&笔记<b> 」</b></a>
             
-            July 10, 2023
+            July 27, 2023
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2023/07/10/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%84%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="机器视觉-图像处理-预处理笔记" class="posttitle">机器视觉-图像处理-预处理笔记</a></h3>
+            <a href="/2023/07/27/transformer%E8%AE%BA%E6%96%87/" title="【论文笔记&amp;总结】（Transformer）Attention Is All You Need" class="posttitle">【论文笔记&amp;总结】（Transformer）Attention Is All You Need</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>Words count</i>
-                14k
+                1.3k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                13 mins.
+                1 mins.
             </span>
             
             
         </p>
         
         
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Deep-Learn/" rel="tag">Deep Learn</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Transformer/" rel="tag">Transformer</a></li></ul>
+        
         <div class="md-content animated fadeIn">
             
             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            <span class="read-more"><a href="/2023/07/27/transformer%E8%AE%BA%E6%96%87/" title="Read article" class="posttitle">Read article</a>
+                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+    
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="typed-text"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="primary">
+        
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            July 10, 2023
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2023/07/10/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%84%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="机器视觉-图像处理-预处理笔记" class="posttitle">机器视觉-图像处理-预处理笔记</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        14k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        13 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                
 
 <p>1.图像的减法</p>
 
@@ -207,29 +294,48 @@
 <p>出现的灰度级的个数初除于总个数 得到v，右图为图像的直方图</p>
 
 
-<p>变成均匀的直方图，自动实现，直接调用图像处理库的函数...</p>
+<p>变成均匀的直方图，自动实现，直接调用图像处理库的函数</p>
+
+
+<p>对特定值进行处理</p>
+
+
+
+
+
+
+<p>均值滤波器可以达到去噪的效果，但是会使得图片变得模糊。</p>
+
+
+<p>滤波器中的数值是由高斯分布确定的，清晰度会比均值滤波好</p>
+
+
+<p>对椒盐噪声有着不错的效果</p>
+
+
+
+
+
+
+
+
+<p>一般图像锐化的步骤，先对图像进行边缘检测，在用原图按照一定的比例，加上边缘检测的图像，图中A代表原图</p>
+
+
+
+
+
+
+
+
+<p>T为旋转轴到...</p>
             
-            <span class="read-more"><a href="/2023/07/10/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%84%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="Read article" class="posttitle">Read article</a>
-                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-    
-</div>
-
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                    <span class="typed-text"></span>
-                </p>
-            </div>
+            <span class="read-more"><a href="/2023/07/10/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%84%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
 
-    <div id="primary">
-        
+
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -646,56 +752,6 @@ class LinkedList:
                             &#39;https://youtu.be/NUsoVlDFqZg&#39;  #...</code></pre>
             
             <span class="read-more"><a href="/2021/11/21/YOLO-V5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
-            
-            October 30, 2021
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/" title="算法例题&amp;LeetCode--Python" class="posttitle">算法例题&amp;LeetCode--Python</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        25k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        22 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <h1 id="1-贪心算法"><a href="#1-贪心算法" class="headerlink" title="1.贪心算法"></a>1.贪心算法</h1><h2 id="1-最优合并问题"><a href="#1-最优合并问题" class="headerlink" title="1 最优合并问题"></a>1 最优合并问题</h2><p> <strong>问题描述：</strong></p>
-<p>给定k 个排好序的序列s1, s2 , …, sk, 用2 路合并算法将这k 个序列合并成一个序列。假设所采用的2 路合并算法合并2 个长度分别为m和n的序列需要m + n -1次比较。试设计一个算法确定合并这个序列的最优合并顺序，使所需的总比较次数最少。</p>
-<p>为了进行比较，还需要确定合并这个序列的最差合并顺序，使所需的总比较次数最多。</p>
-<p><strong>编程任务：</strong></p>
-<p>对于给定的k个待合并序列，编程计算最多比较次数和最少比较次数合并方案。</p>
-<p><strong>数据输入：</strong></p>
-<p>由文件input.txt给...</p>
-            
-            <span class="read-more"><a href="/2021/10/30/%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98-LeetCode/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
